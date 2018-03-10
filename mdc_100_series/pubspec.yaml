@@ -1,5 +1,5 @@
 name: shrine
-description: Learn the basics of using Material Components by building a simple app with core components.
+description: Learn how to use Material for structure and layout.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

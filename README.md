@@ -12,7 +12,7 @@ The starter and completed code is in the various branches of this repo.
 
 ## Getting Started
 
-Visit the [Google codelabs site](https://codelabs.developers.google.com/), or [codelabs.developers.google.com/codelabs/mdc-101-flutter](https://codelabs.developers.google.com/codelabs/mdc-101-flutter), to follow along the guided steps.
+Visit the [Google codelabs site](https://codelabs.developers.google.com/), or [codelabs.developers.google.com/codelabs/mdc-102-flutter](https://codelabs.developers.google.com/codelabs/mdc-102-flutter), to follow along the guided steps.
 
 ## Support
 
