@@ -11,9 +11,9 @@ class ShrineApp extends StatelessWidget {
       title: 'Shrine',
       home: HomePage(),
       initialRoute: '/home/login',
-      routes: <String, WidgetBuilder> { //5
-        '/home': (BuildContext context) => new HomePage(), //6
-        '/home/login' : (BuildContext context) => new LoginPage() //7
+      routes: <String, WidgetBuilder>{
+        '/home': (BuildContext context) => new HomePage(),
+        '/home/login': (BuildContext context) => new LoginPage()
       },
     );
   }
