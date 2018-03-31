@@ -1,0 +1,21 @@
+name: mdc_101_complete
+description: Learn the basics of using Material Components by building a simple app with core components.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# The following section is specific to Flutter.
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/diamond.png
