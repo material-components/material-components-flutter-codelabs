@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(Icons.tune),
               onPressed: () {
-                print('Tune button');
+                print('Filter button');
               }),
         ],
       ),
