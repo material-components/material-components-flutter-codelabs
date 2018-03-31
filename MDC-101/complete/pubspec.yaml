@@ -1,5 +1,5 @@
-name: starter
-description: A new Flutter project.
+name: MDC-101 (Complete)
+description: Learn the basics of using Material Components by building a simple app with core components.
 
 dependencies:
   flutter:
