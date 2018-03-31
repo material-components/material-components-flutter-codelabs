@@ -9,10 +9,9 @@ class ShrineApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shrine',
       home: HomePage(),
-      initialRoute: '/home/login',
+      initialRoute: '/login',
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => new HomePage(),
-        '/home/login': (BuildContext context) => new LoginPage()
+        '/login': (BuildContext context) => new LoginPage()
       },
     );
   }
