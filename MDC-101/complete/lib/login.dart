@@ -22,20 +22,20 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 121.0),
+          SizedBox(height: 120.0),
           TextField(
             decoration: InputDecoration(
               border: const UnderlineInputBorder(),
               filled: true,
-              labelText: "Username",
+              labelText: 'Username',
             ),
           ),
-          SizedBox(height: 13.0),
+          SizedBox(height: 12.0),
           TextField(
             decoration: InputDecoration(
               border: const UnderlineInputBorder(),
               filled: true,
-              labelText: "Password",
+              labelText: 'Password',
             ),
           ),
           SizedBox(height: 32.0),
@@ -43,13 +43,13 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               FlatButton(
-                child: Text("CANCEL"),
+                child: Text('CANCEL'),
               ),
               SizedBox(
                 width: 16.0,
               ),
               RaisedButton(
-                  child: Text("NEXT"),
+                  child: Text('NEXT'),
                   onPressed: () {
                     Navigator.pop(context);
                   })
