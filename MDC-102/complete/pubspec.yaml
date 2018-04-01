@@ -19,3 +19,7 @@ flutter:
 
   assets:
     - assets/diamond.png
+    - assets/0-1.jpg
+    - assets/1-1.jpg
+    - assets/2-1.jpg
+    - assets/3-1.jpg
