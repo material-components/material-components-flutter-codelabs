@@ -9,23 +9,20 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         children: <Widget>[
           SizedBox(height: 80.0),
-          Container(
-            child: Column(
-              children: <Widget>[
-                Image.asset('assets/diamond.png'),
-                SizedBox(
-                  height: 16.0,
-                ),
-                Text(
-                  'SHRINE',
-                ),
-              ],
-            ),
+          Column(
+            children: <Widget>[
+              Image.asset('assets/diamond.png'),
+              SizedBox(
+                height: 16.0,
+              ),
+              Text(
+                'SHRINE',
+              ),
+            ],
           ),
           SizedBox(height: 120.0),
           TextField(
             decoration: InputDecoration(
-              border: const UnderlineInputBorder(),
               filled: true,
               labelText: 'Username',
             ),
@@ -33,7 +30,6 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 12.0),
           TextField(
             decoration: InputDecoration(
-              border: const UnderlineInputBorder(),
               filled: true,
               labelText: 'Password',
             ),
@@ -49,10 +45,11 @@ class LoginPage extends StatelessWidget {
                 width: 16.0,
               ),
               RaisedButton(
-                  child: Text('NEXT'),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  })
+                child: Text('NEXT'),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
             ],
           )
         ],
