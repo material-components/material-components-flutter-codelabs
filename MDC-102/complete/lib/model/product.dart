@@ -15,7 +15,15 @@ class Product {
   /// The price of the item.
   final double price;
 
-  const Product(this.category, this.id, this.isFeatured, this.name, this.price);
+  final String priceString;
+
+  const Product(category, id, isFeatured, name, price, priceString)
+      : category = category,
+        id = id,
+        isFeatured = isFeatured,
+        name = name,
+        price = price,
+        priceString = priceString;
 
   @override
   String toString() => "$name (id=$id)";

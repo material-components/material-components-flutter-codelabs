@@ -1,8 +1,40 @@
+import 'package:intl/intl.dart';
+
 import 'product.dart';
 
-const List<Product> allProducts = <Product>[
-  Product(Category.home, 0, true, 'Tea Set', 35.0),
-  Product(Category.accessories, 1, false, 'Chintz Tie', 80.2),
-  Product(Category.clothing, 2, false, 'French Pants', 100.0),
-  Product(Category.home, 3, false, 'Stuffed Cat', 5.0),
+var formatter = NumberFormat.simpleCurrency();
+
+var allProducts = <Product>[
+  Product(
+    Category.home,
+    0,
+    true,
+    'Tab Can',
+    35.0,
+    formatter.format(35.0),
+  ),
+  Product(
+    Category.accessories,
+    1,
+    false,
+    'Pineapple Wallpaper',
+    80.2,
+    formatter.format(80.2),
+  ),
+  Product(
+    Category.clothing,
+    2,
+    false,
+    'Tab and Fresca Cooler',
+    100.0,
+    formatter.format(100.0),
+  ),
+  Product(
+    Category.home,
+    3,
+    false,
+    'Capris',
+    5.0,
+    formatter.format(5.0),
+  ),
 ];
