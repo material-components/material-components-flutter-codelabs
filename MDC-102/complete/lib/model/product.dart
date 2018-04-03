@@ -1,9 +1,4 @@
-enum Category {
-  none,
-  accessories,
-  clothing,
-  home
-}
+enum Category { none, accessories, clothing, home }
 
 class Product {
   final Category category;
