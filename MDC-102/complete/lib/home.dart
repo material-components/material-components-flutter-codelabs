@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
-List<Card> _buildGridCards(BuildContext context, int count) {
+import 'model/data.dart';
+import 'model/product.dart';
+
+List<Card> _buildGridCards(BuildContext context, List<Product> products) {
   List<Card> cards = List.generate(
-      count,
+      products.length,
       (int index) => Card(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -10,7 +13,7 @@ List<Card> _buildGridCards(BuildContext context, int count) {
                 AspectRatio(
                   aspectRatio: 16 / 11,
                   child: Image.asset(
-                    'assets/$index-1.jpg',
+                    'assets/${products[index].id}-1.jpg',
                     fit: BoxFit.fitWidth,
                   ),
                 ),
@@ -26,11 +29,12 @@ List<Card> _buildGridCards(BuildContext context, int count) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       // TODO(larche): Make headline6 when available
-                      Text('Tea Cups',
+                      Text(products[index].name,
                           style: Theme.of(context).textTheme.caption),
                       //SizedBox(height: 8.0,),
                       // TODO(larche): Make subtitle2 when available
-                      Text('\$36', style: Theme.of(context).textTheme.body2),
+                      Text('\$${products[index].price}',
+                          style: Theme.of(context).textTheme.body2),
                     ],
                   ),
                 ))
@@ -73,7 +77,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: GridView.count(
           crossAxisCount: 2,
-          children: _buildGridCards(context, 4),
+          children: _buildGridCards(context, allProducts),
           padding: EdgeInsets.all(16.0),
           mainAxisSpacing: 8.0,
         ),
