@@ -13,9 +13,7 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Image.asset('assets/diamond.png'),
                 SizedBox(height: 16.0),
-                Text(
-                  'SHRINE',
-                ),
+                Text('SHRINE'),
               ],
             ),
             SizedBox(height: 120.0),
