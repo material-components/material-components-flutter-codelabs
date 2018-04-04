@@ -7,10 +7,10 @@ import 'product.dart';
 List<Product> allProducts;
 NumberFormat formatter = NumberFormat.simpleCurrency();
 
-Future getData() async {
+Future<Null> getData() async {
   var localeString = await findSystemLocale();
 
-  future.then((locale) => formatter = NumberFormat.simpleCurrency(locale: locale));
+  formatter = NumberFormat.simpleCurrency(locale: localeString);
   allProducts = generateProducts();
 }
 

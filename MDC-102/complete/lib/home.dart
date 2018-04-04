@@ -52,6 +52,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //getData()
+
+  @override
+  void initState() {
+    super.initState();
+    getData().then((value) => setState((){}));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

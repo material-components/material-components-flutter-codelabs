@@ -33,6 +33,7 @@ class LoginPage extends StatelessWidget {
                 filled: true,
                 labelText: 'Password',
               ),
+              obscureText: true,
             ),
             SizedBox(height: 32.0),
             Row(
