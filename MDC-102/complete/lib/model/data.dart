@@ -4,12 +4,11 @@ import 'package:intl/intl_standalone.dart';
 
 import 'product.dart';
 
-List<Product> allProducts;
+List<Product> allProducts = generateProducts();
 NumberFormat formatter = NumberFormat.simpleCurrency();
 
 Future<Null> getData() async {
   var localeString = await findSystemLocale();
-
   formatter = NumberFormat.simpleCurrency(locale: localeString);
   allProducts = generateProducts();
 }
@@ -36,7 +35,7 @@ List<Product> generateProducts() {
       Category.clothing,
       2,
       false,
-      'Tab and Fresca Cooler',
+      'Tab & Fresca Cooler',
       100.0,
       formatter.format(100.0),
     ),
