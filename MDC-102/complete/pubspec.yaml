@@ -4,6 +4,7 @@ description: Learn the basics of using Material Components by building a simple 
 dependencies:
   flutter:
     sdk: flutter
+  intl: "^0.15.4"
 
   cupertino_icons: ^0.1.0
 
