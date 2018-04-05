@@ -35,6 +35,7 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 FlatButton(
                   child: Text('CANCEL'),
+                  onPressed: null,
                 ),
                 RaisedButton(
                   child: Text('NEXT'),
