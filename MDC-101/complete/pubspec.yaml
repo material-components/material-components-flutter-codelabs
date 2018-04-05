@@ -1,5 +1,6 @@
 name: mdc_101_complete
-description: Learn the basics of using Material Components by building a simple app with core components.
+description: >
+  Learn the basics of using Material Components by building a simple app with core components.
 
 dependencies:
   flutter:
@@ -12,10 +13,7 @@ dev_dependencies:
     sdk: flutter
 
 
-# The following section is specific to Flutter.
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/diamond.png
