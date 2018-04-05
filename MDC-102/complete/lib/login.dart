@@ -13,9 +13,7 @@ class LoginPage extends StatelessWidget {
                 children: <Widget>[
                   Image.asset('assets/diamond.png'),
                   SizedBox(height: 16.0),
-                  Text(
-                    'SHRINE',
-                  ),
+                  Text('SHRINE'),
                 ],
               ),
               SizedBox(height: 120.0),
@@ -33,15 +31,12 @@ class LoginPage extends StatelessWidget {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 32.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+              ButtonBar(
                 children: <Widget>[
                   FlatButton(
                     child: Text('CANCEL'),
                     onPressed: null,
                   ),
-                  SizedBox(width: 16.0),
                   RaisedButton(
                     child: Text('NEXT'),
                     onPressed: () {
