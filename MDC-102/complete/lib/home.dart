@@ -29,9 +29,14 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       // TODO(larche): Make headline6 when available
-                      Text(products[index].name,
-                          style: Theme.of(context).textTheme.title, maxLines: 1,),
-                      SizedBox(height: 8.0,),
+                      Text(
+                        products[index].name,
+                        style: Theme.of(context).textTheme.title,
+                        maxLines: 1,
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
                       // TODO(larche): Make subtitle2 when available
                       Text('${products[index].priceString}',
                           style: Theme.of(context).textTheme.body2),
@@ -40,7 +45,8 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                 ))
               ],
             ),
-          ));
+          )
+  );
 
   return cards;
 }
