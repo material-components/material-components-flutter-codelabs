@@ -31,14 +31,11 @@ class LoginPage extends StatelessWidget {
               ),
               obscureText: true,
             ),
-            SizedBox(height: 32.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            ButtonBar(
               children: <Widget>[
                 FlatButton(
                   child: Text('CANCEL'),
                 ),
-                SizedBox(width: 16.0),
                 RaisedButton(
                   child: Text('NEXT'),
                   onPressed: () {
