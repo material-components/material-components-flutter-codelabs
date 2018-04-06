@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Image.asset('assets/diamond.png'),
                 SizedBox(height: 16.0),
-                Text('SHRINE'),
+                Text('SHRINE', style: Theme.of(context).textTheme.headline,),
               ],
             ),
             SizedBox(height: 120.0),
@@ -39,6 +39,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 RaisedButton(
                   child: Text('NEXT'),
+                  elevation: 8.0,
                   onPressed: () {
                     Navigator.pop(context);
                   },

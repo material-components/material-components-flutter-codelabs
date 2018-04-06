@@ -50,7 +50,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
             ),
           ),
         ],
-      ),
+      ), elevation: 0.0,
     ),
   );
 
