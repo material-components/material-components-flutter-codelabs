@@ -4,16 +4,18 @@ import 'package:intl/intl_standalone.dart';
 
 import 'product.dart';
 
-List<Product> allProducts = generateProducts();
-NumberFormat formatter = NumberFormat.simpleCurrency();
+NumberFormat formatter;
 
-Future<Null> getData() async {
+Future<String> getLocale() async {
   var localeString = await findSystemLocale();
-  formatter = NumberFormat.simpleCurrency(locale: localeString);
-  allProducts = generateProducts();
+  return localeString;
 }
 
-List<Product> generateProducts() {
+List<Product> generateProducts(NumberFormat formatter) {
+  if (formatter == null) {
+    formatter = NumberFormat.simpleCurrency();
+  }
+
   return <Product>[
     Product(Category.home, 0, true, 'Tab Can', 35.0, formatter.format(35.0)),
     Product(Category.accessories, 1, false, 'Pineapple Wallpaper', 80.2,
