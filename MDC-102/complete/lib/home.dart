@@ -24,7 +24,12 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                  padding: EdgeInsets.fromLTRB(
+                    16.0,
+                    12.0,
+                    16.0,
+                    8.0,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -36,12 +41,14 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                       ),
                       SizedBox(height: 8.0),
                       // TODO(larche): Make subtitle2 when available
-                      Text(products[index].priceString,
-                          style: Theme.of(context).textTheme.body2),
+                      Text(
+                        products[index].priceString,
+                        style: Theme.of(context).textTheme.body2,
+                      ),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -73,31 +80,38 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              print('Menu button');
-            }),
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Menu button');
+          },
+        ),
         title: Text('SHRINE'),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-                print('Search button');
-              }),
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('Search button');
+            },
+          ),
           IconButton(
-              icon: Icon(Icons.tune),
-              onPressed: () {
-                print('Filter button');
-              }),
+            icon: Icon(Icons.tune),
+            onPressed: () {
+              print('Filter button');
+            },
+          ),
         ],
       ),
       body: Center(
         child: GridView.count(
-            crossAxisCount: 2,
-            children: _buildGridCards(context, allProducts),
-            padding: EdgeInsets.all(16.0),
-            mainAxisSpacing: 8.0,
-            childAspectRatio: 8.0 / 9.0),
+          crossAxisCount: 2,
+          children: _buildGridCards(
+            context,
+            allProducts,
+          ),
+          padding: EdgeInsets.all(16.0),
+          mainAxisSpacing: 8.0,
+          childAspectRatio: 8.0 / 9.0,
+        ),
       ),
     );
   }

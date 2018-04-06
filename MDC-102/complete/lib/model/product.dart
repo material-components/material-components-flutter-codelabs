@@ -21,12 +21,13 @@ class Product {
   final String priceString;
 
   const Product({
-      @required this.category,
-      @required this.id,
-      @required this.isFeatured,
-      @required this.name,
-      @required this.price,
-      @required this.priceString});
+    @required this.category,
+    @required this.id,
+    @required this.isFeatured,
+    @required this.name,
+    @required this.price,
+    @required this.priceString,
+  });
 
   @override
   String toString() => "$name (id=$id)";
