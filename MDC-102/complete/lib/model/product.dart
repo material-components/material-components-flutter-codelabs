@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 enum Category { none, accessories, clothing, home }
 
 class Product {
+  /// The Category classification of the product.
   final Category category;
 
   /// The unique identifier of the product.
