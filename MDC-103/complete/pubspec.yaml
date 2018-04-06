@@ -21,3 +21,9 @@ flutter:
     - assets/1-1.jpg
     - assets/2-1.jpg
     - assets/3-1.jpg
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Regular.ttf
+        - asset: fonts/Rubik-Medium.ttf
+          weight: 500

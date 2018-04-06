@@ -13,7 +13,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
     products.length,
         (int index) => Card(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           AspectRatio(
             aspectRatio: 16 / 11,
@@ -31,7 +31,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                 8.0,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   // TODO(larche): Make headline6 when available
                   Text(
@@ -43,7 +43,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                   // TODO(larche): Make subtitle2 when available
                   Text(
                     products[index].priceString,
-                    style: Theme.of(context).textTheme.body2,
+                    style: Theme.of(context).textTheme.subhead,
                   ),
                 ],
               ),
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     getLocale().then((locale) => setState(() {
-      formatter = NumberFormat.simpleCurrency(locale: locale);
+      formatter = NumberFormat.simpleCurrency(locale: locale, decimalDigits: 0,);
       allProducts = generateProducts(formatter);
     }));
   }
@@ -79,6 +79,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {
