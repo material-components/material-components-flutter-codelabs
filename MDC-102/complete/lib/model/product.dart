@@ -15,7 +15,7 @@ class Product {
   final String name;
 
   /// The price of the item.
-  final double price;
+  final int price;
 
   /// Formatted currency representation of price. Localized if possible.
   final String priceString;

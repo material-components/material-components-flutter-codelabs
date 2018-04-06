@@ -63,14 +63,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Product> allProducts = generateProducts(null);
+  List<Product> allProducts = generateProducts(NumberFormat.simpleCurrency(
+    decimalDigits: 0,
+  ));
 
   @override
   void initState() {
     super.initState();
 
     getLocale().then((locale) => setState(() {
-          formatter = NumberFormat.simpleCurrency(locale: locale);
+          formatter = NumberFormat.simpleCurrency(
+            locale: locale,
+            decimalDigits: 0,
+          );
           allProducts = generateProducts(formatter);
         }));
   }

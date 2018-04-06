@@ -12,38 +12,34 @@ Future<String> getLocale() async {
 }
 
 List<Product> generateProducts(NumberFormat formatter) {
-  if (formatter == null) {
-    formatter = NumberFormat.simpleCurrency();
-  }
-
   return <Product>[
     Product(
         category: Category.home,
         id: 0,
         isFeatured: true,
         name: 'Tab Can',
-        price: 35.0,
-        priceString: formatter.format(35.0)),
+        price: 35,
+        priceString: formatter.format(35)),
     Product(
         category: Category.accessories,
         id: 1,
         isFeatured: false,
         name: 'Pineapple Wallpaper',
-        price: 80.2,
-        priceString: formatter.format(80.2)),
+        price: 80,
+        priceString: formatter.format(80)),
     Product(
         category: Category.clothing,
         id: 2,
         isFeatured: false,
         name: 'Tab & Fresca Cooler',
-        price: 100.0,
-        priceString: formatter.format(100.0)),
+        price: 100,
+        priceString: formatter.format(100)),
     Product(
         category: Category.home,
         id: 3,
         isFeatured: false,
         name: 'Capris',
-        price: 5.0,
-        priceString: formatter.format(5.0)),
+        price: 5,
+        priceString: formatter.format(5)),
   ];
 }
