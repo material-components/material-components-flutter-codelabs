@@ -4,48 +4,46 @@ import 'package:intl/intl_standalone.dart';
 
 import 'product.dart';
 
-List<Product> allProducts = generateProducts();
-NumberFormat formatter = NumberFormat.simpleCurrency();
+NumberFormat formatter;
 
-Future<Null> getData() async {
+Future<String> getLocale() async {
   var localeString = await findSystemLocale();
-  formatter = NumberFormat.simpleCurrency(locale: localeString);
-  allProducts = generateProducts();
+  return localeString;
 }
 
-List<Product> generateProducts() {
+List<Product> generateProducts(NumberFormat formatter) {
+  if (formatter == null) {
+    formatter = NumberFormat.simpleCurrency();
+  }
+
   return <Product>[
     Product(
-      Category.home,
-      0,
-      true,
-      'Tab Can',
-      35.0,
-      formatter.format(35.0),
-    ),
+        category: Category.home,
+        id: 0,
+        isFeatured: true,
+        name: 'Tab Can',
+        price: 35.0,
+        priceString: formatter.format(35.0)),
     Product(
-      Category.accessories,
-      1,
-      false,
-      'Pineapple Wallpaper',
-      80.2,
-      formatter.format(80.2),
-    ),
+        category: Category.accessories,
+        id: 1,
+        isFeatured: false,
+        name: 'Pineapple Wallpaper',
+        price: 80.2,
+        priceString: formatter.format(80.2)),
     Product(
-      Category.clothing,
-      2,
-      false,
-      'Tab & Fresca Cooler',
-      100.0,
-      formatter.format(100.0),
-    ),
+        category: Category.clothing,
+        id: 2,
+        isFeatured: false,
+        name: 'Tab & Fresca Cooler',
+        price: 100.0,
+        priceString: formatter.format(100.0)),
     Product(
-      Category.home,
-      3,
-      false,
-      'Capris',
-      5.0,
-      formatter.format(5.0),
-    ),
+        category: Category.home,
+        id: 3,
+        isFeatured: false,
+        name: 'Capris',
+        price: 5.0,
+        priceString: formatter.format(5.0)),
   ];
 }

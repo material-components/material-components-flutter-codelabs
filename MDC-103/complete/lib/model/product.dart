@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 enum Category { none, accessories, clothing, home }
 
 class Product {
@@ -15,15 +17,17 @@ class Product {
   /// The price of the item.
   final double price;
 
+  /// Formatted currency representation of price. Localized if possible.
   final String priceString;
 
-  const Product(category, id, isFeatured, name, price, priceString)
-      : category = category,
-        id = id,
-        isFeatured = isFeatured,
-        name = name,
-        price = price,
-        priceString = priceString;
+  const Product({
+    @required this.category,
+    @required this.id,
+    @required this.isFeatured,
+    @required this.name,
+    @required this.price,
+    @required this.priceString,
+  });
 
   @override
   String toString() => "$name (id=$id)";
