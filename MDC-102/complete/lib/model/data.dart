@@ -17,11 +17,33 @@ List<Product> generateProducts(NumberFormat formatter) {
   }
 
   return <Product>[
-    Product(Category.home, 0, true, 'Tab Can', 35.0, formatter.format(35.0)),
-    Product(Category.accessories, 1, false, 'Pineapple Wallpaper', 80.2,
-        formatter.format(80.2)),
-    Product(Category.clothing, 2, false, 'Tab & Fresca Cooler', 100.0,
-        formatter.format(100.0)),
-    Product(Category.home, 3, false, 'Capris', 5.0, formatter.format(5.0)),
+    Product(
+        category: Category.home,
+        id: 0,
+        isFeatured: true,
+        name: 'Tab Can',
+        price: 35.0,
+        priceString: formatter.format(35.0)),
+    Product(
+        category: Category.accessories,
+        id: 1,
+        isFeatured: false,
+        name: 'Pineapple Wallpaper',
+        price: 80.2,
+        priceString: formatter.format(80.2)),
+    Product(
+        category: Category.clothing,
+        id: 2,
+        isFeatured: false,
+        name: 'Tab & Fresca Cooler',
+        price: 100.0,
+        priceString: formatter.format(100.0)),
+    Product(
+        category: Category.home,
+        id: 3,
+        isFeatured: false,
+        name: 'Capris',
+        price: 5.0,
+        priceString: formatter.format(5.0)),
   ];
 }
