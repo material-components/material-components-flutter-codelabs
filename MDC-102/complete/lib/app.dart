@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-
 import 'home.dart';
 import 'login.dart';
+
+import 'package:flutter/material.dart';
 
 class ShrineApp extends StatelessWidget {
   @override
@@ -15,14 +15,14 @@ class ShrineApp extends StatelessWidget {
   }
 
   Route<dynamic> _getRoute(RouteSettings settings) {
-    if (settings.name == '/login') {
-      return MaterialPageRoute<void>(
-        settings: settings,
-        builder: (BuildContext context) => LoginPage(),
-        fullscreenDialog: true,
-      );
+    if (settings.name != '/login') {
+      return null;
     }
 
-    return null;
+    return MaterialPageRoute<void>(
+      settings: settings,
+      builder: (BuildContext context) => LoginPage(),
+      fullscreenDialog: true,
+    );
   }
 }
