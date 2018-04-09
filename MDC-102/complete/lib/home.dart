@@ -10,9 +10,9 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
   }
 
   final ThemeData theme = Theme.of(context);
-  List<Card> cards = List.generate(
-    products.length,
-    (int index) => Card(
+
+  return List.generate(products.length, (int index) {
+    return Card(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -47,10 +47,8 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
               ),
             ],
           ),
-        ),
-  );
-
-  return cards;
+        )}
+  ).toList();
 }
 
 class HomePage extends StatefulWidget {
