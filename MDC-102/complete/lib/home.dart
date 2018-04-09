@@ -9,6 +9,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
     return [];
   }
 
+  final ThemeData theme = Theme.of(context);
   List<Card> cards = List.generate(
     products.length,
     (int index) => Card(
@@ -24,26 +25,21 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                    16.0,
-                    12.0,
-                    16.0,
-                    8.0,
-                  ),
+                  padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       // TODO(larche): Make headline6 when available
                       Text(
                         products[index].name,
-                        style: Theme.of(context).textTheme.title,
+                        style: theme.textTheme.title,
                         maxLines: 1,
                       ),
                       SizedBox(height: 8.0),
                       // TODO(larche): Make subtitle2 when available
                       Text(
                         products[index].priceString,
-                        style: Theme.of(context).textTheme.body2,
+                        style: theme.textTheme.body2,
                       ),
                     ],
                   ),
