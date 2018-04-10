@@ -3,11 +3,12 @@ import 'product.dart';
 List<Product> getAllProducts() {
   return <Product>[
     Product(
-        category: Category.home,
-        id: 0,
-        isFeatured: true,
-        name: 'Tab Can',
-        price: 35),
+      category: Category.home,
+      id: 0,
+      isFeatured: true,
+      name: 'Tab Can',
+      price: 35,
+    ),
     Product(
       category: Category.accessories,
       id: 1,
