@@ -20,7 +20,8 @@ class _HomePageState extends State<HomePage> {
     final ThemeData theme = Theme.of(context);
     final NumberFormat formatter = NumberFormat.simpleCurrency(
         locale: Localizations.localeOf(context).toString());
-    return List.generate(products.length, (int index) {
+
+    return products.map((product) {
       return Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
             AspectRatio(
               aspectRatio: 18 / 11,
               child: Image.asset(
-                'assets/${products[index].id}-1.jpg',
+                'assets/${product.id}-1.jpg',
                 fit: BoxFit.fitWidth,
               ),
             ),
@@ -40,14 +41,14 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[
                     // TODO(larche): Make headline6 when available
                     Text(
-                      products[index].name,
+                      product.name,
                       style: theme.textTheme.title,
                       maxLines: 1,
                     ),
                     SizedBox(height: 8.0),
                     // TODO(larche): Make subtitle2 when available
                     Text(
-                      formatter.format(products[index].price),
+                      formatter.format(product.price),
                       style: theme.textTheme.body2,
                     ),
                   ],
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       );
-    });
+    }).toList();
   }
 
   @override
