@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AspectRatio(
-              aspectRatio: 16 / 11,
+              aspectRatio: 18 / 11,
               child: Image.asset(
                 'assets/${products[index].id}-1.jpg',
                 fit: BoxFit.fitWidth,
