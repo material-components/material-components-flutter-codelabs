@@ -10,7 +10,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
   }
 
   final ThemeData theme = Theme.of(context);
-
+  final NumberFormat formatter = NumberFormat.simpleCurrency(locale: Localizations.localeOf(context).toString());
   return List.generate(products.length, (int index) {
     return Card(
           child: Column(
@@ -38,7 +38,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
                       SizedBox(height: 8.0),
                       // TODO(larche): Make subtitle2 when available
                       Text(
-                        products[index].priceString,
+                        formatter.format(products[index].price),
                         style: theme.textTheme.body2,
                       ),
                     ],
@@ -47,7 +47,7 @@ List<Card> _buildGridCards(BuildContext context, List<Product> products) {
               ),
             ],
           ),
-        )}
+        );}
   ).toList();
 }
 
@@ -57,22 +57,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Product> allProducts = generateProducts(NumberFormat.simpleCurrency(
-    decimalDigits: 0,
-  ));
-
-  @override
-  void initState() {
-    super.initState();
-
-    getLocale().then((locale) => setState(() {
-          formatter = NumberFormat.simpleCurrency(
-            locale: locale,
-            decimalDigits: 0,
-          );
-          allProducts = generateProducts(formatter);
-        }));
-  }
+  List<Product> allProducts = getAllProducts();
 
   @override
   Widget build(BuildContext context) {

@@ -3,23 +3,11 @@ import 'package:flutter/foundation.dart';
 enum Category { none, accessories, clothing, home }
 
 class Product {
-  /// The Category classification of the product.
   final Category category;
-
-  /// The unique identifier of the product.
   final int id;
-
-  /// Whether the product will be shown in the Featured section.
   final bool isFeatured;
-
-  /// The default text to display.
   final String name;
-
-  /// The price of the item.
   final int price;
-
-  /// Formatted currency representation of price. Localized if possible.
-  final String priceString;
 
   const Product({
     @required this.category,
@@ -27,8 +15,11 @@ class Product {
     @required this.isFeatured,
     @required this.name,
     @required this.price,
-    @required this.priceString,
-  });
+  })  : assert(category != null),
+        assert(id != null),
+        assert(isFeatured != null),
+        assert(name != null),
+        assert(price != null);
 
   @override
   String toString() => "$name (id=$id)";
