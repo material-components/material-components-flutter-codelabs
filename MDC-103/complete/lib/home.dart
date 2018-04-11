@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     return products.map((product) {
       return Card(
         elevation: 0.0,
+        shape: new RoundedRectangleBorder(), ///For no rounded corners
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
