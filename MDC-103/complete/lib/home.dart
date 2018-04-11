@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 import 'model/data.dart';
 import 'model/product.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
