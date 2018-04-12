@@ -12,7 +12,7 @@ class ShrineApp extends StatelessWidget {
           buttonColor: Color(0xFFFCB8AB),
           scaffoldBackgroundColor: Color(0xFFFFFFFF),
           cardColor: Color(0xFFFFFFFF),
-          buttonTheme: ButtonThemeData(
+          buttonTheme: new ButtonThemeData(
             textTheme: ButtonTextTheme.accent,
           ),
           textTheme: _customTextTheme(Theme.of(context).textTheme),
