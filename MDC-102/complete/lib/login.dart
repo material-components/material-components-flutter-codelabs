@@ -6,7 +6,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
             SizedBox(height: 80.0),
             Column(
@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                   child: Text('CANCEL'),
                   onPressed: null,
                 ),
-                RaisedButton(
+                new RaisedButton(
                   child: Text('NEXT'),
                   onPressed: () {
                     Navigator.pop(context);
