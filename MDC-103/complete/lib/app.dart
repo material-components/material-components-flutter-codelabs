@@ -7,12 +7,12 @@ import 'login.dart';
 class ShrineApp extends StatelessWidget {
   ThemeData _customTheme(BuildContext context) {
     return Theme.of(context).copyWith(
-          accentColor: Color(0xFF442B2D),
-          primaryColor: Color(0xFFFFDBCF),
-          buttonColor: Color(0xFFFCB8AB),
-          scaffoldBackgroundColor: Color(0xFFFFFFFF),
-          cardColor: Color(0xFFFFFFFF),
-          buttonTheme: new ButtonThemeData(
+          accentColor: const Color(0xFF442B2D),
+          primaryColor: const Color(0xFFFFDBCF),
+          buttonColor: const Color(0xFFFCB8AB),
+          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+          cardColor: const Color(0xFFFFFFFF),
+          buttonTheme: const ButtonThemeData(
             textTheme: ButtonTextTheme.accent,
           ),
           textTheme: _customTextTheme(Theme.of(context).textTheme),
@@ -24,11 +24,11 @@ class ShrineApp extends StatelessWidget {
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
-    return original.copyWith(color: Color(0xFF442B2D));
+    return original.copyWith(color: const Color(0xFF442B2D));
   }
 
   TextTheme _customTextTheme(TextTheme original) {
-    String rubik = 'Rubik';
+    const String rubik = 'Rubik';
 
     return original
         .copyWith(
