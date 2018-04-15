@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'model/data.dart';
 import 'model/product.dart';
+import 'product_card.dart';
 import 'product_columns.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,18 +30,18 @@ class _HomePageState extends State<HomePage> {
       if (index % 2 == 0) {
         /// Even cases
         int firstProductIndex = (index ~/ 2 * 3);
-        column = TwoProductColumn(
+        column = TwoProductCardColumn(
             bottom: products[firstProductIndex],
             top: products.length - 1 >= firstProductIndex + 1
                 ? products[firstProductIndex + 1]
                 : null);
       } else {
         /// Odd cases
-        column = OneProductColumn(product: products[index * 3 - 1]);
+        column = ProductCard(
+            imageAspectRatio: 33 / 49, product: products[index * 3 - 1]);
       }
-
       return new Container(
-        width: 160.0,
+        width: 216.0,
         child: column,
       );
     }).toList();
@@ -74,10 +75,13 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: new Center(
-          child: new ListView(
-        scrollDirection: Axis.horizontal,
-        children: _buildGridCards(),
-      )),
+        child: new ListView(
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.all(56.0),
+
+          children: _buildGridCards(),
+        ),
+      ),
     );
   }
 }
