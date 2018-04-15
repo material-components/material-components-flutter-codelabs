@@ -6,9 +6,9 @@ import 'login.dart';
 class ShrineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new MaterialApp(
       title: 'Shrine',
-      home: HomePage(),
+      home: new HomePage(),
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
     );
@@ -21,7 +21,7 @@ class ShrineApp extends StatelessWidget {
 
     return MaterialPageRoute<void>(
       settings: settings,
-      builder: (BuildContext context) => LoginPage(),
+      builder: (BuildContext context) => new LoginPage(),
       fullscreenDialog: true,
     );
   }
