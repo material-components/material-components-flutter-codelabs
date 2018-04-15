@@ -62,10 +62,6 @@ class _HomePageState extends State<HomePage> {
     }).toList();
   }
 
-  void _buttonPress() {
-    print('Button pressed');
-  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -73,17 +69,23 @@ class _HomePageState extends State<HomePage> {
         brightness: Brightness.light,
         leading: new IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: _buttonPress,
+          onPressed: () {
+            print('Menu button');
+          },
         ),
         title: const Text('SHRINE'),
         actions: <Widget>[
           new IconButton(
             icon: const Icon(Icons.search),
-            onPressed: _buttonPress,
+            onPressed: () {
+              print('Search button');
+            },
           ),
           new IconButton(
             icon: const Icon(Icons.tune),
-            onPressed: _buttonPress,
+            onPressed: () {
+              print('Filter button');
+            },
           ),
         ],
       ),
