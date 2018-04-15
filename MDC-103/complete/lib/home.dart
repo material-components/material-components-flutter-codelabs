@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     return List.generate(count, (int index) {
+      double width;
       Widget column;
       if (index % 2 == 0) {
         /// Even cases
@@ -35,14 +36,21 @@ class _HomePageState extends State<HomePage> {
             top: products.length - 1 >= firstProductIndex + 1
                 ? products[firstProductIndex + 1]
                 : null);
+        width = 242.0;
       } else {
         /// Odd cases
         column = ProductCard(
-            imageAspectRatio: 33 / 49, product: products[index * 3 - 1]);
+          imageAspectRatio: 33 / 49,
+          product: products[index * 3 - 1],
+        );
+        width = 186.0;
       }
       return new Container(
-        width: 216.0,
-        child: column,
+        width: width,
+        child: new Padding(
+          padding: EdgeInsetsDirectional.only(start: 56.0),
+          child: column,
+        ),
       );
     }).toList();
   }
@@ -77,8 +85,6 @@ class _HomePageState extends State<HomePage> {
       body: new Center(
         child: new ListView(
           scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.all(56.0),
-
           children: _buildGridCards(),
         ),
       ),

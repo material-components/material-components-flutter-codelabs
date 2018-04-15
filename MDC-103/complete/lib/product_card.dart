@@ -14,6 +14,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NumberFormat formatter = new NumberFormat.simpleCurrency(
+        decimalDigits: 0,
         locale: Localizations.localeOf(context).toString());
     final ThemeData theme = Theme.of(context);
 
@@ -27,7 +28,7 @@ class ProductCard extends StatelessWidget {
               ? null
               : new Image.asset(
                   'assets/${product.id}-1.jpg',
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.cover,
                 ),
         ),
         new Padding(
