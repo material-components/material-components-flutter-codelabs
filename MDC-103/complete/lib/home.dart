@@ -6,7 +6,7 @@ import 'model/product.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => new _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -18,26 +18,26 @@ class _HomePageState extends State<HomePage> {
     }
 
     final ThemeData theme = Theme.of(context);
-    final NumberFormat formatter = NumberFormat.simpleCurrency(
+    final NumberFormat formatter = new NumberFormat.simpleCurrency(
         locale: Localizations.localeOf(context).toString());
 
     return products.map((product) {
-      return Container(
+      return new Container(
         width: 160.0,
-        child: Column(
+        child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            AspectRatio(
+            new AspectRatio(
               aspectRatio: 18 / 11,
-              child: Image.asset(
+              child: new Image.asset(
                 'assets/${product.id}-1.jpg',
                 fit: BoxFit.fitWidth,
               ),
             ),
-            Expanded(
-              child: Padding(
+            new Expanded(
+              child: new Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                child: Column(
+                child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     // TODO(larche): Make headline6 when available
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                       style: theme.textTheme.title,
                       maxLines: 1,
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     // TODO(larche): Make subtitle2 when available
                     new Text(
                       formatter.format(product.price),
@@ -68,14 +68,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return new Scaffold(
+      appBar: new AppBar(
         brightness: Brightness.light,
         leading: new IconButton(
           icon: const Icon(Icons.menu),
           onPressed: _buttonPress,
         ),
-        title: Text('SHRINE'),
+        title: const Text('SHRINE'),
         actions: <Widget>[
           new IconButton(
             icon: const Icon(Icons.search),
@@ -87,8 +87,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Center(
-          child: ListView(
+      body: new Center(
+          child: new ListView(
         scrollDirection: Axis.horizontal,
         children: _buildGridCards(),
       )),

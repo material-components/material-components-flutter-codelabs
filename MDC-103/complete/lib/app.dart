@@ -46,8 +46,8 @@ class ShrineApp extends StatelessWidget {
           button: original.button.copyWith(fontFamily: rubik),
         )
         .apply(
-          displayColor: Color(0xFF442B2D),
-          bodyColor: Color(0xFF442B2D),
+          displayColor: const Color(0xFF442B2D),
+          bodyColor: const Color(0xFF442B2D),
         );
   }
 
@@ -57,7 +57,7 @@ class ShrineApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Shrine',
-      home: HomePage(),
+      home: new HomePage(),
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       theme: _customTheme(context),
@@ -66,9 +66,9 @@ class ShrineApp extends StatelessWidget {
 
   Route<dynamic> _getRoute(RouteSettings settings) {
     if (settings.name == '/login') {
-      return MaterialPageRoute<void>(
+      return new MaterialPageRoute<void>(
         settings: settings,
-        builder: (BuildContext context) => LoginPage(),
+        builder: (BuildContext context) => new LoginPage(),
         fullscreenDialog: true,
       );
     }

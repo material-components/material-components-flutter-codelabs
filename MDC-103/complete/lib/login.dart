@@ -3,46 +3,48 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return new Scaffold(
       backgroundColor: const Color(0xFFFEEAE6),
-      body: SafeArea(
-        child: ListView(
+      body: new SafeArea(
+        child: new ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
-            SizedBox(height: 80.0),
-            Column(
+            const SizedBox(height: 80.0),
+            new Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
-                SizedBox(height: 16.0),
+                new Image.asset('assets/diamond.png'),
+                const SizedBox(height: 16.0),
                 new Text(
                   'SHRINE',
                   style: Theme.of(context).textTheme.headline,
                 ),
               ],
             ),
-            SizedBox(height: 120.0),
-            TextField(
-              decoration: InputDecoration(
+            const SizedBox(height: 120.0),
+            const TextField(
+              decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
               ),
             ),
-            SizedBox(height: 12.0),
-            TextField(
-              decoration: InputDecoration(
+            const SizedBox(height: 12.0),
+            const TextField(
+              decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
               ),
               obscureText: true,
             ),
-            ButtonBar(
+            new ButtonBar(
               children: <Widget>[
                 new FlatButton(
-                  child: new Text('CANCEL'),
-                  onPressed: null,
+                  child: const Text('CANCEL'),
+                  onPressed: () {
+
+                  },
                 ),
                 new RaisedButton(
-                  child: new Text('NEXT'),
+                  child: const Text('NEXT'),
                   elevation: 8.0,
                   onPressed: () {
                     Navigator.pop(context);
