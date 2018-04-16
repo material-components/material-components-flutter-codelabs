@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Container> _buildGridCards() {
+  List<Container> _buildGridCards(BuildContext context) {
     List<Product> products = getAllProducts();
 
     if (products == null || products.isEmpty) {
@@ -36,19 +36,18 @@ class _HomePageState extends State<HomePage> {
             top: products.length - 1 >= firstProductIndex + 1
                 ? products[firstProductIndex + 1]
                 : null);
-        width = 242.0;
+        width = 4 / 9 * MediaQuery.of(context).size.width + 32.0;
       } else {
         /// Odd cases
         column = ProductCard(
-          imageAspectRatio: 33 / 49,
           product: products[index * 3 - 1],
         );
-        width = 186.0;
+        width = 4 / 9 * MediaQuery.of(context).size.width;
       }
       return new Container(
         width: width,
         child: new Padding(
-          padding: EdgeInsetsDirectional.only(start: 56.0),
+          padding: EdgeInsetsDirectional.only(start: 16.0),
           child: column,
         ),
       );
@@ -85,7 +84,8 @@ class _HomePageState extends State<HomePage> {
       body: new Center(
         child: new ListView(
           scrollDirection: Axis.horizontal,
-          children: _buildGridCards(),
+          padding: EdgeInsets.fromLTRB(0.0, 56.0, 0.0, 40.0),
+          children: _buildGridCards(context),
         ),
       ),
     );

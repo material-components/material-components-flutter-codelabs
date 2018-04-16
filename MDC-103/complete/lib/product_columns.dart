@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import 'model/product.dart';
 import 'product_card.dart';
@@ -14,26 +13,34 @@ class TwoProductCardColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        new Padding(
-          padding: const EdgeInsetsDirectional.only(start: 56.0),
-          child: new ProductCard(
-            imageAspectRatio: 18 / 11,
-            product: top,
+    return new LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      const spacerHeight = 56.0;
+      double height = (constraints.maxHeight - spacerHeight) / 2.0;
+      print(height);
+      return new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          new Container(
+            height: height,
+            padding: const EdgeInsetsDirectional.only(start: 32.0),
+            child: top != null
+                ? new ProductCard(
+                    product: top,
+                  )
+                : null,
           ),
-        ),
-        const SizedBox(height: 56.0),
-        new Padding(
-          padding: const EdgeInsetsDirectional.only(end: 56.0),
-          child: new ProductCard(
-            imageAspectRatio: 18 / 11,
-            product: bottom,
+          const SizedBox(height: spacerHeight),
+          new Container(
+            height: height,
+            padding: const EdgeInsetsDirectional.only(end: 32.0),
+            child: new ProductCard(
+              product: bottom,
+            ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    });
   }
 }

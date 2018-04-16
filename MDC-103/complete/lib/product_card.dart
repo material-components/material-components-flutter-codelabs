@@ -4,33 +4,24 @@ import 'package:intl/intl.dart';
 import 'model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard({this.imageAspectRatio, this.product})
-      : assert(imageAspectRatio != null),
-        assert(imageAspectRatio > 0);
+  ProductCard({this.product}) : assert(product != null);
 
-  final double imageAspectRatio;
   final Product product;
 
   @override
   Widget build(BuildContext context) {
     final NumberFormat formatter = new NumberFormat.simpleCurrency(
-        decimalDigits: 0,
-        locale: Localizations.localeOf(context).toString());
+        decimalDigits: 0, locale: Localizations.localeOf(context).toString());
     final ThemeData theme = Theme.of(context);
 
     return new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        new AspectRatio(
-          aspectRatio: imageAspectRatio,
-          child: product == null
-              ? null
-              : new Image.asset(
-                  'assets/${product.id}-1.jpg',
-                  fit: BoxFit.cover,
-                ),
-        ),
+            new Image.asset(
+                'assets/${product.id}-1.jpg',
+                fit: BoxFit.cover,
+              ),
         new Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
           child: new Column(
