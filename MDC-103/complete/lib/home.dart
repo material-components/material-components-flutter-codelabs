@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       } else {
         /// Odd cases
         column = ProductCard(
-          product: products[index * 3 - 1],
+          product: products[(index / 2).ceil() * 3 - 1],
         );
         width = 4 / 9 * MediaQuery.of(context).size.width;
       }
