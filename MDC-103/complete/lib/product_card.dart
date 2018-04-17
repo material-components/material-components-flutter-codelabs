@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
   final double imageAspectRatio;
   final Product product;
 
-  static final kTextBoxHeight = 45.0;
+  static final kTextBoxHeight = 65.0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,29 +31,28 @@ class ProductCard extends StatelessWidget {
           aspectRatio: imageAspectRatio,
           child: imageWidget,
         ),
-        new Padding(
-          padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-          child: SizedBox(
-            height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
-            child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                // TODO(larche): Make headline6 when available
-                new Text(
-                  product == null ? '' : product.name,
-                  style: theme.textTheme.title,
-                  softWrap: false,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                ),
-                const SizedBox(height: 8.0),
-                // TODO(larche): Make subtitle2 when available
-                new Text(
-                  product == null ? '' : formatter.format(product.price),
-                  style: theme.textTheme.subhead,
-                ),
-              ],
-            ),
+        new SizedBox(
+          height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
+          width: 121.0,
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              // TODO(larche): Make headline6 when available
+              new Text(
+                product == null ? '' : product.name,
+                style: theme.textTheme.button,
+                softWrap: false,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
+              const SizedBox(height: 4.0),
+              // TODO(larche): Make subtitle2 when available
+              new Text(
+                product == null ? '' : formatter.format(product.price),
+                style: theme.textTheme.subhead,
+              ),
+            ],
           ),
         ),
       ],

@@ -15,7 +15,7 @@ class TwoProductCardColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return new LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      const spacerHeight = 56.0;
+      const spacerHeight = 44.0;
 
       double heightOfCards = (constraints.biggest.height - spacerHeight) / 2.0;
       double heightOfImages = heightOfCards - ProductCard.kTextBoxHeight;
@@ -26,7 +26,7 @@ class TwoProductCardColumn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Container(
-            padding: const EdgeInsetsDirectional.only(start: 32.0),
+            padding: const EdgeInsetsDirectional.only(start: 28.0),
             child: top != null
                 ? new ProductCard(
                     imageAspectRatio: imageAspectRatio,
@@ -38,7 +38,7 @@ class TwoProductCardColumn extends StatelessWidget {
           ),
           const SizedBox(height: spacerHeight),
           new Container(
-            padding: const EdgeInsetsDirectional.only(end: 32.0),
+            padding: const EdgeInsetsDirectional.only(end: 28.0),
             child: new ProductCard(
               imageAspectRatio: imageAspectRatio,
               product: bottom,
@@ -47,5 +47,26 @@ class TwoProductCardColumn extends StatelessWidget {
         ],
       );
     });
+  }
+}
+
+class OneProductCardColumn extends StatelessWidget {
+  OneProductCardColumn({this.product});
+
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        ProductCard(
+          product: product,
+        ),
+        SizedBox(
+          height: 40.0,
+        ),
+      ],
+    );
   }
 }
