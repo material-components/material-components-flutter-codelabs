@@ -14,23 +14,14 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  // TODO customize this during talk
+  // TODO TextField customize this during talk
   //   - add filled, colors, border, etc.
-  Widget _buildUsernameField() {
+  Widget _buildTextField(String input, bool obscureText) {
     return TextField(
       decoration: InputDecoration(
-        labelText: 'Username',
+        labelText: input,
       ),
-    );
-  }
-
-  // TODO customize this during talk
-  Widget _buildPasswordField() {
-    return TextField(
-      decoration: InputDecoration(
-        labelText: 'Password',
-      ),
-      obscureText: true,
+      obscureText: obscureText,
     );
   }
 
@@ -62,9 +53,9 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 80.0),
             _buildLogo(context),
             SizedBox(height: 120.0),
-            _buildUsernameField(),
+            _buildTextField('Username', false),
             SizedBox(height: 12.0),
-            _buildPasswordField(),
+            _buildTextField('Password', true),
             _buildButtonBar(context),
           ],
         ),
