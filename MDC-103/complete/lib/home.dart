@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'supplemental/asymmetric_grid.dart';
+import 'supplemental/theming.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
       appBar: new AppBar(
         brightness: Brightness.light,
+        backgroundColor: kShrinePeachLightest,
         leading: new IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {

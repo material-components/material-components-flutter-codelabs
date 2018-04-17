@@ -3,15 +3,17 @@ import 'package:flutter/services.dart';
 
 import 'home.dart';
 import 'login.dart';
+import 'supplemental/theming.dart';
 
 class ShrineApp extends StatelessWidget {
   ThemeData _customTheme(BuildContext context) {
     return Theme.of(context).copyWith(
-          accentColor: const Color(0xFF442B2D),
-          primaryColor: const Color(0xFFFFDBCF),
-          buttonColor: const Color(0xFFFCB8AB),
-          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
-          cardColor: const Color(0xFFFFFFFF),
+          accentColor: kShrineBrown,
+          primaryColor: kShrinePeachPrimary,
+          buttonColor: kShrinePeachPrimary,
+          scaffoldBackgroundColor: Colors.white,
+          cardColor: Colors.white,
+          textSelectionColor: kShrinePeachPrimary,
           buttonTheme: const ButtonThemeData(
             textTheme: ButtonTextTheme.accent,
           ),
@@ -46,14 +48,14 @@ class ShrineApp extends StatelessWidget {
             fontFamily: rubik,
             fontWeight: FontWeight.w500,
           ),
-          title: original.title.copyWith(fontFamily: rubik, fontSize: 14.0),
+          title: original.title.copyWith(fontFamily: rubik, fontSize: 18.0),
           subhead: original.subhead.copyWith(fontFamily: rubik, fontSize: 14.0),
           caption: original.caption.copyWith(fontFamily: rubik),
           button: original.button.copyWith(fontFamily: rubik),
         )
         .apply(
-          displayColor: const Color(0xFF442B2D),
-          bodyColor: const Color(0xFF442B2D),
+          displayColor: kShrineBrown,
+          bodyColor: kShrineBrown,
         );
   }
 
