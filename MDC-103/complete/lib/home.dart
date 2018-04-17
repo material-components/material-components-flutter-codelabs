@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
       body: new Center(
         child: new ListView(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.fromLTRB(0.0, 56.0, 0.0, 40.0),
+          padding: EdgeInsets.fromLTRB(0.0, 56.0, 16.0, 40.0),
           children: _buildGridCards(context),
         ),
       ),
