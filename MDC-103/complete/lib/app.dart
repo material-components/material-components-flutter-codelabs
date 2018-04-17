@@ -20,7 +20,13 @@ class ShrineApp extends StatelessWidget {
               _customTextTheme(Theme.of(context).primaryTextTheme),
           primaryIconTheme:
               _customIconTheme(Theme.of(context).primaryIconTheme),
+          inputDecorationTheme:
+              _customInputTheme(Theme.of(context).inputDecorationTheme),
         );
+  }
+
+  InputDecorationTheme _customInputTheme(InputDecorationTheme original) {
+    return InputDecorationTheme(border: OutlineInputBorder());
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
