@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
         new Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
           child: SizedBox(
-            height: kTextBoxHeight,
+            height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
