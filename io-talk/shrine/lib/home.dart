@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import 'model/data.dart';
 import 'model/product.dart';
+import 'diamond_hamburger.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -64,12 +65,13 @@ class _HomePageState extends State<HomePage> {
   // TODO customize during talk
   Widget _buildAppBar() {
     return AppBar(
-      leading: new IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: () {
-          print('Menu button');
-        },
-      ),
+      leading: new DiamondHamburger(),
+//      leading: new IconButton(
+//          icon: const Icon(Icons.menu),
+//      onPressed: () {
+//          print('Menu button');
+//        },
+//      ),
       title: Text('SHRINE'),
       actions: <Widget>[
         new IconButton(
