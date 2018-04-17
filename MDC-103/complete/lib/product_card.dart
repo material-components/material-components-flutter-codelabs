@@ -27,10 +27,10 @@ class ProductCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-            new AspectRatio(
-                aspectRatio: imageAspectRatio,
-                child: imageWidget,
-              ),
+        new AspectRatio(
+          aspectRatio: imageAspectRatio,
+          child: imageWidget,
+        ),
         new Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
           child: SizedBox(
