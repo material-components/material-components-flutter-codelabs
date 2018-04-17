@@ -3,51 +3,51 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+    return new Scaffold(
+      body: new SafeArea(
+        child: new ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
-            SizedBox(height: 80.0),
-            Column(
+            const SizedBox(height: 80.0),
+            new Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
-                SizedBox(height: 16.0),
-                Text('SHRINE'),
+                new Image.asset('assets/diamond.png'),
+                const SizedBox(height: 16.0),
+                const Text('SHRINE'),
               ],
             ),
-            SizedBox(height: 120.0),
-            TextField(
-              decoration: InputDecoration(
+            const SizedBox(height: 120.0),
+            const TextField(
+              decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
               ),
             ),
-            SizedBox(height: 12.0),
-            TextField(
-              decoration: InputDecoration(
+            const SizedBox(height: 12.0),
+            const TextField(
+              decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
               ),
               obscureText: true,
             ),
-            ButtonBar(
+            new ButtonBar(
               children: <Widget>[
-                FlatButton(
-                  child: Text('CANCEL'),
+                new FlatButton(
+                  child: const Text('CANCEL'),
                   onPressed: null,
                 ),
-                RaisedButton(
-                  child: Text('NEXT'),
+                new RaisedButton(
+                  child: const Text('NEXT'),
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }

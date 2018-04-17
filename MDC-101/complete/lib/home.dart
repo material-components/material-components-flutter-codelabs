@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('SHRINE'),
+    return new Scaffold(
+      appBar: new AppBar(
+        title: const Text('SHRINE'),
       ),
-      body: Center(
-        child: Text('You did it!'),
+      body: const Center(
+        child: const Text('You did it!'),
       ),
     );
   }
