@@ -25,7 +25,7 @@ class ShrineApp extends StatelessWidget {
           primaryIconTheme:
               _customIconTheme(Theme.of(context).primaryIconTheme),
           inputDecorationTheme:
-              InputDecorationTheme(border: NotchedCornerBorder()),
+              InputDecorationTheme(border: new NotchedCornerBorder()),
         );
   }
 
