@@ -41,64 +41,9 @@ class NotchedCornerBorder extends OutlineInputBorder {
   }
 
   Path _gapBorderPath(Canvas canvas, RRect center, double start, double extent) {
+    final Path path = new Path();
 
-    final Rect tlCorner = new Rect.fromLTWH(
-      center.left,
-      center.top,
-      center.tlRadiusX * 2.0,
-      center.tlRadiusY * 2.0,
-    );
-    final Rect trCorner = new Rect.fromLTWH(
-      center.right - center.trRadiusX * 2.0,
-      center.top,
-      center.trRadiusX * 2.0,
-      center.trRadiusY * 2.0,
-    );
-    final Rect brCorner = new Rect.fromLTWH(
-      center.right - center.brRadiusX * 2.0,
-      center.bottom - center.brRadiusY * 2.0,
-      center.brRadiusX * 2.0,
-      center.brRadiusY * 2.0,
-    );
-    final Rect blCorner = new Rect.fromLTWH(
-      center.left,
-      center.bottom - center.brRadiusY * 2.0,
-      center.blRadiusX * 2.0,
-      center.blRadiusY * 2.0,
-    );
-
-    const double cornerArcSweep = math.pi / 2.0;
-    final double tlCornerArcSweep = start < center.tlRadiusX
-        ? math.asin(start / center.tlRadiusX)
-        : math.pi / 2.0;
-
-    final Path path = new Path()
-      ..addArc(tlCorner, math.pi, tlCornerArcSweep)
-      ..moveTo(center.left + center.tlRadiusX, center.top);
-
-    if (start > center.tlRadiusX)
-      path.lineTo(center.left + start, center.top);
-
-    const double trCornerArcStart = (3 * math.pi) / 2.0;
-    const double trCornerArcSweep = cornerArcSweep;
-    if (start + extent < center.width - center.trRadiusX) {
-      path
-        ..relativeMoveTo(extent, 0.0)
-        ..lineTo(center.right - center.trRadiusX, center.top)
-        ..addArc(trCorner, trCornerArcStart, trCornerArcSweep);
-    } else if (start + extent < center.width) {
-      final double dx = center.width - (start + extent);
-      final double sweep = math.acos(dx / center.trRadiusX);
-      path.addArc(trCorner, trCornerArcStart + sweep, trCornerArcSweep - sweep);
-    }
-
-    return path
-      ..moveTo(center.right, center.top + center.trRadiusY)
-      ..lineTo(center.right, center.bottom - center.brRadiusY)
-      ..addArc(brCorner, 0.0, cornerArcSweep)
-      ..lineTo(center.left + center.blRadiusX, center.bottom)
-      ..addArc(blCorner, math.pi / 2.0, cornerArcSweep)
-      ..lineTo(center.left, center.top + center.trRadiusY);
+    return path;
   }
 
   @override
