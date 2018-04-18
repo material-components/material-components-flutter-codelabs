@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'home.dart';
 import 'login.dart';
-import 'octagonalBorder.dart';
+import 'notched_corner_border.dart';
 import 'supplemental/theming.dart';
 
 class ShrineApp extends StatelessWidget {

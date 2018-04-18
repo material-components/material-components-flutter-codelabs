@@ -7,12 +7,40 @@ import 'package:flutter/widgets.dart';
 class NotchedCornerBorder extends OutlineInputBorder {
   const NotchedCornerBorder({
     BorderSide borderSide: BorderSide.none,
-  }) :
-        super(borderSide: borderSide);
+    this.cut: 7.0,
+  }) :super(borderSide: borderSide);
 
+
+  @override
+  NotchedCornerBorder copyWith({
+    BorderSide borderSide,
+    BorderRadius borderRadius,
+    double gapPadding,
+  }) {
+    return new NotchedCornerBorder(
+      borderSide: borderSide ?? this.borderSide,
+      cut: cut ?? this.cut,
+    );
+  }
+
+  final double cut;
+
+  Path _notchedCornerPath(Rect center,) {
+
+    final Path path = new Path()
+    ..moveTo(center.left + cut, center.top)
+    ..lineTo(center.right - cut, center.top)
+    ..lineTo(center.right, center.top + cut)
+    ..lineTo(center.right, center.top + center.height - cut)
+    ..lineTo(center.right - cut, center.top + center.height)
+    ..lineTo(center.left + cut, center.top + center.height)
+    ..lineTo(center.left, center.top + center.height - cut)
+    ..lineTo(center.left, center.top + cut)
+    ..close();
+    return path;
+  }
 
   Path _gapBorderPath(Canvas canvas, RRect center, double start, double extent) {
-    print('******');
 
     final Rect tlCorner = new Rect.fromLTWH(
       center.left,
@@ -63,7 +91,6 @@ class NotchedCornerBorder extends OutlineInputBorder {
       final double sweep = math.acos(dx / center.trRadiusX);
       path.addArc(trCorner, trCornerArcStart + sweep, trCornerArcSweep - sweep);
     }
-    print('******');
 
     return path
       ..moveTo(center.right, center.top + center.trRadiusY)
@@ -83,17 +110,13 @@ class NotchedCornerBorder extends OutlineInputBorder {
   }) {
     assert(gapExtent != null);
     assert(gapPercentage >= 0.0 && gapPercentage <= 1.0);
-    print('******');
 
     final Paint paint = borderSide.toPaint();
     final RRect outer = borderRadius.toRRect(rect);
     final RRect center = outer.deflate(borderSide.width / 2.0);
     if (gapStart == null || gapExtent <= 0.0 || gapPercentage == 0.0) {
-      canvas.drawRect(center.middleRect, paint);
-      //canvas.drawRRect(center, paint);
-      print('******');
+      canvas.drawPath(_notchedCornerPath(center.middleRect), paint);
     } else {
-      print('******');
 
       final double extent = lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage);
       switch (textDirection) {
