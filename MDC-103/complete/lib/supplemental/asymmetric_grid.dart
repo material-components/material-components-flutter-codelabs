@@ -16,20 +16,20 @@ List<Container> buildGridCardsAsymmetric(BuildContext context) {
     if (index % 2 == 0) {
       /// Even cases
       int bottom = evenCasesIndex(index);
-      column = TwoProductCardColumn(
+      column = new TwoProductCardColumn(
           bottom: products[bottom],
           top: products.length - 1 >= bottom + 1 ? products[bottom + 1] : null);
       width += 32.0;
     } else {
       /// Odd cases
-      column = OneProductCardColumn(
+      column = new OneProductCardColumn(
         product: products[oddCasesIndex(index)],
       );
     }
     return new Container(
       width: width,
       child: new Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: new EdgeInsets.symmetric(horizontal: 16.0),
         child: column,
       ),
     );
