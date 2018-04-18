@@ -1,7 +1,3 @@
-import 'dart:async';
-import 'package:intl/intl.dart';
-import 'package:intl/intl_standalone.dart';
-
 import 'product.dart';
 
 List<Product> getAllProducts() {
