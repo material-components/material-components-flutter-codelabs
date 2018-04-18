@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => new _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _usernameController = new TextEditingController();
+  final _passwordController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -17,14 +25,16 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 120.0),
-            const TextField(
+            new TextField(
+              controller: _usernameController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
               ),
             ),
             const SizedBox(height: 12.0),
-            const TextField(
+            new TextField(
+              controller: _passwordController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
@@ -35,7 +45,10 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 new FlatButton(
                   child: const Text('CANCEL'),
-                  onPressed: null,
+                  onPressed: () {
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
                 ),
                 new RaisedButton(
                   child: const Text('NEXT'),
