@@ -6,7 +6,7 @@ import 'login.dart';
 class ShrineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return new MaterialApp(
       title: 'Shrine',
       home: new HomePage(),
       initialRoute: '/login',
