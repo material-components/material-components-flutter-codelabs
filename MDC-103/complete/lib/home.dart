@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: new ListView(
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.fromLTRB(0.0, 34.0, 16.0, 44.0),
+        padding: const EdgeInsets.fromLTRB(0.0, 34.0, 16.0, 44.0),
         children: buildGridCardsAsymmetric(context),
       ),
     );
