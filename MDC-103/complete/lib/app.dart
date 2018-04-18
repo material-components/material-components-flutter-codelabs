@@ -8,25 +8,24 @@ import 'supplemental/theming.dart';
 
 class ShrineApp extends StatelessWidget {
   ThemeData _customTheme(BuildContext context) {
-    return Theme.of(context).copyWith(
-          accentColor: kShrineBrown900,
-          primaryColor: kShrinePink100,
-          buttonColor: kShrinePink100,
-          scaffoldBackgroundColor: kShrineBackgroundWhite,
-          cardColor: kShrineBackgroundWhite,
-          textSelectionColor: kShrinePink100,
-          errorColor: kShrineErrorRed,
-          buttonTheme: const ButtonThemeData(
-            textTheme: ButtonTextTheme.accent,
-          ),
-          textTheme: _customTextTheme(Theme.of(context).textTheme),
-          primaryTextTheme:
-              _customTextTheme(Theme.of(context).primaryTextTheme),
-          primaryIconTheme:
-              _customIconTheme(Theme.of(context).primaryIconTheme),
-          inputDecorationTheme:
-              InputDecorationTheme(border: new NotchedCornerBorder()),
-        );
+    final ThemeData theme = Theme.of(context);
+    return theme.copyWith(
+      accentColor: kShrineBrown900,
+      primaryColor: kShrinePink100,
+      buttonColor: kShrinePink100,
+      scaffoldBackgroundColor: kShrineBackgroundWhite,
+      cardColor: kShrineBackgroundWhite,
+      textSelectionColor: kShrinePink100,
+      errorColor: kShrineErrorRed,
+      buttonTheme: const ButtonThemeData(
+        textTheme: ButtonTextTheme.accent,
+      ),
+      textTheme: _customTextTheme(theme.textTheme),
+      primaryTextTheme: _customTextTheme(theme.primaryTextTheme),
+      primaryIconTheme: _customIconTheme(theme.primaryIconTheme),
+      inputDecorationTheme:
+          InputDecorationTheme(border: new NotchedCornerBorder()),
+    );
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
