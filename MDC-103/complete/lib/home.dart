@@ -14,7 +14,6 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
       appBar: new AppBar(
         brightness: Brightness.light,
-        backgroundColor: kShrinePeachLightest,
         leading: new IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {

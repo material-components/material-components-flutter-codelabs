@@ -9,12 +9,13 @@ import 'supplemental/theming.dart';
 class ShrineApp extends StatelessWidget {
   ThemeData _customTheme(BuildContext context) {
     return Theme.of(context).copyWith(
-          accentColor: kShrineBrown,
-          primaryColor: kShrinePeachPrimary,
-          buttonColor: kShrinePeachPrimary,
-          scaffoldBackgroundColor: Colors.white,
-          cardColor: Colors.white,
-          textSelectionColor: kShrinePeachPrimary,
+          accentColor: kShrineBrown900,
+          primaryColor: kShrinePink100,
+          buttonColor: kShrinePink100,
+          scaffoldBackgroundColor: kShrineBackgroundWhite,
+          cardColor: kShrineBackgroundWhite,
+          textSelectionColor: kShrinePink100,
+          errorColor: kShrineErrorRed,
           buttonTheme: const ButtonThemeData(
             textTheme: ButtonTextTheme.accent,
           ),
@@ -29,7 +30,7 @@ class ShrineApp extends StatelessWidget {
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
-    return original.copyWith(color: kShrineBrown);
+    return original.copyWith(color: kShrineBrown900);
   }
 
   TextTheme _customTextTheme(TextTheme original) {
@@ -55,8 +56,8 @@ class ShrineApp extends StatelessWidget {
           button: original.button.copyWith(fontFamily: rubik),
         )
         .apply(
-          displayColor: kShrineBrown,
-          bodyColor: kShrineBrown,
+          displayColor: kShrineBrown900,
+          bodyColor: kShrineBrown900,
         );
   }
 
