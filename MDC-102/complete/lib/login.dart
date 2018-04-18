@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  LoginPageState createState() {
-    return new LoginPageState();
-  }
+  _LoginPageState createState() => new _LoginPageState();
 }
 
-class LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<LoginPage> {
   final _usernameController = new TextEditingController();
   final _passwordController = new TextEditingController();
 
