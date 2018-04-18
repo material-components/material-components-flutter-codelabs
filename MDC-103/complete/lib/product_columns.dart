@@ -32,7 +32,7 @@ class TwoProductCardColumn extends StatelessWidget {
                     imageAspectRatio: imageAspectRatio,
                     product: top,
                   )
-                : SizedBox(
+                : new SizedBox(
                     height: heightOfCards,
                   ),
           ),
@@ -60,10 +60,10 @@ class OneProductCardColumn extends StatelessWidget {
     return new Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        ProductCard(
+        new ProductCard(
           product: product,
         ),
-        SizedBox(
+        const SizedBox(
           height: 40.0,
         ),
       ],
