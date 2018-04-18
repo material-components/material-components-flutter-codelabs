@@ -32,7 +32,7 @@ class ShrineApp extends StatelessWidget {
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
-    return original.copyWith(color: const Color(0xFF442B2D));
+    return original.copyWith(color: kShrineBrown);
   }
 
   TextTheme _customTextTheme(TextTheme original) {
@@ -49,8 +49,12 @@ class ShrineApp extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
           title: original.title.copyWith(fontFamily: rubik, fontSize: 18.0),
-          subhead: original.subhead.copyWith(fontFamily: rubik, fontSize: 14.0),
-          caption: original.caption.copyWith(fontFamily: rubik),
+          subhead: original.subhead.copyWith(fontFamily: rubik),
+          caption: original.caption.copyWith(
+            fontFamily: rubik,
+            fontWeight: FontWeight.w400,
+            fontSize: 14.0,
+          ),
           button: original.button.copyWith(fontFamily: rubik),
         )
         .apply(

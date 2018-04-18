@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
               // TODO(larche): Make subtitle2 when available
               new Text(
                 product == null ? '' : formatter.format(product.price),
-                style: theme.textTheme.subhead,
+                style: theme.textTheme.caption,
               ),
             ],
           ),
