@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'supplemental/asymmetric_grid.dart';
-import 'supplemental/theming.dart';
 
 class HomePage extends StatefulWidget {
   @override
