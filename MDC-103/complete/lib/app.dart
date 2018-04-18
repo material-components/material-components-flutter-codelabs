@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'home.dart';
 import 'login.dart';
+import 'octagonalBorder.dart';
 import 'supplemental/theming.dart';
 
 class ShrineApp extends StatelessWidget {
@@ -23,12 +24,8 @@ class ShrineApp extends StatelessWidget {
           primaryIconTheme:
               _customIconTheme(Theme.of(context).primaryIconTheme),
           inputDecorationTheme:
-              _customInputTheme(Theme.of(context).inputDecorationTheme),
+              InputDecorationTheme(border: NotchedCornerBorder()),
         );
-  }
-
-  InputDecorationTheme _customInputTheme(InputDecorationTheme original) {
-    return InputDecorationTheme(border: OutlineInputBorder());
   }
 
   IconThemeData _customIconTheme(IconThemeData original) {
