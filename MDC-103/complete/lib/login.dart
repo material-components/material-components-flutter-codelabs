@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'supplemental/theming.dart';
+
 class LoginPage extends StatefulWidget {
   @override
   LoginPageState createState() {
@@ -14,7 +16,7 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: const Color(0xFFFEEAE6),
+      backgroundColor: kShrineSurfaceWhite,
       body: new SafeArea(
         child: new ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
