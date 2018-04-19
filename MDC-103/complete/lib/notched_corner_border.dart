@@ -23,13 +23,40 @@ class NotchedCornerBorder extends OutlineInputBorder {
 
   final double cut;
 
+  @override
+  ShapeBorder lerpFrom(ShapeBorder a, double t) {
+    if (a is NotchedCornerBorder) {
+      final NotchedCornerBorder outline = a;
+      return new NotchedCornerBorder(
+        borderSide: BorderSide.lerp(outline.borderSide, borderSide, t),
+        cut: cut,
+      );
+    }
+    return super.lerpFrom(a, t);
+  }
+
+  @override
+  ShapeBorder lerpTo(ShapeBorder b, double t) {
+    if (b is NotchedCornerBorder) {
+      final NotchedCornerBorder outline = b;
+      return new NotchedCornerBorder(
+        borderSide: BorderSide.lerp(borderSide, outline.borderSide, t),
+        cut: cut,
+      );
+    }
+    return super.lerpTo(b, t);
+  }
+
+
   Path _notchedCornerPath(Rect center,
       [double start = 0.0, double extent = 0.0]) {
     final Path path = new Path();
     if (start > 0.0 || extent > 0.0) {
       path.relativeMoveTo(extent + start, center.top);
       _notchedSidesAndBottom(center, path);
-      path.lineTo(start, center.top + start / cut);
+      path
+          ..lineTo(center.left + cut, center.top)
+          ..lineTo(start, center.top);
     } else {
       path.moveTo(center.left + cut, center.top);
       _notchedSidesAndBottom(center, path);
