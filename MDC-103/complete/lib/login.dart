@@ -33,19 +33,24 @@ class LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 120.0),
-            new TextField(
-              controller: _usernameController,
-              decoration: const InputDecoration(
-                labelText: 'Username',
+            new PrimaryColorOverride(
+              color: kShrineBrown900,
+              child: new TextField(
+                controller: _usernameController,
+                decoration: const InputDecoration(
+                  labelText: 'Username',
+                ),
               ),
             ),
             const SizedBox(height: 12.0),
-            new TextField(
-              controller: _passwordController,
-              decoration: const InputDecoration(
-                labelText: 'Password',
+            new PrimaryColorOverride(
+              color: kShrineBrown900,
+              child: new TextField(
+                controller: _usernameController,
+                decoration: const InputDecoration(
+                  labelText: 'Password',
+                ),
               ),
-              obscureText: true,
             ),
             new ButtonBar(
               children: <Widget>[
@@ -68,6 +73,24 @@ class LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class PrimaryColorOverride extends StatelessWidget {
+  const PrimaryColorOverride({Key key, this.color, this.child})
+      : super(key: key);
+
+  final Color color;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Theme(
+      child: child,
+      data: Theme.of(context).copyWith(
+            primaryColor: color,
+          ),
     );
   }
 }
