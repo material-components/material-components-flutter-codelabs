@@ -7,9 +7,33 @@ import 'notched_corner_border.dart';
 import 'supplemental/theming.dart';
 
 class ShrineApp extends StatelessWidget {
-  ThemeData _customTheme(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    return theme.copyWith(
+
+  IconThemeData _customIconTheme(IconThemeData original) {
+    return original.copyWith(color: kShrineBrown900);
+  }
+
+  TextTheme _buildShrineTextTheme(TextTheme base) {
+    return base.copyWith(
+      headline: base.headline.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
+      title: base.title.copyWith(
+          fontSize: 18.0
+      ),
+      caption: base.caption.copyWith(
+        fontWeight: FontWeight.w400,
+        fontSize: 14.0,
+      ),
+    ).apply(
+      fontFamily: 'Rubik',
+      displayColor: kShrineBrown900,
+      bodyColor: kShrineBrown900,
+    );
+  }
+
+  ThemeData _buildShrineTheme() {
+    final ThemeData base = new ThemeData.light();
+    return base.copyWith(
       accentColor: kShrineBrown900,
       primaryColor: kShrinePink100,
       buttonColor: kShrinePink100,
@@ -20,44 +44,17 @@ class ShrineApp extends StatelessWidget {
       buttonTheme: const ButtonThemeData(
         textTheme: ButtonTextTheme.accent,
       ),
-      textTheme: _customTextTheme(theme.textTheme),
-      primaryTextTheme: _customTextTheme(theme.primaryTextTheme),
-      primaryIconTheme: _customIconTheme(theme.primaryIconTheme),
-      inputDecorationTheme:
-          new InputDecorationTheme(border: new NotchedCornerBorder()),
+      primaryIconTheme: base.iconTheme.copyWith(
+          color: kShrineBrown900
+      ),
+      inputDecorationTheme: new InputDecorationTheme(
+          border: new NotchedCornerBorder(),
+      ),
+      textTheme: _buildShrineTextTheme(base.textTheme),
+      primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
+      accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
+      iconTheme: _customIconTheme(base.iconTheme),
     );
-  }
-
-  IconThemeData _customIconTheme(IconThemeData original) {
-    return original.copyWith(color: kShrineBrown900);
-  }
-
-  TextTheme _customTextTheme(TextTheme original) {
-    const String rubik = 'Rubik';
-
-    return original
-        .copyWith(
-          display4: original.display4.copyWith(fontFamily: rubik),
-          display3: original.display3.copyWith(fontFamily: rubik),
-          display2: original.display2.copyWith(fontFamily: rubik),
-          display1: original.display1.copyWith(fontFamily: rubik),
-          headline: original.headline.copyWith(
-            fontFamily: rubik,
-            fontWeight: FontWeight.w500,
-          ),
-          title: original.title.copyWith(fontFamily: rubik, fontSize: 18.0),
-          subhead: original.subhead.copyWith(fontFamily: rubik),
-          caption: original.caption.copyWith(
-            fontFamily: rubik,
-            fontWeight: FontWeight.w400,
-            fontSize: 14.0,
-          ),
-          button: original.button.copyWith(fontFamily: rubik),
-        )
-        .apply(
-          displayColor: kShrineBrown900,
-          bodyColor: kShrineBrown900,
-        );
   }
 
   @override
@@ -69,7 +66,7 @@ class ShrineApp extends StatelessWidget {
       home: new HomePage(),
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
-      theme: _customTheme(context),
+      theme: _buildShrineTheme(),
     );
   }
 
