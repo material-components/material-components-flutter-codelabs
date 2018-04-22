@@ -64,6 +64,8 @@ class LoginPageState extends State<LoginPage> {
                 new RaisedButton(
                   child: const Text('NEXT'),
                   elevation: 8.0,
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
                   onPressed: () {
                     Navigator.pop(context);
                   },

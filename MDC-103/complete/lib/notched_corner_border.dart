@@ -7,7 +7,10 @@ class NotchedCornerBorder extends OutlineInputBorder {
   const NotchedCornerBorder({
     BorderSide borderSide: BorderSide.none,
     this.cut: 7.0,
-  }) : super(borderSide: borderSide, borderRadius: BorderRadius.all(Radius.circular(2.0)), gapPadding: 2.0);
+  }) : super(
+            borderSide: borderSide,
+            borderRadius: const BorderRadius.all(Radius.circular(2.0)),
+            gapPadding: 2.0);
 
   @override
   NotchedCornerBorder copyWith({
@@ -47,16 +50,13 @@ class NotchedCornerBorder extends OutlineInputBorder {
     return super.lerpTo(b, t);
   }
 
-
   Path _notchedCornerPath(Rect center,
       [double start = 0.0, double extent = 0.0]) {
     final Path path = new Path();
     if (start > 0.0 || extent > 0.0) {
       path.relativeMoveTo(extent + start, center.top);
       _notchedSidesAndBottom(center, path);
-      path
-          ..lineTo(center.left + cut, center.top)
-          ..lineTo(start, center.top);
+      path..lineTo(center.left + cut, center.top)..lineTo(start, center.top);
     } else {
       path.moveTo(center.left + cut, center.top);
       _notchedSidesAndBottom(center, path);
