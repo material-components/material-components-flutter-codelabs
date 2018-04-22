@@ -46,7 +46,7 @@ class LoginPageState extends State<LoginPage> {
             new PrimaryColorOverride(
               color: kShrineBrown900,
               child: new TextField(
-                controller: _usernameController,
+                controller: _passwordController,
                 decoration: const InputDecoration(
                   labelText: 'Password',
                 ),
