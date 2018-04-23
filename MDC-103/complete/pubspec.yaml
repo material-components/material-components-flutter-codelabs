@@ -1,6 +1,5 @@
-name: mdc_101_complete
-description: >
-  Learn the basics of using Material Components by building a simple app with core components.
+name: Shrine
+description: Learn the basics of using Material Components by building a simple app with core components.
 
 dependencies:
   flutter:
