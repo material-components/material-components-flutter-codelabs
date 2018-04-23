@@ -22,5 +22,5 @@ class Product {
   final int price;
 
   @override
-  String toString() => "$name (id=$id)";
+  String toString() => '$name (id=$id)';
 }

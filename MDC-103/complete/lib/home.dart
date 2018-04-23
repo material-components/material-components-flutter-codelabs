@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'supplemental/asymmetric_grid.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => new _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

@@ -17,6 +17,7 @@ class NotchedCornerBorder extends OutlineInputBorder {
     BorderSide borderSide,
     BorderRadius borderRadius,
     double gapPadding,
+    double cut,
   }) {
     return new NotchedCornerBorder(
       borderSide: borderSide ?? this.borderSide,

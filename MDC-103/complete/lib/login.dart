@@ -16,7 +16,6 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: kShrineSurfaceWhite,
       body: new SafeArea(
         child: new ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -57,7 +56,8 @@ class LoginPageState extends State<LoginPage> {
                 new FlatButton(
                   child: const Text('CANCEL'),
                   shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
+                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  ),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
@@ -67,7 +67,8 @@ class LoginPageState extends State<LoginPage> {
                   child: const Text('NEXT'),
                   elevation: 8.0,
                   shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
+                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -92,9 +93,7 @@ class PrimaryColorOverride extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Theme(
       child: child,
-      data: Theme.of(context).copyWith(
-            primaryColor: color,
-          ),
+      data: Theme.of(context).copyWith(primaryColor: color),
     );
   }
 }
