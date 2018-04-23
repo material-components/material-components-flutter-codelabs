@@ -6,11 +6,13 @@ import 'package:flutter/widgets.dart';
 class NotchedCornerBorder extends OutlineInputBorder {
   const NotchedCornerBorder({
     BorderSide borderSide: BorderSide.none,
+    BorderRadius borderRadius: const BorderRadius.all(Radius.circular(2.0)),
     this.cut: 7.0,
+    double gapPadding: 2.0,
   }) : super(
             borderSide: borderSide,
-            borderRadius: const BorderRadius.all(Radius.circular(2.0)),
-            gapPadding: 2.0);
+            borderRadius: borderRadius,
+            gapPadding: gapPadding);
 
   @override
   NotchedCornerBorder copyWith({
@@ -20,8 +22,10 @@ class NotchedCornerBorder extends OutlineInputBorder {
     double cut,
   }) {
     return new NotchedCornerBorder(
+      borderRadius: borderRadius ?? this.borderRadius,
       borderSide: borderSide ?? this.borderSide,
       cut: cut ?? this.cut,
+      gapPadding: gapPadding ?? this.gapPadding,
     );
   }
 
@@ -32,8 +36,10 @@ class NotchedCornerBorder extends OutlineInputBorder {
     if (a is NotchedCornerBorder) {
       final NotchedCornerBorder outline = a;
       return new NotchedCornerBorder(
+        borderRadius: BorderRadius.lerp(outline.borderRadius, borderRadius, t),
         borderSide: BorderSide.lerp(outline.borderSide, borderSide, t),
         cut: cut,
+        gapPadding: gapPadding * t,
       );
     }
     return super.lerpFrom(a, t);
@@ -44,8 +50,10 @@ class NotchedCornerBorder extends OutlineInputBorder {
     if (b is NotchedCornerBorder) {
       final NotchedCornerBorder outline = b;
       return new NotchedCornerBorder(
+        borderRadius: BorderRadius.lerp(borderRadius, outline.borderRadius, t),
         borderSide: BorderSide.lerp(borderSide, outline.borderSide, t),
         cut: cut,
+        gapPadding: gapPadding * t,
       );
     }
     return super.lerpTo(b, t);
