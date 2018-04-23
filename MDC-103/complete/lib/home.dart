@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: AsymmetricGrid(products: getAllProducts())
+      body: ProductsView(products: getAllProducts())
     );
   }
 }

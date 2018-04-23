@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../model/product.dart';
 import '../product_columns.dart';
 
-class AsymmetricGrid extends StatelessWidget {
+class ProductsView extends StatelessWidget {
   final List<Product> products;
 
-  const AsymmetricGrid({ Key key, this.products});
+  const ProductsView({ Key key, this.products});
 
   List<Container> _buildColumns(BuildContext context) {
     if (products == null || products.isEmpty) {
