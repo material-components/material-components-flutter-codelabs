@@ -46,6 +46,7 @@ class ProductsView extends StatelessWidget {
   }
 
   int _oddCasesIndex(int input) {
+    assert(input > 0);
     return (input / 2).ceil() * 3 - 1;
   }
 
