@@ -6,7 +6,7 @@ import '../product_columns.dart';
 class ProductsView extends StatelessWidget {
   final List<Product> products;
 
-  const ProductsView({ Key key, this.products});
+  const ProductsView({Key key, this.products});
 
   List<Container> _buildColumns(BuildContext context) {
     if (products == null || products.isEmpty) {
@@ -21,7 +21,9 @@ class ProductsView extends StatelessWidget {
         int bottom = _evenCasesIndex(index);
         column = new TwoProductCardColumn(
             bottom: products[bottom],
-            top: products.length - 1 >= bottom + 1 ? products[bottom + 1] : null);
+            top: products.length - 1 >= bottom + 1
+                ? products[bottom + 1]
+                : null);
         width += 32.0;
       } else {
         /// Odd cases
@@ -64,6 +66,3 @@ class ProductsView extends StatelessWidget {
     );
   }
 }
-
-
-

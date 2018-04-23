@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: ProductsView(products: getAllProducts())
+      body: ProductsView(products: getAllProducts()),
     );
   }
 }
