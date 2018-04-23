@@ -56,6 +56,8 @@ class LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 new FlatButton(
                   child: const Text('CANCEL'),
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0))),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
