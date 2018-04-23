@@ -39,7 +39,7 @@ class NotchedCornerBorder extends OutlineInputBorder {
         borderRadius: BorderRadius.lerp(outline.borderRadius, borderRadius, t),
         borderSide: BorderSide.lerp(outline.borderSide, borderSide, t),
         cut: cut,
-        gapPadding: gapPadding * t,
+        gapPadding: outline.gapPadding,
       );
     }
     return super.lerpFrom(a, t);
@@ -53,7 +53,7 @@ class NotchedCornerBorder extends OutlineInputBorder {
         borderRadius: BorderRadius.lerp(borderRadius, outline.borderRadius, t),
         borderSide: BorderSide.lerp(borderSide, outline.borderSide, t),
         cut: cut,
-        gapPadding: gapPadding * t,
+        gapPadding: outline.gapPadding,
       );
     }
     return super.lerpTo(b, t);
