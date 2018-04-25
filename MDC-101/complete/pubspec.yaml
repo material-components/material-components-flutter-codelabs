@@ -6,6 +6,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.0
+  shrine_images: 1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -15,41 +16,41 @@ flutter:
   uses-material-design: true
   assets:
     - assets/diamond.png
-    - assets/0-0.jpg
-    - assets/1-0.jpg
-    - assets/2-0.jpg
-    - assets/3-0.jpg
-    - assets/4-0.jpg
-    - assets/5-0.jpg
-    - assets/6-0.jpg
-    - assets/7-0.jpg
-    - assets/8-0.jpg
-    - assets/9-0.jpg
-    - assets/10-0.jpg
-    - assets/11-0.jpg
-    - assets/12-0.jpg
-    - assets/13-0.jpg
-    - assets/14-0.jpg
-    - assets/15-0.jpg
-    - assets/16-0.jpg
-    - assets/17-0.jpg
-    - assets/18-0.jpg
-    - assets/19-0.jpg
-    - assets/20-0.jpg
-    - assets/21-0.jpg
-    - assets/22-0.jpg
-    - assets/23-0.jpg
-    - assets/24-0.jpg
-    - assets/25-0.jpg
-    - assets/26-0.jpg
-    - assets/27-0.jpg
-    - assets/28-0.jpg
-    - assets/29-0.jpg
-    - assets/30-0.jpg
-    - assets/31-0.jpg
-    - assets/32-0.jpg
-    - assets/33-0.jpg
-    - assets/34-0.jpg
-    - assets/35-0.jpg
-    - assets/36-0.jpg
-    - assets/37-0.jpg
+    - packages/shrine_images/0-0.jpg
+    - packages/shrine_images/1-0.jpg
+    - packages/shrine_images/2-0.jpg
+    - packages/shrine_images/3-0.jpg
+    - packages/shrine_images/4-0.jpg
+    - packages/shrine_images/5-0.jpg
+    - packages/shrine_images/6-0.jpg
+    - packages/shrine_images/7-0.jpg
+    - packages/shrine_images/8-0.jpg
+    - packages/shrine_images/9-0.jpg
+    - packages/shrine_images/10-0.jpg
+    - packages/shrine_images/11-0.jpg
+    - packages/shrine_images/12-0.jpg
+    - packages/shrine_images/13-0.jpg
+    - packages/shrine_images/14-0.jpg
+    - packages/shrine_images/15-0.jpg
+    - packages/shrine_images/16-0.jpg
+    - packages/shrine_images/17-0.jpg
+    - packages/shrine_images/18-0.jpg
+    - packages/shrine_images/19-0.jpg
+    - packages/shrine_images/20-0.jpg
+    - packages/shrine_images/21-0.jpg
+    - packages/shrine_images/22-0.jpg
+    - packages/shrine_images/23-0.jpg
+    - packages/shrine_images/24-0.jpg
+    - packages/shrine_images/25-0.jpg
+    - packages/shrine_images/26-0.jpg
+    - packages/shrine_images/27-0.jpg
+    - packages/shrine_images/28-0.jpg
+    - packages/shrine_images/29-0.jpg
+    - packages/shrine_images/30-0.jpg
+    - packages/shrine_images/31-0.jpg
+    - packages/shrine_images/32-0.jpg
+    - packages/shrine_images/33-0.jpg
+    - packages/shrine_images/34-0.jpg
+    - packages/shrine_images/35-0.jpg
+    - packages/shrine_images/36-0.jpg
+    - packages/shrine_images/37-0.jpg
