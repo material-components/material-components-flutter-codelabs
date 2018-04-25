@@ -1,5 +1,5 @@
 name: Shrine
-description: Learn how to use Material for structure and layout.
+description: Take your design up a notch and learn to use our advanced component backdrop menu.
 
 dependencies:
   flutter:
@@ -55,3 +55,9 @@ flutter:
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
     - packages/shrine_images/37-0.jpg
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Regular.ttf
+        - asset: fonts/Rubik-Medium.ttf
+          weight: 500
