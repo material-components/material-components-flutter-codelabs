@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   // TODO: Make a collection of cards (102)
   // TODO: Add a variable for Category (104)
+
   @override
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
@@ -30,3 +31,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
