@@ -1,6 +1,5 @@
-name: mdc_101_complete
-description: >
-  Learn the basics of using Material Components by building a simple app with core components.
+name: Shrine
+description: Learn how to use Material Design for structure and layout.
 
 dependencies:
   flutter:
@@ -17,7 +16,41 @@ flutter:
   uses-material-design: true
   assets:
     - assets/diamond.png
-    - assets/0-1.jpg
-    - assets/1-1.jpg
-    - assets/2-1.jpg
-    - assets/3-1.jpg
+    - assets/0-0.jpg
+    - assets/1-0.jpg
+    - assets/2-0.jpg
+    - assets/3-0.jpg
+    - assets/4-0.jpg
+    - assets/5-0.jpg
+    - assets/6-0.jpg
+    - assets/7-0.jpg
+    - assets/8-0.jpg
+    - assets/9-0.jpg
+    - assets/10-0.jpg
+    - assets/11-0.jpg
+    - assets/12-0.jpg
+    - assets/13-0.jpg
+    - assets/14-0.jpg
+    - assets/15-0.jpg
+    - assets/16-0.jpg
+    - assets/17-0.jpg
+    - assets/18-0.jpg
+    - assets/19-0.jpg
+    - assets/20-0.jpg
+    - assets/21-0.jpg
+    - assets/22-0.jpg
+    - assets/23-0.jpg
+    - assets/24-0.jpg
+    - assets/25-0.jpg
+    - assets/26-0.jpg
+    - assets/27-0.jpg
+    - assets/28-0.jpg
+    - assets/29-0.jpg
+    - assets/30-0.jpg
+    - assets/31-0.jpg
+    - assets/32-0.jpg
+    - assets/33-0.jpg
+    - assets/34-0.jpg
+    - assets/35-0.jpg
+    - assets/36-0.jpg
+    - assets/37-0.jpg
