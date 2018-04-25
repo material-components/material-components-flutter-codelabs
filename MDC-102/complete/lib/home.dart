@@ -29,8 +29,8 @@ class _HomePageState extends State<HomePage> {
             new AspectRatio(
               aspectRatio: 18 / 11,
               child: new Image.asset(
-                '${product.id}-0.jpg',
-                package: 'shrine_images',
+                product.assetName,
+                package: product.assetPackage,
                 fit: BoxFit.fitWidth,
               ),
             ),
