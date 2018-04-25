@@ -19,7 +19,8 @@ class ProductCard extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     final imageWidget = new Image.asset(
-      'assets/${product.id}-0.jpg',
+      '${product.id}-0.jpg',
+      package: 'shrine_images',
       fit: BoxFit.cover,
     );
 
