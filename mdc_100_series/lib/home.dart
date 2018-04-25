@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: AsymmetricView(products: getProducts(Category.all)),
+      body: AsymmetricView(products: getProducts(Category.all))),
     );
   }
 }
