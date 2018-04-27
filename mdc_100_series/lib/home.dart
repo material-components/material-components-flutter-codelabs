@@ -18,13 +18,9 @@ import 'package:intl/intl.dart';
 import 'model/data.dart';
 import 'model/product.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
+class HomePage extends StatelessWidget {
 
-class _HomePageState extends State<HomePage> {
-  List<Card> _buildGridCards() {
+  List<Card> _buildGridCards(BuildContext context) {
     List<Product> products = getAllProducts();
 
     if (products == null || products.isEmpty) {
@@ -105,7 +101,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: GridView.count(
           crossAxisCount: 2,
-          children: _buildGridCards(),
+          children: _buildGridCards(context),
           padding: EdgeInsets.all(16.0),
           mainAxisSpacing: 8.0,
           childAspectRatio: 8.0 / 9.0,
