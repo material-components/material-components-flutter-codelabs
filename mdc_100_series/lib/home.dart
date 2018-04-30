@@ -102,7 +102,6 @@ class HomePage extends StatelessWidget {
         child: GridView.count(
           crossAxisCount: 2,
           padding: EdgeInsets.all(16.0),
-          mainAxisSpacing: 8.0,
           childAspectRatio: 8.0 / 9.0,
           children: _buildGridCards(context),
         ),
