@@ -15,7 +15,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'model/product.dart';
+import '../model/product.dart';
 
 class ProductCard extends StatelessWidget {
   ProductCard({this.imageAspectRatio: 33 / 49, this.product})
