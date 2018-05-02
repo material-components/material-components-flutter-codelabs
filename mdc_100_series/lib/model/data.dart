@@ -223,7 +223,7 @@ List<Product> getAllProducts() {
       category: Category.clothing,
       id: 29,
       isFeatured: true,
-      name: 'Bixby scarf',
+      name: 'Ginger scarf',
       price: 98,
     ),
     Product(
