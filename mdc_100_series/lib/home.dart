@@ -17,9 +17,9 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: const Center(
-        child: const Text('You did it!'),
+    return Scaffold(
+      body: Center(
+        child: Text('You did it!'),
       ),
     );
   }
