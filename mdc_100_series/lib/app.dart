@@ -18,7 +18,7 @@ import 'package:flutter/services.dart';
 import 'colors.dart';
 import 'home.dart';
 import 'login.dart';
-import 'supplemental/notched_corner_border.dart';
+import 'supplemental/cut_corners_border.dart';
 
 class ShrineApp extends StatelessWidget {
   @override
