@@ -27,7 +27,7 @@ class TwoProductCardColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new LayoutBuilder(
+    return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       const spacerHeight = 44.0;
 
@@ -35,25 +35,25 @@ class TwoProductCardColumn extends StatelessWidget {
       double heightOfImages = heightOfCards - ProductCard.kTextBoxHeight;
       double imageAspectRatio = constraints.biggest.width / heightOfImages;
 
-      return new Column(
+      return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          new Container(
-            padding: const EdgeInsetsDirectional.only(start: 28.0),
+          Container(
+            padding: EdgeInsetsDirectional.only(start: 28.0),
             child: top != null
-                ? new ProductCard(
+                ? ProductCard(
                     imageAspectRatio: imageAspectRatio,
                     product: top,
                   )
-                : new SizedBox(
+                : SizedBox(
                     height: heightOfCards,
                   ),
           ),
-          const SizedBox(height: spacerHeight),
-          new Container(
-            padding: const EdgeInsetsDirectional.only(end: 28.0),
-            child: new ProductCard(
+          SizedBox(height: spacerHeight),
+          Container(
+            padding: EdgeInsetsDirectional.only(end: 28.0),
+            child: ProductCard(
               imageAspectRatio: imageAspectRatio,
               product: bottom,
             ),
@@ -71,13 +71,13 @@ class OneProductCardColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        new ProductCard(
+        ProductCard(
           product: product,
         ),
-        const SizedBox(
+        SizedBox(
           height: 40.0,
         ),
       ],
