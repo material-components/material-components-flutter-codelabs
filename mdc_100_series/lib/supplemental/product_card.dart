@@ -28,42 +28,42 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NumberFormat formatter = new NumberFormat.simpleCurrency(
+    final NumberFormat formatter = NumberFormat.simpleCurrency(
         decimalDigits: 0, locale: Localizations.localeOf(context).toString());
     final ThemeData theme = Theme.of(context);
 
-    final imageWidget = new Image.asset(
+    final imageWidget = Image.asset(
       product.assetName,
       package: product.assetPackage,
       fit: BoxFit.cover,
     );
 
-    return new Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        new AspectRatio(
+        AspectRatio(
           aspectRatio: imageAspectRatio,
           child: imageWidget,
         ),
-        new SizedBox(
+        SizedBox(
           height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
           width: 121.0,
-          child: new Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               // TODO(larche): Make headline6 when available
-              new Text(
+              Text(
                 product == null ? '' : product.name,
                 style: theme.textTheme.button,
                 softWrap: false,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),
-              const SizedBox(height: 4.0),
+              SizedBox(height: 4.0),
               // TODO(larche): Make subtitle2 when available
-              new Text(
+              Text(
                 product == null ? '' : formatter.format(product.price),
                 style: theme.textTheme.caption,
               ),

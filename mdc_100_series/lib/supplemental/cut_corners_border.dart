@@ -35,7 +35,7 @@ class CutCornersBorder extends OutlineInputBorder {
     double gapPadding,
     double cut,
   }) {
-    return new CutCornersBorder(
+    return CutCornersBorder(
       borderRadius: borderRadius ?? this.borderRadius,
       borderSide: borderSide ?? this.borderSide,
       cut: cut ?? this.cut,
@@ -49,7 +49,7 @@ class CutCornersBorder extends OutlineInputBorder {
   ShapeBorder lerpFrom(ShapeBorder a, double t) {
     if (a is CutCornersBorder) {
       final CutCornersBorder outline = a;
-      return new CutCornersBorder(
+      return CutCornersBorder(
         borderRadius: BorderRadius.lerp(outline.borderRadius, borderRadius, t),
         borderSide: BorderSide.lerp(outline.borderSide, borderSide, t),
         cut: cut,
@@ -63,7 +63,7 @@ class CutCornersBorder extends OutlineInputBorder {
   ShapeBorder lerpTo(ShapeBorder b, double t) {
     if (b is CutCornersBorder) {
       final CutCornersBorder outline = b;
-      return new CutCornersBorder(
+      return CutCornersBorder(
         borderRadius: BorderRadius.lerp(borderRadius, outline.borderRadius, t),
         borderSide: BorderSide.lerp(borderSide, outline.borderSide, t),
         cut: cut,
@@ -75,7 +75,7 @@ class CutCornersBorder extends OutlineInputBorder {
 
   Path _notchedCornerPath(Rect center,
       [double start = 0.0, double extent = 0.0]) {
-    final Path path = new Path();
+    final Path path = Path();
     if (start > 0.0 || extent > 0.0) {
       path.relativeMoveTo(extent + start, center.top);
       _notchedSidesAndBottom(center, path);
