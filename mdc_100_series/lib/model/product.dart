@@ -39,5 +39,5 @@ class Product {
   String get assetPackage => 'shrine_images';
 
   @override
-  String toString() => "$name (id=$id)";
+  String toString() => '$name (id=$id)';
 }

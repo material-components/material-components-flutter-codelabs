@@ -14,8 +14,8 @@
 
 import 'product.dart';
 
-List<Product> getAllProducts() {
-  return const <Product>[
+List<Product> getProducts(Category category) {
+  const allProducts = <Product>[
     Product(
       category: Category.accessories,
       id: 0,
@@ -283,4 +283,11 @@ List<Product> getAllProducts() {
       price: 58,
     ),
   ];
+  if (category == Category.all) {
+    return allProducts;
+  } else {
+    return allProducts.where((Product p) {
+      return p.category == category;
+    }).toList();
+  }
 }
