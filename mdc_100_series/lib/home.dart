@@ -15,7 +15,7 @@
 import 'package:flutter/material.dart';
 
 import 'model/data.dart';
-import 'products_view.dart';
+import 'supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
   @override
