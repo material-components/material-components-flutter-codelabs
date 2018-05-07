@@ -26,24 +26,23 @@ class MenuPage extends StatelessWidget {
                 SizedBox(height: 16.0),
                 Text(
                   categoryString,
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.body2,
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: 14.0),
                 Container(
                   width: 70.0,
                   height: 2.0,
-                  color: Colors.pink[200],
+                  color: Color(0xFFEAA4A4),
                 ),
-                SizedBox(height: 4.0),
               ],
             )
           : Container(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Text(
                 categoryString,
-                style: Theme.of(context).textTheme.title.copyWith(
-                      color: Colors.brown[300],
+                style: Theme.of(context).textTheme.body2.copyWith(
+                      color: kShrineBrown900.withAlpha(153),
                     ),
                 textAlign: TextAlign.center,
               ),
@@ -55,28 +54,11 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var menuItems = <Widget>[];
     _categories.forEach((Category c) {
+      if (c == Category.none) {
+        return;
+      }
       menuItems.add(_buildCategory(c, context));
     });
-
-    menuItems.add(Center(
-      child: Container(
-        width: 70.0,
-        height: 1.0,
-        color: Colors.brown[200],
-      ),
-    ));
-    menuItems.add(
-      Container(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        child: Text(
-          'MY ACCOUNT',
-          style: Theme.of(context).textTheme.title.copyWith(
-                color: Colors.brown[300],
-              ),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
 
     return Center(
       child: Container(
