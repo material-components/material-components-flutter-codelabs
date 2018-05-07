@@ -73,12 +73,13 @@ class OneProductCardColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      reverse: true,
       children: <Widget>[
-        ProductCard(
-          product: product,
-        ),
         SizedBox(
           height: 40.0,
+        ),
+        ProductCard(
+          product: product,
         ),
       ],
     );
