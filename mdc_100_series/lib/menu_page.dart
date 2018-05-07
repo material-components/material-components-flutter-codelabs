@@ -54,9 +54,6 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var menuItems = <Widget>[];
     _categories.forEach((Category c) {
-      if (c == Category.none) {
-        return;
-      }
       menuItems.add(_buildCategory(c, context));
     });
 
