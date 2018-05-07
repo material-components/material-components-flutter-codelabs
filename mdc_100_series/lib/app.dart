@@ -15,34 +15,60 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'backdrop.dart';
 import 'colors.dart';
 import 'home.dart';
 import 'login.dart';
+import 'menu_page.dart';
+import 'model/product.dart';
 import 'supplemental/cut_corners_border.dart';
 
-class ShrineApp extends StatelessWidget {
+class ShrineApp extends StatefulWidget {
+  @override
+  _ShrineAppState createState() => _ShrineAppState();
+}
+
+class _ShrineAppState extends State<ShrineApp> {
+  Category _currentCategory = Category.all;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-      home: HomePage(),
+      home: Backdrop(
+        currentCategory: _currentCategory,
+        frontPanel: HomePage(category: _currentCategory),
+        backPanel: MenuPage(
+          currentCategory: _currentCategory,
+          onCategoryTap: _onCategoryTap,
+        ),
+        frontTitle: Text('SHRINE'),
+        backTitle: Text('MENU'),
+      ),
+
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       theme: _kShrineTheme,
     );
   }
 
-  Route<dynamic> _getRoute(RouteSettings settings) {
-    if (settings.name == '/login') {
-      return MaterialPageRoute<void>(
-        settings: settings,
-        builder: (BuildContext context) => LoginPage(),
-        fullscreenDialog: true,
-      );
-    }
-
-    return null;
+  /// Function to call when a [Category] is tapped.
+  void _onCategoryTap(Category category) {
+    setState(() {
+      _currentCategory = category;
+    });
   }
+}
+
+Route<dynamic> _getRoute(RouteSettings settings) {
+  if (settings.name == '/login') {
+    return MaterialPageRoute<void>(
+      settings: settings,
+      builder: (BuildContext context) => LoginPage(),
+      fullscreenDialog: true,
+    );
+  }
+
+  return null;
 }
 
 final ThemeData _kShrineTheme = _buildShrineTheme();
