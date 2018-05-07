@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
               print('Search button');
             },
           ),
-          new IconButton(
+          IconButton(
             icon: Icon(Icons.tune),
             onPressed: () {
               print('Filter button');
