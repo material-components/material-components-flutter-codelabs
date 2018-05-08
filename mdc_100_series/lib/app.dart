@@ -33,7 +33,7 @@ class ShrineApp extends StatelessWidget {
 
   Route<dynamic> _getRoute(RouteSettings settings) {
     if (settings.name == '/login') {
-      return new MaterialPageRoute<void>(
+      return MaterialPageRoute<void>(
         settings: settings,
         builder: (BuildContext context) => LoginPage(),
         fullscreenDialog: true,
