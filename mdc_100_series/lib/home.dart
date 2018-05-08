@@ -15,6 +15,7 @@
 import 'package:flutter/material.dart';
 
 import 'model/data.dart';
+import 'model/product.dart';
 import 'supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -45,7 +46,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: AsymmetricView(getProducts(Category.all)),
+      body: AsymmetricView(products: getProducts(Category.all)),
     );
   }
 }
