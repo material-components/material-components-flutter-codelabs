@@ -83,6 +83,10 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
       fontWeight: FontWeight.w400,
       fontSize: 14.0,
     ),
+    body2: base.body2.copyWith(
+      fontWeight: FontWeight.w500,
+      fontSize: 16.0,
+    ),
   ).apply(
     fontFamily: 'Rubik',
     displayColor: kShrineBrown900,
