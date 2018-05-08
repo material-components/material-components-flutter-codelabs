@@ -21,7 +21,7 @@ import 'model/product.dart';
 class HomePage extends StatelessWidget {
 
   List<Card> _buildGridCards(BuildContext context) {
-    List<Product> products = getAllProducts();
+    List<Product> products = getProducts(Category.all);
 
     if (products == null || products.isEmpty) {
       return const <Card>[];
