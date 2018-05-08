@@ -72,10 +72,6 @@ Route<dynamic> _getRoute(RouteSettings settings) {
 
 final ThemeData _kShrineTheme = _buildShrineTheme();
 
-IconThemeData _customIconTheme(IconThemeData original) {
-  return original.copyWith(color: kShrineBrown900);
-}
-
 ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
@@ -98,7 +94,6 @@ ThemeData _buildShrineTheme() {
     textTheme: _buildShrineTextTheme(base.textTheme),
     primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
     accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
-    iconTheme: _customIconTheme(base.iconTheme),
   );
 }
 
