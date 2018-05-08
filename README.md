@@ -6,6 +6,10 @@ This repository contains five codelabs for [Material Components for Flutter](htt
 
 Codelabs MDC-101 through MDC-104 will guide you through building and integrating one application with MDC-Flutter.
 
+## Branches
+
+The starter and completed code is in the various branches of this repo.
+
 ## Getting Started
 Visit the Google codelabs site to follow along the guided steps.
 
