@@ -187,20 +187,18 @@ class _BackdropState extends State<Backdrop>
       end: RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0),
     ).animate(_controller.view);
 
-    return Container(
+    return Stack(
       key: _backdropKey,
-      child: Stack(
-        children: <Widget>[
-          widget.backPanel,
-          PositionedTransition(
-            rect: panelAnimation,
-            child: _BackdropPanel(
-              onTap: _toggleBackdropPanelVisibility,
-              child: widget.frontPanel,
-            ),
+      children: <Widget>[
+        widget.backPanel,
+        PositionedTransition(
+          rect: panelAnimation,
+          child: _BackdropPanel(
+            onTap: _toggleBackdropPanelVisibility,
+            child: widget.frontPanel,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
