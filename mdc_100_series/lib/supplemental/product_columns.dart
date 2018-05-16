@@ -39,7 +39,7 @@ class TwoProductCardColumn extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(
+          Padding(
             padding: EdgeInsetsDirectional.only(start: 28.0),
             child: top != null
                 ? ProductCard(
@@ -51,7 +51,7 @@ class TwoProductCardColumn extends StatelessWidget {
                   ),
           ),
           SizedBox(height: spacerHeight),
-          Container(
+          Padding(
             padding: EdgeInsetsDirectional.only(end: 28.0),
             child: ProductCard(
               imageAspectRatio: imageAspectRatio,
