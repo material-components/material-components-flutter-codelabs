@@ -207,17 +207,31 @@ class _BackdropState extends State<Backdrop>
     var appBar = AppBar(
       brightness: Brightness.light,
       elevation: 0.0,
-      leading: IconButton(
-        onPressed: _toggleBackdropPanelVisibility,
-        icon: AnimatedIcon(
-          icon: AnimatedIcons.close_menu,
-          progress: _controller.view,
-        ),
-      ),
+      titleSpacing: 0.0,
       title: _BackdropTitle(
         listenable: _controller.view,
-        frontTitle: widget.frontTitle,
-        backTitle: widget.backTitle,
+        frontTitle: Row(
+          children:<Widget>[
+            SizedBox(
+              width: 72.0,
+              child: IconButton(
+                padding: EdgeInsets.only(left: 20.0),
+                onPressed: _toggleBackdropPanelVisibility,
+                icon: Row(
+                  children: <Widget>[
+                    ImageIcon(AssetImage('assets/slanted_menu.png')),
+                    ImageIcon(AssetImage('assets/diamond.png')),
+                  ],
+                ),
+              ),
+            ),
+            widget.frontTitle,
+          ],
+        ),
+        backTitle: IconButton(
+          onPressed: _toggleBackdropPanelVisibility,
+          icon: Icon(Icons.close),
+        ),
       ),
       actions: <Widget>[
         new IconButton(
@@ -248,3 +262,4 @@ class _BackdropState extends State<Backdrop>
     );
   }
 }
+
