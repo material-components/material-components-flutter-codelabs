@@ -20,8 +20,8 @@ import 'login.dart';
 
 const double _kFlingVelocity = 2.0;
 
-class _BackdropPanel extends StatelessWidget {
-  const _BackdropPanel({
+class _FrontLayer extends StatelessWidget {
+  const _FrontLayer({
     Key key,
     this.onTap,
     this.child,
@@ -150,9 +150,9 @@ class _BackdropState extends State<Backdrop>
       setState(() {
         _controller.fling(
             velocity:
-                _backdropPanelVisible ? -_kFlingVelocity : _kFlingVelocity);
+              _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
       });
-    } else if (!_backdropPanelVisible) {
+    } else if (!_frontLayerVisible) {
       setState(() {
         _controller.fling(velocity: _kFlingVelocity);
       });
@@ -165,15 +165,16 @@ class _BackdropState extends State<Backdrop>
     super.dispose();
   }
 
-  bool get _backdropPanelVisible {
+  bool get _frontLayerVisible {
     final AnimationStatus status = _controller.status;
     return status == AnimationStatus.completed ||
         status == AnimationStatus.forward;
   }
 
   void _toggleBackdropPanelVisibility() {
+    print(_frontLayerVisible);
     _controller.fling(
-        velocity: _backdropPanelVisible ? -_kFlingVelocity : _kFlingVelocity);
+        velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
   }
 
   Widget _buildStack(BuildContext context, BoxConstraints constraints) {
@@ -193,7 +194,7 @@ class _BackdropState extends State<Backdrop>
         widget.backPanel,
         PositionedTransition(
           rect: panelAnimation,
-          child: _BackdropPanel(
+          child: _FrontLayer(
             onTap: _toggleBackdropPanelVisibility,
             child: widget.frontPanel,
           ),
