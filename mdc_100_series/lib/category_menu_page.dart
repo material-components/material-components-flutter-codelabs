@@ -18,12 +18,12 @@ import 'package:meta/meta.dart';
 import 'model/product.dart';
 import 'colors.dart';
 
-class MenuPage extends StatelessWidget {
+class CategoryMenuPage extends StatelessWidget {
   final Category currentCategory;
   final ValueChanged<Category> onCategoryTap;
   final List<Category> _categories = Category.values;
 
-  const MenuPage({
+  const CategoryMenuPage({
     Key key,
     @required this.currentCategory,
     this.onCategoryTap,
