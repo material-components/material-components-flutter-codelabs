@@ -101,26 +101,26 @@ class _BackdropTitle extends AnimatedWidget {
 
 /// Builds a Backdrop.
 ///
-/// A Backdrop widget has two panels, front and back. The front panel is shown
-/// by default, and slides down to show the back panel, from which a user
+/// A Backdrop widget has two layers, front and back. The front layer is shown
+/// by default, and slides down to show the back layer, from which a user
 /// can make a selection. The user can also configure the titles for when the
-/// front or back panel is showing.
+/// front or back layer is showing.
 class Backdrop extends StatefulWidget {
   final Category currentCategory;
-  final Widget frontPanel;
-  final Widget backPanel;
+  final Widget frontLayer;
+  final Widget backLayer;
   final Widget frontTitle;
   final Widget backTitle;
 
   const Backdrop({
     @required this.currentCategory,
-    @required this.frontPanel,
-    @required this.backPanel,
+    @required this.frontLayer,
+    @required this.backLayer,
     @required this.frontTitle,
     @required this.backTitle,
   })  : assert(currentCategory != null),
-        assert(frontPanel != null),
-        assert(backPanel != null),
+        assert(frontLayer != null),
+        assert(backLayer != null),
         assert(frontTitle != null),
         assert(backTitle != null);
 
@@ -171,32 +171,32 @@ class _BackdropState extends State<Backdrop>
         status == AnimationStatus.forward;
   }
 
-  void _toggleBackdropPanelVisibility() {
+  void _toggleBackdropLayerVisibility() {
     print(_frontLayerVisible);
     _controller.fling(
         velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
   }
 
   Widget _buildStack(BuildContext context, BoxConstraints constraints) {
-    const double panelTitleHeight = 48.0;
-    final Size panelSize = constraints.biggest;
-    final double panelTop = panelSize.height - panelTitleHeight;
+    const double layerTitleHeight = 48.0;
+    final Size layerSize = constraints.biggest;
+    final double layerTop = layerSize.height - layerTitleHeight;
 
-    Animation<RelativeRect> panelAnimation = RelativeRectTween(
+    Animation<RelativeRect> layerAnimation = RelativeRectTween(
       begin: RelativeRect.fromLTRB(
-          0.0, panelTop, 0.0, panelTop - panelSize.height),
+          0.0, layerTop, 0.0, layerTop - layerSize.height),
       end: RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0),
     ).animate(_controller.view);
 
     return Stack(
       key: _backdropKey,
       children: <Widget>[
-        widget.backPanel,
+        widget.backLayer,
         PositionedTransition(
-          rect: panelAnimation,
+          rect: layerAnimation,
           child: _FrontLayer(
-            onTap: _toggleBackdropPanelVisibility,
-            child: widget.frontPanel,
+            onTap: _toggleBackdropLayerVisibility,
+            child: widget.frontLayer,
           ),
         ),
       ],
