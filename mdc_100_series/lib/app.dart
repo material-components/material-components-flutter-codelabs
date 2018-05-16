@@ -43,7 +43,6 @@ class _ShrineAppState extends State<ShrineApp> {
         frontTitle: Text('SHRINE'),
         backTitle: Text('MENU'),
       ),
-
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       theme: _kShrineTheme,
@@ -89,9 +88,7 @@ ThemeData _buildShrineTheme() {
     buttonTheme: ButtonThemeData(
       textTheme: ButtonTextTheme.accent,
     ),
-    primaryIconTheme: base.iconTheme.copyWith(
-        color: kShrineBrown900
-    ),
+    primaryIconTheme: base.iconTheme.copyWith(color: kShrineBrown900),
     inputDecorationTheme: InputDecorationTheme(
       border: CutCornersBorder(),
     ),
