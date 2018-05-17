@@ -208,6 +208,7 @@ class _BackdropState extends State<Backdrop>
       ImageIcon(AssetImage('assets/slanted_menu.png')),
       ImageIcon(AssetImage('assets/diamond.png')),
     ]);
+
     var appBar = AppBar(
       brightness: Brightness.light,
       elevation: 0.0,
