@@ -150,7 +150,7 @@ class _BackdropState extends State<Backdrop>
       setState(() {
         _controller.fling(
             velocity:
-            _backdropPanelVisible ? -_kFlingVelocity : _kFlingVelocity);
+                _backdropPanelVisible ? -_kFlingVelocity : _kFlingVelocity);
       });
     } else if (!_backdropPanelVisible) {
       setState(() {
@@ -204,6 +204,10 @@ class _BackdropState extends State<Backdrop>
 
   @override
   Widget build(BuildContext context) {
+    var brandedIcon = Row(children: <Widget>[
+      ImageIcon(AssetImage('assets/slanted_menu.png')),
+      ImageIcon(AssetImage('assets/diamond.png')),
+    ]);
     var appBar = AppBar(
       brightness: Brightness.light,
       elevation: 0.0,
@@ -211,18 +215,13 @@ class _BackdropState extends State<Backdrop>
       title: _BackdropTitle(
         listenable: _controller.view,
         frontTitle: Row(
-          children:<Widget>[
+          children: <Widget>[
             SizedBox(
               width: 72.0,
               child: IconButton(
                 padding: EdgeInsets.only(left: 20.0),
                 onPressed: _toggleBackdropPanelVisibility,
-                icon: Row(
-                  children: <Widget>[
-                    ImageIcon(AssetImage('assets/slanted_menu.png')),
-                    ImageIcon(AssetImage('assets/diamond.png')),
-                  ],
-                ),
+                icon: brandedIcon,
               ),
             ),
             widget.frontTitle,
@@ -262,4 +261,3 @@ class _BackdropState extends State<Backdrop>
     );
   }
 }
-
