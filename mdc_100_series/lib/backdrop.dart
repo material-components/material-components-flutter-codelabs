@@ -58,12 +58,14 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
+  final Widget leading;
   final Widget frontTitle;
   final Widget backTitle;
 
   const _BackdropTitle({
     Key key,
     Listenable listenable,
+    this.leading,
     this.frontTitle,
     this.backTitle,
   }) : super(key: key, listenable: listenable);
@@ -209,6 +211,11 @@ class _BackdropState extends State<Backdrop>
       ImageIcon(AssetImage('assets/slanted_menu.png')),
       ImageIcon(AssetImage('assets/diamond.png')),
     ]);
+
+    var animatedIcon = AnimatedIcon(
+      icon: AnimatedIcons.close_menu,
+      progress: _controller.view
+    );
 
     var appBar = AppBar(
       brightness: Brightness.light,
