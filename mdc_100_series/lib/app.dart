@@ -35,8 +35,8 @@ class _ShrineAppState extends State<ShrineApp> {
       title: 'Shrine',
       home: Backdrop(
         currentCategory: _currentCategory,
-        frontPanel: HomePage(category: _currentCategory),
-        backPanel: CategoryMenuPage(
+        frontLayer: HomePage(category: _currentCategory),
+        backLayer: CategoryMenuPage(
           currentCategory: _currentCategory,
           onCategoryTap: _onCategoryTap,
         ),
