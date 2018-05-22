@@ -80,6 +80,15 @@ class _BackdropTitle extends AnimatedWidget {
     }
 
     if (this.frontTitle != null && this.backTitle != null) {
+      Animation<Offset> backSlide = new Tween<Offset>(
+        begin: Offset(0.0, 0.0),
+        end: Offset(0.5, 0.0),
+      ).animate(animation);
+      Animation<Offset> frontSlide = new Tween<Offset>(
+        begin: Offset(-0.25, 0.0),
+        end: Offset(0.0, 0.0),
+      ).animate(animation);
+
       rowContents.add(Stack(
         // Here, we do a custom cross fade between backTitle and frontTitle.
         // This makes a smooth animation between the two texts.
@@ -89,14 +98,20 @@ class _BackdropTitle extends AnimatedWidget {
               parent: ReverseAnimation(animation),
               curve: Interval(0.5, 1.0),
             ).value,
-            child: backTitle,
+            child: SlideTransition(
+              position: backSlide,
+              child: backTitle,
+            ),
           ),
           Opacity(
             opacity: CurvedAnimation(
               parent: animation,
               curve: Interval(0.5, 1.0),
             ).value,
-            child: frontTitle,
+            child: SlideTransition(
+              position: frontSlide,
+              child: frontTitle,
+            ),
           ),
         ],
       ));
@@ -231,9 +246,7 @@ class _BackdropState extends State<Backdrop>
       end: Offset(1.0, 0.0),
     ).animate(_controller.view);
     var diamondIcon = SlideTransition(
-      position: slide,
-      child: ImageIcon(AssetImage('assets/diamond.png'))
-    );
+        position: slide, child: ImageIcon(AssetImage('assets/diamond.png')));
 
     var brandedIcon = SizedBox(
       width: 72.0,
