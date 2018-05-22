@@ -222,7 +222,7 @@ class _BackdropState extends State<Backdrop>
               width: 72.0,
               child: IconButton(
                 padding: EdgeInsets.only(left: 20.0),
-                onPressed: _toggleBackdropPanelVisibility,
+                onPressed: _toggleBackdropLayerVisibility,
                 icon: brandedIcon,
               ),
             ),
@@ -230,7 +230,7 @@ class _BackdropState extends State<Backdrop>
           ],
         ),
         backTitle: IconButton(
-          onPressed: _toggleBackdropPanelVisibility,
+          onPressed: _toggleBackdropLayerVisibility,
           icon: Icon(Icons.close),
         ),
       ),
