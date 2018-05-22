@@ -58,14 +58,14 @@ class _BackdropPanel extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  final Widget leading;
+  final Widget customIcon;
   final Widget frontTitle;
   final Widget backTitle;
 
   const _BackdropTitle({
     Key key,
     Listenable listenable,
-    this.leading,
+    this.customIcon,
     this.frontTitle,
     this.backTitle,
   }) : super(key: key, listenable: listenable);
@@ -73,13 +73,16 @@ class _BackdropTitle extends AnimatedWidget {
   @override
   Widget build(BuildContext context) {
     final Animation<double> animation = this.listenable;
-    return DefaultTextStyle(
-      style: Theme.of(context).primaryTextTheme.title,
-      softWrap: false,
-      overflow: TextOverflow.ellipsis,
-      // Here, we do a custom cross fade between backTitle and frontTitle.
-      // This makes a smooth animation between the two texts.
-      child: Stack(
+
+    var rowContents = <Widget>[];
+    if (this.customIcon != null) {
+      rowContents.add(this.customIcon);
+    }
+
+    if (this.frontTitle != null && this.backTitle != null) {
+      rowContents.add(Stack(
+        // Here, we do a custom cross fade between backTitle and frontTitle.
+        // This makes a smooth animation between the two texts.
         children: <Widget>[
           Opacity(
             opacity: CurvedAnimation(
@@ -96,7 +99,14 @@ class _BackdropTitle extends AnimatedWidget {
             child: frontTitle,
           ),
         ],
-      ),
+      ));
+    }
+
+    return DefaultTextStyle(
+      style: Theme.of(context).primaryTextTheme.title,
+      softWrap: false,
+      overflow: TextOverflow.ellipsis,
+      child: Row(children: rowContents),
     );
   }
 }
@@ -206,14 +216,31 @@ class _BackdropState extends State<Backdrop>
 
   @override
   Widget build(BuildContext context) {
-    var brandedIcon = Row(children: <Widget>[
-      ImageIcon(AssetImage('assets/slanted_menu.png')),
-      ImageIcon(AssetImage('assets/diamond.png')),
-    ]);
+    Animation<double> fade = new Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(_controller.view);
+    var menuIcon = FadeTransition(
+      opacity: fade,
+      child: ImageIcon(AssetImage('assets/slanted_menu.png')),
+    );
 
-    var animatedIcon = AnimatedIcon(
-      icon: AnimatedIcons.close_menu,
-      progress: _controller.view
+    Animation<Offset> slide = new Tween<Offset>(
+      begin: Offset(0.0, 0.0),
+      end: Offset(1.0, 0.0),
+    ).animate(_controller.view);
+    var diamondIcon = SlideTransition(
+      position: slide,
+      child: ImageIcon(AssetImage('assets/diamond.png'))
+    );
+
+    var brandedIcon = SizedBox(
+      width: 72.0,
+      child: IconButton(
+        padding: EdgeInsets.only(right: 8.0),
+        onPressed: _toggleBackdropPanelVisibility,
+        icon: Stack(children: <Widget>[menuIcon, diamondIcon]),
+      ),
     );
 
     var appBar = AppBar(
@@ -222,23 +249,9 @@ class _BackdropState extends State<Backdrop>
       titleSpacing: 0.0,
       title: _BackdropTitle(
         listenable: _controller.view,
-        frontTitle: Row(
-          children: <Widget>[
-            SizedBox(
-              width: 72.0,
-              child: IconButton(
-                padding: EdgeInsets.only(left: 20.0),
-                onPressed: _toggleBackdropPanelVisibility,
-                icon: animatedIcon,
-              ),
-            ),
-            widget.frontTitle,
-          ],
-        ),
-        backTitle: IconButton(
-          onPressed: _toggleBackdropPanelVisibility,
-          icon: Icon(Icons.close),
-        ),
+        customIcon: brandedIcon,
+        frontTitle: widget.frontTitle,
+        backTitle: widget.backTitle,
       ),
       actions: <Widget>[
         new IconButton(
