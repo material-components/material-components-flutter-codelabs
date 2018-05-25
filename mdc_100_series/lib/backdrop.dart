@@ -147,9 +147,7 @@ class _BackdropState extends State<Backdrop>
   void didUpdateWidget(Backdrop old) {
     super.didUpdateWidget(old);
     if (widget.currentCategory != old.currentCategory) {
-      _controller.fling(
-          velocity:
-            _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
+      _toggleBackdropLayerVisibility();
     } else if (!_frontLayerVisible) {
       _controller.fling(velocity: _kFlingVelocity);
     }
