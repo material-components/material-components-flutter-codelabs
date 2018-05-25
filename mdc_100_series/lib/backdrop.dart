@@ -172,7 +172,6 @@ class _BackdropState extends State<Backdrop>
   }
 
   void _toggleBackdropLayerVisibility() {
-    print(_frontLayerVisible);
     _controller.fling(
         velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
   }
