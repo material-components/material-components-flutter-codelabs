@@ -146,6 +146,7 @@ class _BackdropState extends State<Backdrop>
   @override
   void didUpdateWidget(Backdrop old) {
     super.didUpdateWidget(old);
+    
     if (widget.currentCategory != old.currentCategory) {
       _toggleBackdropLayerVisibility();
     } else if (!_frontLayerVisible) {
