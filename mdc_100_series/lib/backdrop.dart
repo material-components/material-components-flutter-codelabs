@@ -66,9 +66,11 @@ class _BackdropTitle extends AnimatedWidget {
     Key key,
     Listenable listenable,
     this.customIcon,
-    this.frontTitle,
-    this.backTitle,
-  }) : super(key: key, listenable: listenable);
+    @required this.frontTitle,
+    @required this.backTitle,
+  })  : assert(frontTitle != null),
+        assert(backTitle != null),
+        super(key: key, listenable: listenable);
 
   @override
   Widget build(BuildContext context) {
@@ -79,43 +81,41 @@ class _BackdropTitle extends AnimatedWidget {
       rowContents.add(this.customIcon);
     }
 
-    if (this.frontTitle != null && this.backTitle != null) {
-      Animation<Offset> backSlide = new Tween<Offset>(
-        begin: Offset(0.0, 0.0),
-        end: Offset(0.5, 0.0),
-      ).animate(animation);
-      Animation<Offset> frontSlide = new Tween<Offset>(
-        begin: Offset(-0.25, 0.0),
-        end: Offset(0.0, 0.0),
-      ).animate(animation);
+    Animation<Offset> backSlide = new Tween<Offset>(
+      begin: Offset.zero,
+      end: Offset(0.5, 0.0),
+    ).animate(animation);
+    Animation<Offset> frontSlide = new Tween<Offset>(
+      begin: Offset(-0.25, 0.0),
+      end: Offset.zero,
+    ).animate(animation);
 
-      rowContents.add(Stack(
-        // Here, we do a custom cross fade between backTitle and frontTitle.
-        // This makes a smooth animation between the two texts.
-        children: <Widget>[
-          Opacity(
-            opacity: CurvedAnimation(
-              parent: ReverseAnimation(animation),
-              curve: Interval(0.5, 1.0),
-            ).value,
-            child: SlideTransition(
-              position: backSlide,
-              child: backTitle,
-            ),
+    rowContents.add(Stack(
+      // Here, we do a custom cross fade between backTitle and frontTitle.
+      // This makes a smooth animation between the two texts.
+      children: <Widget>[
+        Opacity(
+          opacity: CurvedAnimation(
+            parent: ReverseAnimation(animation),
+            curve: Interval(0.5, 1.0),
+          ).value,
+          child: SlideTransition(
+            position: backSlide,
+            child: backTitle,
           ),
-          Opacity(
-            opacity: CurvedAnimation(
-              parent: animation,
-              curve: Interval(0.5, 1.0),
-            ).value,
-            child: SlideTransition(
-              position: frontSlide,
-              child: frontTitle,
-            ),
+        ),
+        Opacity(
+          opacity: CurvedAnimation(
+            parent: animation,
+            curve: Interval(0.5, 1.0),
+          ).value,
+          child: SlideTransition(
+            position: frontSlide,
+            child: frontTitle,
           ),
-        ],
-      ));
-    }
+        ),
+      ],
+    ));
 
     return DefaultTextStyle(
       style: Theme.of(context).primaryTextTheme.title,
@@ -176,8 +176,7 @@ class _BackdropState extends State<Backdrop>
     if (widget.currentCategory != old.currentCategory) {
       setState(() {
         _controller.fling(
-            velocity:
-              _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
+            velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
       });
     } else if (!_frontLayerVisible) {
       setState(() {
@@ -242,7 +241,7 @@ class _BackdropState extends State<Backdrop>
     );
 
     Animation<Offset> slide = new Tween<Offset>(
-      begin: Offset(0.0, 0.0),
+      begin: Offset.zero,
       end: Offset(1.0, 0.0),
     ).animate(_controller.view);
     var diamondIcon = SlideTransition(
@@ -252,7 +251,7 @@ class _BackdropState extends State<Backdrop>
       width: 72.0,
       child: IconButton(
         padding: EdgeInsets.only(right: 8.0),
-        onPressed: _toggleBackdropPanelVisibility,
+        onPressed: _toggleBackdropLayerVisibility,
         icon: Stack(children: <Widget>[menuIcon, diamondIcon]),
       ),
     );
