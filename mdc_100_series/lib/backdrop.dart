@@ -58,7 +58,6 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-//  final Widget customIcon;
   final Function onPress;
   final Widget frontTitle;
   final Widget backTitle;
@@ -97,7 +96,7 @@ class _BackdropTitle extends AnimatedWidget {
                 translation: Tween<Offset>(
                   begin: Offset.zero,
                   end: Offset(1.0, 0.0),
-                ).animate(animation).value,
+                ).evaluate(animation),
                 child: ImageIcon(AssetImage('assets/diamond.png')),
               )]),
           ),
@@ -115,7 +114,7 @@ class _BackdropTitle extends AnimatedWidget {
                 translation: Tween<Offset>(
                   begin: Offset.zero,
                   end: Offset(0.5, 0.0),
-                ).animate(animation).value,
+                ).evaluate(animation),
                 child: backTitle,
               ),
             ),
@@ -128,7 +127,7 @@ class _BackdropTitle extends AnimatedWidget {
                 translation: Tween<Offset>(
                   begin: Offset(-0.25, 0.0),
                   end: Offset.zero,
-                ).animate(animation).value,
+                ).evaluate(animation),
                 child: frontTitle,
               ),
             ),
