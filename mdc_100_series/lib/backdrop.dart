@@ -58,14 +58,15 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  final Widget customIcon;
+//  final Widget customIcon;
+  final Function onPress;
   final Widget frontTitle;
   final Widget backTitle;
 
   const _BackdropTitle({
     Key key,
     Listenable listenable,
-    this.customIcon,
+    this.onPress,
     @required this.frontTitle,
     @required this.backTitle,
   })  : assert(frontTitle != null),
@@ -76,52 +77,64 @@ class _BackdropTitle extends AnimatedWidget {
   Widget build(BuildContext context) {
     final Animation<double> animation = this.listenable;
 
-    var rowContents = <Widget>[];
-    if (this.customIcon != null) {
-      rowContents.add(this.customIcon);
-    }
-
-    Animation<Offset> backSlide = new Tween<Offset>(
-      begin: Offset.zero,
-      end: Offset(0.5, 0.0),
-    ).animate(animation);
-    Animation<Offset> frontSlide = new Tween<Offset>(
-      begin: Offset(-0.25, 0.0),
-      end: Offset.zero,
-    ).animate(animation);
-
-    rowContents.add(Stack(
-      // Here, we do a custom cross fade between backTitle and frontTitle.
-      // This makes a smooth animation between the two texts.
-      children: <Widget>[
-        Opacity(
-          opacity: CurvedAnimation(
-            parent: ReverseAnimation(animation),
-            curve: Interval(0.5, 1.0),
-          ).value,
-          child: SlideTransition(
-            position: backSlide,
-            child: backTitle,
-          ),
-        ),
-        Opacity(
-          opacity: CurvedAnimation(
-            parent: animation,
-            curve: Interval(0.5, 1.0),
-          ).value,
-          child: SlideTransition(
-            position: frontSlide,
-            child: frontTitle,
-          ),
-        ),
-      ],
-    ));
-
     return DefaultTextStyle(
       style: Theme.of(context).primaryTextTheme.title,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
-      child: Row(children: rowContents),
+      child: Row(children: <Widget>[
+        // branded icon
+        SizedBox(
+          width: 72.0,
+          child: IconButton(
+            padding: EdgeInsets.only(right: 8.0),
+            onPressed: this.onPress,
+            icon: Stack(children: <Widget>[
+              Opacity(
+                opacity: animation.value,
+                child: ImageIcon(AssetImage('assets/slanted_menu.png')),
+              ),
+              FractionalTranslation(
+                translation: Tween<Offset>(
+                  begin: Offset.zero,
+                  end: Offset(1.0, 0.0),
+                ).animate(animation).value,
+                child: ImageIcon(AssetImage('assets/diamond.png')),
+              )]),
+          ),
+        ),
+        // Here, we do a custom cross fade between backTitle and frontTitle.
+        // This makes a smooth animation between the two texts.
+        Stack(
+          children: <Widget>[
+            Opacity(
+              opacity: CurvedAnimation(
+                parent: ReverseAnimation(animation),
+                curve: Interval(0.5, 1.0),
+              ).value,
+              child: FractionalTranslation(
+                translation: Tween<Offset>(
+                  begin: Offset.zero,
+                  end: Offset(0.5, 0.0),
+                ).animate(animation).value,
+                child: backTitle,
+              ),
+            ),
+            Opacity(
+              opacity: CurvedAnimation(
+                parent: animation,
+                curve: Interval(0.5, 1.0),
+              ).value,
+              child: FractionalTranslation(
+                translation: Tween<Offset>(
+                  begin: Offset(-0.25, 0.0),
+                  end: Offset.zero,
+                ).animate(animation).value,
+                child: frontTitle,
+              ),
+            ),
+          ],
+        )
+      ]),
     );
   }
 }
@@ -198,7 +211,6 @@ class _BackdropState extends State<Backdrop>
   }
 
   void _toggleBackdropLayerVisibility() {
-    print(_frontLayerVisible);
     _controller.fling(
         velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
   }
@@ -231,38 +243,13 @@ class _BackdropState extends State<Backdrop>
 
   @override
   Widget build(BuildContext context) {
-    Animation<double> fade = new Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(_controller.view);
-    var menuIcon = FadeTransition(
-      opacity: fade,
-      child: ImageIcon(AssetImage('assets/slanted_menu.png')),
-    );
-
-    Animation<Offset> slide = new Tween<Offset>(
-      begin: Offset.zero,
-      end: Offset(1.0, 0.0),
-    ).animate(_controller.view);
-    var diamondIcon = SlideTransition(
-        position: slide, child: ImageIcon(AssetImage('assets/diamond.png')));
-
-    var brandedIcon = SizedBox(
-      width: 72.0,
-      child: IconButton(
-        padding: EdgeInsets.only(right: 8.0),
-        onPressed: _toggleBackdropLayerVisibility,
-        icon: Stack(children: <Widget>[menuIcon, diamondIcon]),
-      ),
-    );
-
     var appBar = AppBar(
       brightness: Brightness.light,
       elevation: 0.0,
       titleSpacing: 0.0,
       title: _BackdropTitle(
         listenable: _controller.view,
-        customIcon: brandedIcon,
+        onPress: _toggleBackdropLayerVisibility,
         frontTitle: widget.frontTitle,
         backTitle: widget.backTitle,
       ),
