@@ -29,6 +29,7 @@ class ShrineApp extends StatefulWidget {
 
 class _ShrineAppState extends State<ShrineApp> {
   Category _currentCategory = Category.all;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
