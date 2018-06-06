@@ -1,6 +1,6 @@
 # Material Components for Flutter Codelabs
 
-This repository contains five codelabs for [Material Components for Flutter](https://github.com/material-components/material-components-flutter).  
+This repository contains five codelabs for [Material Components for Flutter](https://github.com/material-components/material-components-flutter).
 
 ## Introduction
 
@@ -11,7 +11,7 @@ Codelabs MDC-101 through MDC-104 will guide you through building and integrating
 The starter and completed code is in the various branches of this repo.
 
 ## Getting Started
-Visit the Google codelabs site to follow along the guided steps.
+Visit the Google codelabs site, or https://codelabs.developers.google.com/codelabs/mdc-104-flutter, to follow along the guided steps.
 
 ## Support
 
