@@ -53,7 +53,7 @@ class CategoryMenuPage extends StatelessWidget {
             ),
           ],
         )
-      : Container(
+      : Padding(
         padding: EdgeInsets.symmetric(vertical: 16.0),
         child: Text(
           categoryString,
