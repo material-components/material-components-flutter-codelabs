@@ -11,7 +11,7 @@ Codelabs MDC-101 through MDC-104 will guide you through building and integrating
 The starter and completed code is in the various branches of this repo.
 
 ## Getting Started
-Visit the [Google codelabs site](https://codelabs.developers.google.com/), or [codelabs.developers.google.com/codelabs/mdc-103-flutter](https://codelabs.developers.google.com/codelabs/mdc-103-flutter), to follow along the guided steps.
+Visit the [Google codelabs site](https://codelabs.developers.google.com/), or [codelabs.developers.google.com/codelabs/mdc-104-flutter](https://codelabs.developers.google.com/codelabs/mdc-104-flutter), to follow along the guided steps.
 
 ## Support
 
