@@ -14,17 +14,13 @@
 
 import 'package:flutter/material.dart';
 
-import 'model/data.dart';
-import 'model/product.dart';
-import 'supplemental/asymmetric_view.dart';
+const kShrinePink50 = const Color(0xFFFEEAE6);
+const kShrinePink100 = const Color(0xFFFEDBD0);
+const kShrinePink300 = const Color(0xFFFBB8AC);
 
-class HomePage extends StatelessWidget {
-  final Category category;
+const kShrineBrown900 = const Color(0xFF442B2D);
 
-  const HomePage({this.category: Category.all});
+const kShrineErrorRed = const Color(0xFFC5032B);
 
-  @override
-  Widget build(BuildContext context) {
-    return AsymmetricView(products: getProducts(category));
-  }
-}
+const kShrineSurfaceWhite = const Color(0xFFFFFBFA);
+const kShrineBackgroundWhite = Colors.white;
