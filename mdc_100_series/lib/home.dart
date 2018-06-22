@@ -15,10 +15,14 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  //TODO: Insert function to build grid cards (102)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //TODO: Add app bar (102)
+      //TODO: Add a grid view (102)
       body: Center(
+        //TODO: Pass context to grid cards (102)
         child: Text('You did it!'),
       ),
     );
