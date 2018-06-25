@@ -20,7 +20,7 @@ import 'login.dart';
 // TODO: Import CategoryMenuPage (104)
 import 'supplemental/cut_corners_border.dart';
 
-// TODO: Convert ShrineApp to stateful (104)
+// TODO: Convert ShrineApp to stateful widget(104)
 class ShrineApp extends StatelessWidget {
   // TODO: Add variable for selected Category (104)
   // TODO: Add a callback when a Category is tapped (104)
@@ -32,7 +32,8 @@ class ShrineApp extends StatelessWidget {
       // TODO: Implement home with a Backdrop (104)
       home: HomePage(),
       // TODO: Pass _currentCategory for frontLayer (104)
-      // TODO: Change backLayer to CategoryMenuPage (104)
+      // TODO: Change backLayer field to CategoryMenuPage (104)
+      // TODO: Make currentCategory field take _currentCategory
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       theme: _kShrineTheme,

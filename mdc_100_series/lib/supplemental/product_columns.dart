@@ -69,7 +69,7 @@ class TwoProductCardColumn extends StatelessWidget {
 class OneProductCardColumn extends StatelessWidget {
   OneProductCardColumn({this.product});
 
-  final Product product; 
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
