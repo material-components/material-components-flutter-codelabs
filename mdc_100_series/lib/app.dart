@@ -25,7 +25,7 @@ class ShrineApp extends StatelessWidget {
       home: HomePage(),
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
-      //TODO: Add a theme (103)
+      // TODO: Add a theme (103)
     );
   }
 
@@ -42,5 +42,5 @@ class ShrineApp extends StatelessWidget {
   }
 }
 
-//TODO: Build a Shrine Theme (103)
-//TODO: Build a Shrine Text Theme (103)
+// TODO: Build a Shrine Theme (103)
+// TODO: Build a Shrine Text Theme (103)
