@@ -20,6 +20,7 @@ import 'supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
   // TODO: Add a variable for Category (104)
+
   @override
   Widget build(BuildContext context) {
     // TODO: Return an AsymmetricView (104)
