@@ -29,10 +29,10 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-      // TODO: Implement home with a Backdrop (104)
+      // TODO: Change home: to a Backdrop with a HomePage frontLayer (104)
       home: HomePage(),
       // TODO: Pass _currentCategory for frontLayer (104)
-      // TODO: Change backLayer field to CategoryMenuPage (104)
+      // TODO: Change backLayer field value to CategoryMenuPage (104)
       // TODO: Make currentCategory field take _currentCategory
       initialRoute: '/login',
       onGenerateRoute: _getRoute,

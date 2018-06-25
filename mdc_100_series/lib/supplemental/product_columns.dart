@@ -36,7 +36,7 @@ class TwoProductCardColumn extends StatelessWidget {
       // TODO: Change imageAspectRatio calculation (104)
       double imageAspectRatio = constraints.biggest.width / heightOfImages;
 
-      //TODO: Replace Column with a ListView (104)
+      // TODO: Replace Column with a ListView (104)
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
