@@ -20,6 +20,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // TODO: Add text editing controllers (101)
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -36,6 +37,8 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 120.0),
+            // TODO: Add TextField widgets (101)
+            // TODO: Add button bar (101)
           ],
         ),
       ),
