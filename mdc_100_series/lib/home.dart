@@ -33,9 +33,9 @@ class HomePage extends StatelessWidget {
 
     return products.map((product) {
       return Card(
-        //TODO: Adjust card heights (103)
+        // TODO: Adjust card heights (103)
         child: Column(
-          //TODO: Center items on the card (103)
+          // TODO: Center items on the card (103)
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             AspectRatio(
@@ -50,9 +50,9 @@ class HomePage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                 child: Column(
-                  //TODO: Align labels to the bottom and center (103)
+                  // TODO: Align labels to the bottom and center (103)
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  //TODO: Change innermost Column
+                  // TODO: Change innermost Column
                   children: <Widget>[
                     // TODO(larche): Make headline6 when available
                     Text(
