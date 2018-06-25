@@ -13,18 +13,26 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
-
+// TODO: Import backdrop.dart (104)
 import 'colors.dart';
 import 'home.dart';
 import 'login.dart';
+// TODO: Import CategoryMenuPage (104)
 import 'supplemental/cut_corners_border.dart';
 
+// TODO: Convert ShrineApp to stateful (104)
 class ShrineApp extends StatelessWidget {
+  // TODO: Add variable for selected Category (104)
+  // TODO: Add a callback when a Category is tapped (104)
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
+      // TODO: Implement home with a Backdrop (104)
       home: HomePage(),
+      // TODO: Pass _currentCategory for frontLayer (104)
+      // TODO: Change backLayer to CategoryMenuPage (104)
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
       theme: _kShrineTheme,
