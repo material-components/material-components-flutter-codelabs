@@ -22,7 +22,6 @@ class HomePage extends StatelessWidget {
       // TODO: Add app bar (102)
       // TODO: Add a grid view (102)
       body: Center(
-        // TODO: Pass context to grid cards (102)
         child: Text('You did it!'),
       ),
     );
