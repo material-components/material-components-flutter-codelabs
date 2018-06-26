@@ -39,6 +39,8 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 120.0),
+            // TODO: Wrap Username with PrimaryColorOverride (103)
+            // TODO: Remove filled: true values (103)
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(
@@ -47,6 +49,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 12.0),
+            // TODO: Wrap Password with PrimaryColorOverride (103)
             TextField(
               controller: _passwordController,
               decoration: InputDecoration(
@@ -57,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             ButtonBar(
               children: <Widget>[
+                // TODO: Add a beveled rectangular border to CANCEL (103)
                 FlatButton(
                   child: Text('CANCEL'),
                   onPressed: () {
@@ -64,6 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.clear();
                   },
                 ),
+                // TODO: Add an elevation to NEXT (103)
+                // TODO: Add a beveled rectangular border to NEXT (103)
                 RaisedButton(
                   child: Text('NEXT'),
                   onPressed: () {
@@ -78,3 +84,5 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+// TODO: Add PrimaryColorOverride (103)
