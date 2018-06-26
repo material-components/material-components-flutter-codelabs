@@ -19,7 +19,7 @@ import 'home.dart';
 import 'login.dart';
 import 'supplemental/cut_corners_border.dart';
 
-// TODO: Convert ShrineApp to stateful widget(104)
+// TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatelessWidget {
   // TODO: Add variable for selected Category (104)
   // TODO: Add a callback when a Category is tapped (104)
