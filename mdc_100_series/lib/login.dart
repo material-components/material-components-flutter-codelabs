@@ -16,27 +16,27 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   // TODO: Add text editing controllers (101)
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new SafeArea(
-        child: new ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+    return Scaffold(
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
-            const SizedBox(height: 80.0),
-            new Column(
+            SizedBox(height: 80.0),
+            Column(
               children: <Widget>[
-                new Image.asset('assets/diamond.png'),
-                const SizedBox(height: 16.0),
-                const Text('SHRINE'),
+                Image.asset('assets/diamond.png'),
+                SizedBox(height: 16.0),
+                Text('SHRINE'),
               ],
             ),
-            const SizedBox(height: 120.0),
+            SizedBox(height: 120.0),
             // TODO: Wrap Username with PrimaryColorOverride (103)
             // TODO: Remove filled: true values (103)
             // TODO: Wrap Password with PrimaryColorOverride (103)

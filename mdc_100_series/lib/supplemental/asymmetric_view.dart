@@ -20,11 +20,11 @@ import 'product_columns.dart';
 class AsymmetricView extends StatelessWidget {
   final List<Product> products;
 
-  const AsymmetricView({Key key, this.products});
+  AsymmetricView({Key key, this.products});
 
   List<Container> _buildColumns(BuildContext context) {
     if (products == null || products.isEmpty) {
-      return const <Container>[];
+      return <Container>[];
     }
 
     /// This will return a list of columns. It will oscillate between the two
