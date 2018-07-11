@@ -15,7 +15,7 @@
 import 'product.dart';
 
 List<Product> getProducts(Category category) {
-  const allProducts = <Product>[
+  allProducts = <Product>[
     Product(
       category: Category.accessories,
       id: 0,
@@ -291,4 +291,3 @@ List<Product> getProducts(Category category) {
     }).toList();
   }
 }
-
