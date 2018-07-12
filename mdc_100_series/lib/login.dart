@@ -53,8 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 12.0),
-            new PrimaryColorOverride(
+            SizedBox(height: 12.0),
+            PrimaryColorOverride(
               color: kShrineBrown900,
               child: TextField(
                 controller: _passwordController,
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class PrimaryColorOverride extends StatelessWidget {
-  const PrimaryColorOverride({Key key, this.color, this.child})
+  PrimaryColorOverride({Key key, this.color, this.child})
       : super(key: key);
 
   final Color color;
