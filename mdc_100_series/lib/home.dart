@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
     List<Product> products = getProducts(Category.all);
 
     if (products == null || products.isEmpty) {
-      return const <Card>[];
+      return <Card>[];
     }
 
     final ThemeData theme = Theme.of(context);
