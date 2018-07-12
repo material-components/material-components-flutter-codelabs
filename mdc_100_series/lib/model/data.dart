@@ -15,7 +15,7 @@
 import 'product.dart';
 
 List<Product> getProducts(Category category) {
-  allProducts = <Product>[
+  const allProducts = <Product>[
     Product(
       category: Category.accessories,
       id: 0,
