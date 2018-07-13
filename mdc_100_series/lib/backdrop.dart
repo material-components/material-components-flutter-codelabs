@@ -18,10 +18,10 @@ import 'package:meta/meta.dart';
 import 'model/product.dart';
 import 'login.dart';
 
-const double _kFlingVelocity = 2.0;
+double _kFlingVelocity = 2.0;
 
 class _FrontLayer extends StatelessWidget {
-  const _FrontLayer({
+  _FrontLayer({
     Key key,
     this.onTap,
     this.child,
@@ -62,7 +62,7 @@ class _BackdropTitle extends AnimatedWidget {
   final Widget frontTitle;
   final Widget backTitle;
 
-  const _BackdropTitle({
+  _BackdropTitle({
     Key key,
     Listenable listenable,
     this.onPress,
@@ -151,7 +151,7 @@ class Backdrop extends StatefulWidget {
   final Widget frontTitle;
   final Widget backTitle;
 
-  const Backdrop({
+  Backdrop({
     @required this.currentCategory,
     @required this.frontLayer,
     @required this.backLayer,
@@ -211,7 +211,7 @@ class _BackdropState extends State<Backdrop>
   }
 
   Widget _buildStack(BuildContext context, BoxConstraints constraints) {
-    const double layerTitleHeight = 48.0;
+    double layerTitleHeight = 48.0;
     final Size layerSize = constraints.biggest;
     final double layerTop = layerSize.height - layerTitleHeight;
 
@@ -250,7 +250,7 @@ class _BackdropState extends State<Backdrop>
       ),
       actions: <Widget>[
         new IconButton(
-          icon: const Icon(Icons.search),
+          icon: Icon(Icons.search),
           onPressed: () {
             Navigator.push(
               context,
@@ -259,7 +259,7 @@ class _BackdropState extends State<Backdrop>
           },
         ),
         new IconButton(
-          icon: const Icon(Icons.tune),
+          icon: Icon(Icons.tune),
           onPressed: () {
             Navigator.push(
               context,
