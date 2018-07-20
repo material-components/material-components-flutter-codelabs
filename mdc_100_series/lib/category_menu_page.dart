@@ -23,7 +23,7 @@ class CategoryMenuPage extends StatelessWidget {
   final ValueChanged<Category> onCategoryTap;
   final List<Category> _categories = Category.values;
 
-  CategoryMenuPage({
+  const CategoryMenuPage({
     Key key,
     @required this.currentCategory,
     @required this.onCategoryTap,

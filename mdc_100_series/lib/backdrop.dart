@@ -21,7 +21,7 @@ import 'login.dart';
 double _kFlingVelocity = 2.0;
 
 class _FrontLayer extends StatelessWidget {
-  _FrontLayer({
+  const _FrontLayer({
     Key key,
     this.onTap,
     this.child,
@@ -62,7 +62,7 @@ class _BackdropTitle extends AnimatedWidget {
   final Widget frontTitle;
   final Widget backTitle;
 
-  _BackdropTitle({
+  const _BackdropTitle({
     Key key,
     Listenable listenable,
     this.onPress,
@@ -151,7 +151,7 @@ class Backdrop extends StatefulWidget {
   final Widget frontTitle;
   final Widget backTitle;
 
-  Backdrop({
+  const Backdrop({
     @required this.currentCategory,
     @required this.frontLayer,
     @required this.backLayer,
