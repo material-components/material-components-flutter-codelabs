@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class PrimaryColorOverride extends StatelessWidget {
-  PrimaryColorOverride({Key key, this.color, this.child})
+  const PrimaryColorOverride({Key key, this.color, this.child})
       : super(key: key);
 
   final Color color;
