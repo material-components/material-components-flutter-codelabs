@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(
             Icons.menu,
-            semanticLabel: "menu",
+            semanticLabel: 'menu',
           ),
           onPressed: () {
             print('Menu button');
@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.search,
-              semanticLabel: "search",
+              semanticLabel: 'search',
             ),
             onPressed: () {
               print('Search button');
@@ -107,7 +107,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.tune,
-              semanticLabel: "filter",
+              semanticLabel: 'filter',
             ),
             onPressed: () {
               print('Filter button');
