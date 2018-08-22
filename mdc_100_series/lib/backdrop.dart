@@ -224,7 +224,10 @@ class _BackdropState extends State<Backdrop>
     return Stack(
       key: _backdropKey,
       children: <Widget>[
-        widget.backLayer,
+        ExcludeSemantics(
+          child: widget.backLayer,
+          excluding: _frontLayerVisible,
+        ),
         PositionedTransition(
           rect: layerAnimation,
           child: _FrontLayer(
