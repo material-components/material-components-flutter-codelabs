@@ -115,7 +115,10 @@ class _BackdropTitle extends AnimatedWidget {
                   begin: Offset.zero,
                   end: Offset(0.5, 0.0),
                 ).evaluate(animation),
-                child: backTitle,
+                child: Semantics(
+                    label: 'hide categories menu',
+                    child: ExcludeSemantics(child: backTitle)
+                ),
               ),
             ),
             Opacity(
@@ -128,7 +131,10 @@ class _BackdropTitle extends AnimatedWidget {
                   begin: Offset(-0.25, 0.0),
                   end: Offset.zero,
                 ).evaluate(animation),
-                child: frontTitle,
+                child: Semantics(
+                    label: 'show categories menu',
+                    child: ExcludeSemantics(child: frontTitle)
+                ),
               ),
             ),
           ],
