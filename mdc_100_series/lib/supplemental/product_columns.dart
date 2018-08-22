@@ -39,6 +39,7 @@ class TwoProductCardColumn extends StatelessWidget {
               : 33 / 49;
 
           return ListView(
+            physics: ClampingScrollPhysics(),
             children: <Widget>[
               Padding(
                 padding: EdgeInsetsDirectional.only(start: 28.0),
@@ -74,6 +75,7 @@ class OneProductCardColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       reverse: true,
+      physics: ClampingScrollPhysics(),
       children: <Widget>[
         SizedBox(
           height: 40.0,
