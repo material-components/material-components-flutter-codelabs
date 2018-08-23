@@ -15,14 +15,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import 'model/data.dart';
+import 'model/products_repository.dart';
 import 'model/product.dart';
 
 class HomePage extends StatelessWidget {
   // TODO: Add a variable for Category (104)
 
   List<Card> _buildGridCards(BuildContext context) {
-    List<Product> products = getProducts(Category.all);
+    List<Product> products = ProductsRepository.loadProducts();
 
     if (products == null || products.isEmpty) {
       return <Card>[];
