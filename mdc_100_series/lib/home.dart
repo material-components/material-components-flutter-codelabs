@@ -14,7 +14,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'model/data.dart';
+import 'model/products_repository.dart';
 import 'model/product.dart';
 import 'supplemental/asymmetric_view.dart';
 
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: AsymmetricView(products: getProducts(Category.all)),
+      body: AsymmetricView(products: ProductsRepository.loadProducts()),
     );
   }
 }
