@@ -58,7 +58,8 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: AsymmetricView(products: ProductsRepository.loadProducts()),
+      body: AsymmetricView(
+          products: ProductsRepository.loadProducts(Category.all)),
     );
   }
 }
