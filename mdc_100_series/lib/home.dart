@@ -25,6 +25,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AsymmetricView(products: ProductsRepository.loadProducts());
+    return AsymmetricView(products: ProductsRepository.loadProducts(category));
   }
 }
