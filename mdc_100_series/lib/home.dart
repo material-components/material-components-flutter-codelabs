@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
   // TODO: Add a variable for Category (104)
 
   List<Card> _buildGridCards(BuildContext context) {
-    List<Product> products = ProductsRepository.loadProducts();
+    List<Product> products = ProductsRepository.loadProducts(Category.all);
 
     if (products == null || products.isEmpty) {
       return <Card>[];
