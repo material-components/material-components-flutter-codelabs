@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 120.0),
-            PrimaryColorOverride(
+            AccentColorOverride(
               color: kShrineBrown900,
               child: TextField(
                 controller: _usernameController,
@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 12.0),
-            PrimaryColorOverride(
+            AccentColorOverride(
               color: kShrineBrown900,
               child: TextField(
                 controller: _passwordController,
@@ -94,8 +94,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class PrimaryColorOverride extends StatelessWidget {
-  const PrimaryColorOverride({Key key, this.color, this.child})
+class AccentColorOverride extends StatelessWidget {
+  const AccentColorOverride({Key key, this.color, this.child})
       : super(key: key);
 
   final Color color;
@@ -105,7 +105,7 @@ class PrimaryColorOverride extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       child: child,
-      data: Theme.of(context).copyWith(primaryColor: color),
+      data: Theme.of(context).copyWith(accentColor: color),
     );
   }
 }
