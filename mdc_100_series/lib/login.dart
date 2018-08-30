@@ -37,9 +37,9 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             SizedBox(height: 120.0),
-            // TODO: Wrap Username with PrimaryColorOverride (103)
+            // TODO: Wrap Username with AccentColorOverride (103)
             // TODO: Remove filled: true values (103)
-            // TODO: Wrap Password with PrimaryColorOverride (103)
+            // TODO: Wrap Password with AccentColorOverride (103)
             // TODO: Add TextField widgets (101)
             // TODO: Add button bar (101)
           ],
@@ -49,4 +49,4 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-// TODO: Add PrimaryColorOverride (103)
+// TODO: Add AccentColorOverride (103)
