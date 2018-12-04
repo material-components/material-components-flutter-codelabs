@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   labelText: 'Password',
                 ),
+                obscureText: true,
               ),
             ),
             ButtonBar(
@@ -105,7 +106,10 @@ class AccentColorOverride extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       child: child,
-      data: Theme.of(context).copyWith(accentColor: color),
+      data: Theme.of(context).copyWith(
+        accentColor: color,
+        brightness: Brightness.dark,
+      ),
     );
   }
 }
