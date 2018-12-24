@@ -7,7 +7,7 @@ dependencies:
   intl: ^0.15.6
 
   cupertino_icons: ^0.1.0
-  shrine_images: 1.0.0
+  shrine_images:
 
 dev_dependencies:
   flutter_test:
