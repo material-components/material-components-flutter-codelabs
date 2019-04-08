@@ -33,10 +33,9 @@ class TwoProductCardColumn extends StatelessWidget {
 
           double heightOfCards = (constraints.biggest.height - spacerHeight) / 2.0;
           double heightOfImages = heightOfCards - ProductCard.kTextBoxHeight;
-          double imageAspectRatio =
-          (heightOfImages >= 0.0 && constraints.biggest.width > heightOfImages)
+          double imageAspectRatio = heightOfImages >= 0.0
               ? constraints.biggest.width / heightOfImages
-              : 33 / 49;
+              : 49.0 / 33.0;
 
           return ListView(
             physics: const ClampingScrollPhysics(),
