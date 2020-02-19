@@ -87,7 +87,12 @@ ThemeData _buildShrineTheme() {
     errorColor: kShrineErrorRed,
     buttonTheme: base.buttonTheme.copyWith(
       buttonColor: kShrinePink100,
-      textTheme: ButtonTextTheme.normal,
+      colorScheme: base.colorScheme.copyWith(
+        secondary: kShrineBrown900,
+      ),
+    ),
+    buttonBarTheme: base.buttonBarTheme.copyWith(
+      buttonTextTheme: ButtonTextTheme.accent,
     ),
     primaryIconTheme: base.iconTheme.copyWith(color: kShrineBrown900),
     inputDecorationTheme: InputDecorationTheme(
