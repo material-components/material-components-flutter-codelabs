@@ -57,17 +57,15 @@ class HomePage extends StatelessWidget {
                   // TODO: Change innermost Column (103)
                   children: <Widget>[
                     // TODO: Handle overflowing labels (103)
-                    // TODO(larche): Make headline6 when available
                     Text(
                       product.name,
-                      style: theme.textTheme.title,
+                      style: theme.textTheme.headline6,
                       maxLines: 1,
                     ),
                     SizedBox(height: 8.0),
-                    // TODO(larche): Make subtitle2 when available
                     Text(
                       formatter.format(product.price),
-                      style: theme.textTheme.body2,
+                      style: theme.textTheme.subtitle2,
                     ),
                   ],
                 ),
