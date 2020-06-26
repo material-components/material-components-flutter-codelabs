@@ -75,6 +75,12 @@ ThemeData _buildShrineTheme() {
         color: kShrineBrown900
     ),
     inputDecorationTheme: InputDecorationTheme(
+      focusedBorder: CutCornersBorder(
+        borderSide: BorderSide(
+          width: 2.0,
+          color: kShrineBrown900,
+        ),
+      ),
       border: CutCornersBorder(),
     ),
     textTheme: _buildShrineTextTheme(base.textTheme),
