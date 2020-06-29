@@ -23,18 +23,24 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _unfocusedColor = Colors.grey[600];
-  FocusNode _usernameFocusNode = FocusNode();
-  FocusNode _passwordFocusNode = FocusNode();
+  final _usernameFocusNode = FocusNode();
+  final _passwordFocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
-    _usernameFocusNode..addListener(() {
-        setState(() {});
+    _usernameFocusNode
+      ..addListener(() {
+        setState(() {
+          //Redraw so that the username label reflects the focus state
+        });
       });
 
-    _passwordFocusNode..addListener(() {
-        setState(() {});
+    _passwordFocusNode
+      ..addListener(() {
+        setState(() {
+          //Redraw so that the password label reflects the focus state
+        });
       });
   }
 
@@ -61,9 +67,10 @@ class _LoginPageState extends State<LoginPage> {
               controller: _usernameController,
               decoration: InputDecoration(
                 labelText: 'Username',
-                labelStyle: _usernameFocusNode.hasFocus
-                    ? TextStyle(color: Theme.of(context).accentColor)
-                    : TextStyle(color: _unfocusedColor),
+                labelStyle: TextStyle(
+                    color: _usernameFocusNode.hasFocus
+                        ? Theme.of(context).accentColor
+                        : _unfocusedColor),
               ),
               focusNode: _usernameFocusNode,
             ),
@@ -72,9 +79,10 @@ class _LoginPageState extends State<LoginPage> {
               controller: _passwordController,
               decoration: InputDecoration(
                 labelText: 'Password',
-                labelStyle: _passwordFocusNode.hasFocus
-                    ? TextStyle(color: Theme.of(context).accentColor)
-                    : TextStyle(color: _unfocusedColor),
+                labelStyle: TextStyle(
+                    color: _passwordFocusNode.hasFocus
+                        ? Theme.of(context).accentColor
+                        : _unfocusedColor),
               ),
               focusNode: _passwordFocusNode,
               obscureText: true,
