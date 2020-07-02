@@ -30,14 +30,14 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     _usernameFocusNode
-      ..addListener(() {
+      .addListener(() {
         setState(() {
           //Redraw so that the username label reflects the focus state
         });
       });
 
     _passwordFocusNode
-      ..addListener(() {
+      .addListener(() {
         setState(() {
           //Redraw so that the password label reflects the focus state
         });
