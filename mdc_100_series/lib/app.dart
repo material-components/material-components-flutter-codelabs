@@ -33,7 +33,7 @@ class ShrineApp extends StatelessWidget {
       // TODO: Change backLayer field value to CategoryMenuPage (104)
       initialRoute: '/login',
       onGenerateRoute: _getRoute,
-      theme: _kShrineTheme,
+      theme: _shrineTheme,
     );
   }
 
@@ -50,35 +50,35 @@ class ShrineApp extends StatelessWidget {
   }
 }
 
-final ThemeData _kShrineTheme = _buildShrineTheme();
+final ThemeData _shrineTheme = _buildShrineTheme();
 
 ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    accentColor: kShrineBrown900,
-    primaryColor: kShrinePink100,
-    buttonColor: kShrinePink100,
-    scaffoldBackgroundColor: kShrineBackgroundWhite,
-    cardColor: kShrineBackgroundWhite,
-    textSelectionColor: kShrinePink100,
-    errorColor: kShrineErrorRed,
+    accentColor: shrineBrown900,
+    primaryColor: shrinePink100,
+    buttonColor: shrinePink100,
+    scaffoldBackgroundColor: shrineBackgroundWhite,
+    cardColor: shrineBackgroundWhite,
+    textSelectionColor: shrinePink100,
+    errorColor: shrineErrorRed,
     buttonTheme: base.buttonTheme.copyWith(
-      buttonColor: kShrinePink100,
+      buttonColor: shrinePink100,
       colorScheme: base.colorScheme.copyWith(
-        secondary: kShrineBrown900,
+        secondary: shrineBrown900,
       ),
     ),
     buttonBarTheme: base.buttonBarTheme.copyWith(
       buttonTextTheme: ButtonTextTheme.accent,
     ),
     primaryIconTheme: base.iconTheme.copyWith(
-        color: kShrineBrown900
+        color: shrineBrown900
     ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
           width: 2.0,
-          color: kShrineBrown900,
+          color: shrineBrown900,
         ),
       ),
       border: CutCornersBorder(),
@@ -107,7 +107,7 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
     ),
   ).apply(
     fontFamily: 'Rubik',
-    displayColor: kShrineBrown900,
-    bodyColor: kShrineBrown900,
+    displayColor: shrineBrown900,
+    bodyColor: shrineBrown900,
   );
 }
