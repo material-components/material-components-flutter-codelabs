@@ -37,32 +37,31 @@ class CategoryMenuPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => onCategoryTap(category),
       child: category == currentCategory
-        ? Column(
-          children: <Widget>[
-            SizedBox(height: 16.0),
-            Text(
-              categoryString,
-              style: theme.textTheme.bodyText1,
-              textAlign: TextAlign.center,
+          ? Column(
+              children: <Widget>[
+                SizedBox(height: 16.0),
+                Text(
+                  categoryString,
+                  style: theme.textTheme.bodyText1,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 14.0),
+                Container(
+                  width: 70.0,
+                  height: 2.0,
+                  color: shrinePink400,
+                ),
+              ],
+            )
+          : Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.0),
+              child: Text(
+                categoryString,
+                style: theme.textTheme.bodyText1
+                    .copyWith(color: shrineBrown900.withAlpha(153)),
+                textAlign: TextAlign.center,
+              ),
             ),
-            SizedBox(height: 14.0),
-            Container(
-              width: 70.0,
-              height: 2.0,
-              color: kShrinePink400,
-            ),
-          ],
-        )
-      : Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        child: Text(
-          categoryString,
-          style: theme.textTheme.bodyText1.copyWith(
-              color: kShrineBrown900.withAlpha(153)
-            ),
-          textAlign: TextAlign.center,
-        ),
-      ),
     );
   }
 
@@ -71,11 +70,11 @@ class CategoryMenuPage extends StatelessWidget {
     return Center(
       child: Container(
         padding: EdgeInsets.only(top: 40.0),
-        color: kShrinePink100,
+        color: shrinePink100,
         child: ListView(
-          children: _categories
-            .map((Category c) => _buildCategory(c, context))
-            .toList()),
+            children: _categories
+                .map((Category c) => _buildCategory(c, context))
+                .toList()),
       ),
     );
   }
