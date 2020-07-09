@@ -18,7 +18,7 @@ import 'package:meta/meta.dart';
 import 'model/product.dart';
 import 'login.dart';
 
-const double _kFlingVelocity = 2.0;
+const double _flingVelocity = 2.0;
 
 class _FrontLayer extends StatelessWidget {
   const _FrontLayer({
@@ -98,7 +98,8 @@ class _BackdropTitle extends AnimatedWidget {
                   end: Offset(1.0, 0.0),
                 ).evaluate(animation),
                 child: ImageIcon(AssetImage('assets/diamond.png')),
-              )]),
+              )
+            ]),
           ),
         ),
         // Here, we do a custom cross fade between backTitle and frontTitle.
@@ -117,8 +118,7 @@ class _BackdropTitle extends AnimatedWidget {
                 ).evaluate(animation),
                 child: Semantics(
                     label: 'hide categories menu',
-                    child: ExcludeSemantics(child: backTitle)
-                ),
+                    child: ExcludeSemantics(child: backTitle)),
               ),
             ),
             Opacity(
@@ -133,8 +133,7 @@ class _BackdropTitle extends AnimatedWidget {
                 ).evaluate(animation),
                 child: Semantics(
                     label: 'show categories menu',
-                    child: ExcludeSemantics(child: frontTitle)
-                ),
+                    child: ExcludeSemantics(child: frontTitle)),
               ),
             ),
           ],
@@ -195,7 +194,7 @@ class _BackdropState extends State<Backdrop>
     if (widget.currentCategory != old.currentCategory) {
       _toggleBackdropLayerVisibility();
     } else if (!_frontLayerVisible) {
-      _controller.fling(velocity: _kFlingVelocity);
+      _controller.fling(velocity: _flingVelocity);
     }
   }
 
@@ -213,7 +212,7 @@ class _BackdropState extends State<Backdrop>
 
   void _toggleBackdropLayerVisibility() {
     _controller.fling(
-        velocity: _frontLayerVisible ? -_kFlingVelocity : _kFlingVelocity);
+        velocity: _frontLayerVisible ? -_flingVelocity : _flingVelocity);
   }
 
   Widget _buildStack(BuildContext context, BoxConstraints constraints) {
