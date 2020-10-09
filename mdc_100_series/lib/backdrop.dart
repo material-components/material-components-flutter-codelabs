@@ -63,14 +63,12 @@ class _BackdropTitle extends AnimatedWidget {
   final Widget backTitle;
 
   const _BackdropTitle({
-    Key key,
+    Key? key,
     Listenable listenable,
     this.onPress,
-    @required this.frontTitle,
-    @required this.backTitle,
-  })  : assert(frontTitle != null),
-        assert(backTitle != null),
-        super(key: key, listenable: listenable);
+    required this.frontTitle,
+    required this.backTitle,
+  })  : super(key: key, listenable: listenable);
 
   @override
   Widget build(BuildContext context) {
