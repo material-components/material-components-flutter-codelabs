@@ -22,9 +22,9 @@ const double _kFlingVelocity = 2.0;
 
 class _FrontLayer extends StatelessWidget {
   const _FrontLayer({
-    Key key,
-    this.onTap,
-    this.child,
+    Key? key,
+    required this.onTap,
+    required this.child,
   }) : super(key: key);
 
   final VoidCallback onTap;
@@ -158,16 +158,12 @@ class Backdrop extends StatefulWidget {
   final Widget backTitle;
 
   const Backdrop({
-    @required this.currentCategory,
-    @required this.frontLayer,
-    @required this.backLayer,
-    @required this.frontTitle,
-    @required this.backTitle,
-  })  : assert(currentCategory != null),
-        assert(frontLayer != null),
-        assert(backLayer != null),
-        assert(frontTitle != null),
-        assert(backTitle != null);
+    required this.currentCategory,
+    required this.frontLayer,
+    required this.backLayer,
+    required this.frontTitle,
+    required this.backTitle,
+  });
 
   @override
   _BackdropState createState() => _BackdropState();

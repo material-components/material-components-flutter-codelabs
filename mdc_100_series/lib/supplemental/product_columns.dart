@@ -19,11 +19,12 @@ import 'product_card.dart';
 
 class TwoProductCardColumn extends StatelessWidget {
   TwoProductCardColumn({
-    this.bottom,
+    required this.bottom,
     this.top,
-  }) : assert(bottom != null);
+  });
 
-  final Product bottom, top;
+  final Product bottom;
+  final Product? top;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class TwoProductCardColumn extends StatelessWidget {
             child: top != null
                 ? ProductCard(
               imageAspectRatio: imageAspectRatio,
-              product: top,
+              product: top!,
             )
                 : SizedBox(
               height: heightOfCards > 0 ? heightOfCards : spacerHeight,
@@ -66,7 +67,7 @@ class TwoProductCardColumn extends StatelessWidget {
 }
 
 class OneProductCardColumn extends StatelessWidget {
-  OneProductCardColumn({this.product});
+  OneProductCardColumn({required this.product});
 
   final Product product;
 
