@@ -18,8 +18,8 @@ import 'package:intl/intl.dart';
 import '../model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard({this.imageAspectRatio: 33 / 49, this.product})
-      : assert(imageAspectRatio == null || imageAspectRatio > 0);
+  ProductCard({this.imageAspectRatio = 33 / 49, required this.product})
+      : assert(imageAspectRatio > 0);
 
   final double imageAspectRatio;
   final Product product;
@@ -30,7 +30,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final NumberFormat formatter = NumberFormat.simpleCurrency(
         decimalDigits: 0, locale: Localizations.localeOf(context).toString());
-    final ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context)!;
 
     final imageWidget = Image.asset(
       product.assetName,
@@ -47,14 +47,14 @@ class ProductCard extends StatelessWidget {
           child: imageWidget,
         ),
         SizedBox(
-          height: kTextBoxHeight * MediaQuery.of(context).textScaleFactor,
+          height: kTextBoxHeight * MediaQuery.of(context)!.textScaleFactor,
           width: 121.0,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                product == null ? '' : product.name,
+                product.name,
                 style: theme.textTheme.headline6,
                 softWrap: false,
                 overflow: TextOverflow.ellipsis,
@@ -62,7 +62,7 @@ class ProductCard extends StatelessWidget {
               ),
               SizedBox(height: 4.0),
               Text(
-                product == null ? '' : formatter.format(product.price),
+                formatter.format(product.price),
                 style: theme.textTheme.subtitle2,
               ),
             ],
