@@ -58,14 +58,14 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  final Function onPress;
+  final void Function() onPress;
   final Widget frontTitle;
   final Widget backTitle;
 
   const _BackdropTitle({
     Key? key,
     Listenable listenable,
-    this.onPress,
+    required this.onPress,
     required this.frontTitle,
     required this.backTitle,
   })  : super(key: key, listenable: listenable);
@@ -170,7 +170,7 @@ class Backdrop extends StatefulWidget {
 class _BackdropState extends State<Backdrop>
     with SingleTickerProviderStateMixin {
   final GlobalKey _backdropKey = GlobalKey(debugLabel: 'Backdrop');
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
