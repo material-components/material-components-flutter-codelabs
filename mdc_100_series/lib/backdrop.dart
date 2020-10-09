@@ -64,18 +64,21 @@ class _BackdropTitle extends AnimatedWidget {
 
   const _BackdropTitle({
     Key? key,
-    Listenable listenable,
+    required Animation<double> listenable,
     required this.onPress,
     required this.frontTitle,
     required this.backTitle,
-  })  : super(key: key, listenable: listenable);
+  })  : _listenable = listenable,
+        super(key: key, listenable: listenable);
+
+  final Animation<double> _listenable;
 
   @override
   Widget build(BuildContext context) {
-    final Animation<double> animation = this.listenable;
+    final Animation<double> animation = _listenable;
 
     return DefaultTextStyle(
-      style: Theme.of(context).primaryTextTheme.headline6,
+      style: Theme.of(context)!.primaryTextTheme.headline6!,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
       child: Row(children: <Widget>[
