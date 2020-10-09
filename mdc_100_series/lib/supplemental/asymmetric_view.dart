@@ -23,7 +23,7 @@ class AsymmetricView extends StatelessWidget {
   AsymmetricView({Key? key, required this.products});
 
   List<Container> _buildColumns(BuildContext context) {
-    if (products == null || products.isEmpty) {
+    if (products.isEmpty) {
       return <Container>[];
     }
 

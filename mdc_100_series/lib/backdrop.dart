@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 import 'model/product.dart';
 import 'login.dart';
