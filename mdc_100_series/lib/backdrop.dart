@@ -22,11 +22,11 @@ const double _kFlingVelocity = 2.0;
 class _FrontLayer extends StatelessWidget {
   const _FrontLayer({
     Key? key,
-    required this.onTap,
+    this.onTap,
     required this.child,
   }) : super(key: key);
 
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Widget child;
 
   @override
