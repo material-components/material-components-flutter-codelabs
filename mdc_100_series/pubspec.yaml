@@ -7,7 +7,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.15.6
+  intl:
+    git:
+      url: https://github.com/dart-lang/intl.git
+      ref: bb23da2587087d051e2f51685143b5fdd47f621f
 
   cupertino_icons: ^0.1.0
   shrine_images: 1.1.1
