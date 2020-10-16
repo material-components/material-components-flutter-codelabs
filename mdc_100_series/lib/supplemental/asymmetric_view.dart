@@ -20,10 +20,10 @@ import 'product_columns.dart';
 class AsymmetricView extends StatelessWidget {
   final List<Product> products;
 
-  AsymmetricView({Key key, this.products});
+  AsymmetricView({Key? key, required this.products});
 
   List<Container> _buildColumns(BuildContext context) {
-    if (products == null || products.isEmpty) {
+    if (products.isEmpty) {
       return <Container>[];
     }
 
@@ -36,7 +36,7 @@ class AsymmetricView extends StatelessWidget {
     /// helpers for creating the index of the product list that will correspond
     /// to the index of the list of columns.
     return List.generate(_listItemCount(products.length), (int index) {
-      double width = .59 * MediaQuery.of(context).size.width;
+      double width = .59 * MediaQuery.of(context)!.size.width;
       Widget column;
       if (index % 2 == 0) {
         /// Even cases

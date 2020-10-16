@@ -1,10 +1,17 @@
 name: Shrine
 description: Take your design up a notch and learn to use our advanced component backdrop menu.
 
+environment:
+  sdk: '>=2.10.0-56.0.dev <2.11.0'
+
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.15.6
+  intl:
+    # TODO: Use pub dependency once NNBD beta is released.
+    git:
+      url: https://github.com/dart-lang/intl.git
+      ref: bb23da2587087d051e2f51685143b5fdd47f621f
 
   cupertino_icons: ^0.1.0
   shrine_images: 1.1.1
