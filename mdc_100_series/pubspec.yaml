@@ -7,11 +7,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl:
-    # TODO: Use pub dependency once NNBD beta is released.
-    git:
-      url: https://github.com/dart-lang/intl.git
-      ref: bb23da2587087d051e2f51685143b5fdd47f621f
+  intl: ">=0.17.0-nullsafety.1 <1.0.0"
 
   cupertino_icons: ^0.1.0
   shrine_images: 1.1.1
