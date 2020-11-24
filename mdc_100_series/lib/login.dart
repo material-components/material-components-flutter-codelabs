@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 16.0),
                 Text(
                   'SHRINE',
-                  style: Theme.of(context)!.textTheme.headline5,
+                  style: Theme.of(context).textTheme.headline5,
                 ),
               ],
             ),
@@ -106,7 +106,7 @@ class AccentColorOverride extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       child: child,
-      data: Theme.of(context)!.copyWith(
+      data: Theme.of(context).copyWith(
         accentColor: color,
         brightness: Brightness.dark,
       ),

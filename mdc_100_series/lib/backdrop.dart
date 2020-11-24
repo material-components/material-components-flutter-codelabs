@@ -77,7 +77,7 @@ class _BackdropTitle extends AnimatedWidget {
     final Animation<double> animation = _listenable;
 
     return DefaultTextStyle(
-      style: Theme.of(context)!.primaryTextTheme.headline6!,
+      style: Theme.of(context).primaryTextTheme.headline6!,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
       child: Row(children: <Widget>[
