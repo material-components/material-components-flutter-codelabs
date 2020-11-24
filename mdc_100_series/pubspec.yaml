@@ -7,7 +7,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.15.6
+  intl: ^0.17.0-nullsafety.2
 
   cupertino_icons: ^0.1.0
   shrine_images: 1.1.1
