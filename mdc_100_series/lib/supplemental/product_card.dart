@@ -18,8 +18,8 @@ import 'package:intl/intl.dart';
 import '../model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard({this.imageAspectRatio: 33 / 49, this.product})
-      : assert(imageAspectRatio == null || imageAspectRatio > 0);
+  ProductCard({this.imageAspectRatio = 33 / 49, required this.product})
+      : assert(imageAspectRatio > 0);
 
   final double imageAspectRatio;
   final Product product;
@@ -54,7 +54,7 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                product == null ? '' : product.name,
+                product.name,
                 style: theme.textTheme.headline6,
                 softWrap: false,
                 overflow: TextOverflow.ellipsis,
@@ -62,7 +62,7 @@ class ProductCard extends StatelessWidget {
               ),
               SizedBox(height: 4.0),
               Text(
-                product == null ? '' : formatter.format(product.price),
+                formatter.format(product.price),
                 style: theme.textTheme.subtitle2,
               ),
             ],
