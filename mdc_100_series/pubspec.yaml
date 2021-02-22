@@ -1,6 +1,9 @@
 name: Shrine
 description: Take your design up a notch and learn to use our advanced component backdrop menu.
 
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
