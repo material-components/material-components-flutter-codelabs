@@ -1,7 +1,8 @@
 name: Shrine
 description: Learn the basics of using Material Components by building a simple app with core components.
 
-environment: sdk: '>=2.10.0 <3.0.0'
+environment: 
+  sdk: '>=2.10.0 <3.0.0'
 
 dependencies:
   flutter:
