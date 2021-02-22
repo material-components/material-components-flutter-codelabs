@@ -1,6 +1,9 @@
 name: Shrine
 description: Discover how Material Components for Flutter make it easy to differentiate your product and express your brand through design.
 
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
