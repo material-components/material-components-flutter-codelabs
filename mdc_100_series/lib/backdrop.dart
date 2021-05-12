@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 import 'model/product.dart';
 import 'login.dart';
@@ -22,12 +21,12 @@ const double _kFlingVelocity = 2.0;
 
 class _FrontLayer extends StatelessWidget {
   const _FrontLayer({
-    Key key,
+    Key? key,
     this.onTap,
-    this.child,
+    required this.child,
   }) : super(key: key);
 
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final Widget child;
 
   @override
@@ -58,26 +57,27 @@ class _FrontLayer extends StatelessWidget {
 }
 
 class _BackdropTitle extends AnimatedWidget {
-  final Function onPress;
+  final void Function() onPress;
   final Widget frontTitle;
   final Widget backTitle;
 
   const _BackdropTitle({
-    Key key,
-    Listenable listenable,
-    this.onPress,
-    @required this.frontTitle,
-    @required this.backTitle,
-  })  : assert(frontTitle != null),
-        assert(backTitle != null),
+    Key? key,
+    required Animation<double> listenable,
+    required this.onPress,
+    required this.frontTitle,
+    required this.backTitle,
+  })  : _listenable = listenable,
         super(key: key, listenable: listenable);
+
+  final Animation<double> _listenable;
 
   @override
   Widget build(BuildContext context) {
-    final Animation<double> animation = this.listenable;
+    final Animation<double> animation = _listenable;
 
     return DefaultTextStyle(
-      style: Theme.of(context).primaryTextTheme.headline6,
+      style: Theme.of(context).primaryTextTheme.headline6!,
       softWrap: false,
       overflow: TextOverflow.ellipsis,
       child: Row(children: <Widget>[
@@ -158,16 +158,12 @@ class Backdrop extends StatefulWidget {
   final Widget backTitle;
 
   const Backdrop({
-    @required this.currentCategory,
-    @required this.frontLayer,
-    @required this.backLayer,
-    @required this.frontTitle,
-    @required this.backTitle,
-  })  : assert(currentCategory != null),
-        assert(frontLayer != null),
-        assert(backLayer != null),
-        assert(frontTitle != null),
-        assert(backTitle != null);
+    required this.currentCategory,
+    required this.frontLayer,
+    required this.backLayer,
+    required this.frontTitle,
+    required this.backTitle,
+  });
 
   @override
   _BackdropState createState() => _BackdropState();
@@ -176,7 +172,7 @@ class Backdrop extends StatefulWidget {
 class _BackdropState extends State<Backdrop>
     with SingleTickerProviderStateMixin {
   final GlobalKey _backdropKey = GlobalKey(debugLabel: 'Backdrop');
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class AccentColorOverride extends StatelessWidget {
-  const AccentColorOverride({Key key, this.color, this.child})
+  const AccentColorOverride({Key? key, required this.color, required this.child})
       : super(key: key);
 
   final Color color;
