@@ -35,7 +35,7 @@ class ShrineApp extends StatelessWidget {
     );
   }
 
-  Route<dynamic> _getRoute(RouteSettings settings) {
+  Route<dynamic>? _getRoute(RouteSettings settings) {
     if (settings.name != '/login') {
       return null;
     }
