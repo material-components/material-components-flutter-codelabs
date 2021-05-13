@@ -83,7 +83,7 @@ ThemeData _buildShrineTheme() {
     primaryColor: kShrinePink100,
     scaffoldBackgroundColor: kShrineBackgroundWhite,
     cardColor: kShrineBackgroundWhite,
-    textSelectionColor: kShrinePink100,
+    textSelectionTheme: TextSelectionThemeData(selectionColor: kShrinePink100),
     errorColor: kShrineErrorRed,
     buttonTheme: base.buttonTheme.copyWith(
       buttonColor: kShrinePink100,
