@@ -89,21 +89,29 @@ class _LoginPageState extends State<LoginPage> {
             ),
             ButtonBar(
               children: <Widget>[
-                FlatButton(
+                TextButton(
                   child: Text('CANCEL'),
-                  shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                      ),
+                    ),
                   ),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
                   },
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Text('NEXT'),
-                  elevation: 8.0,
-                  shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(8.0),
+                    shape: MaterialStateProperty.all(
+                      BeveledRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                      ),
+                    ),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
