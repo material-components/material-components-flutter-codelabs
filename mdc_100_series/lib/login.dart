@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
             ButtonBar(
               children: <Widget>[
                 // TODO: Add a beveled rectangular border to CANCEL (103)
-                FlatButton(
+                TextButton(
                   child: Text('CANCEL'),
                   onPressed: () {
                     _usernameController.clear();
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 // TODO: Add an elevation to NEXT (103)
                 // TODO: Add a beveled rectangular border to NEXT (103)
-                RaisedButton(
+                ElevatedButton(
                   child: Text('NEXT'),
                   onPressed: () {
                     Navigator.pop(context);
