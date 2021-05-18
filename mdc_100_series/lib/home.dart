@@ -85,7 +85,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.menu, semanticLabel: 'menu'),
+          icon: Icon(
+            Icons.menu,
+            semanticLabel: 'menu',
+          ),
           onPressed: () {
             print('Menu button');
           },
@@ -93,13 +96,19 @@ class HomePage extends StatelessWidget {
         title: Text('SHRINE'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.search, semanticLabel: 'search'),
+            icon: Icon(
+              Icons.search,
+              semanticLabel: 'search',
+            ),
             onPressed: () {
               print('Search button');
             },
           ),
           IconButton(
-            icon: Icon(Icons.tune, semanticLabel: 'filter'),
+            icon: Icon(
+              Icons.tune,
+              semanticLabel: 'filter',
+            ),
             onPressed: () {
               print('Filter button');
             },
