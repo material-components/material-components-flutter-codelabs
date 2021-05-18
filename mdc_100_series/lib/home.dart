@@ -114,7 +114,6 @@ class HomePage extends StatelessWidget {
             },
           ),
         ],
-        backwardsCompatibility: false,
       ),
       body: Center(
         child: GridView.count(
