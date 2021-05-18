@@ -65,9 +65,6 @@ ThemeData _buildShrineTheme() {
     textSelectionTheme: TextSelectionThemeData(
       selectionColor: kShrinePink100,
     ),
-    primaryIconTheme: base.iconTheme.copyWith(
-      color: kShrineBrown900,
-    ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: CutCornersBorder(
         borderSide: BorderSide(
