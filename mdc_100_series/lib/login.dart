@@ -69,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   child: Text('CANCEL'),
                   style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(
+                      Theme.of(context).colorScheme.secondary,
+                    ),
                     shape: MaterialStateProperty.all(
                       BeveledRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7.0)),

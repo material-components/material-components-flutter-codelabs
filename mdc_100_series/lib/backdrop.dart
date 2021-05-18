@@ -67,7 +67,7 @@ class _BackdropTitle extends AnimatedWidget {
     required this.onPress,
     required this.frontTitle,
     required this.backTitle,
-  })  : _listenable = listenable,
+  })   : _listenable = listenable,
         super(key: key, listenable: listenable);
 
   final Animation<double> _listenable;
@@ -87,18 +87,25 @@ class _BackdropTitle extends AnimatedWidget {
           child: IconButton(
             padding: EdgeInsets.only(right: 8.0),
             onPressed: this.onPress,
-            icon: Stack(children: <Widget>[
-              Opacity(
-                opacity: animation.value,
-                child: ImageIcon(AssetImage('assets/slanted_menu.png')),
-              ),
-              FractionalTranslation(
-                translation: Tween<Offset>(
-                  begin: Offset.zero,
-                  end: Offset(1.0, 0.0),
-                ).evaluate(animation),
-                child: ImageIcon(AssetImage('assets/diamond.png')),
-              )]),
+            icon: Stack(
+              children: <Widget>[
+                Opacity(
+                  opacity: animation.value,
+                  child: ImageIcon(
+                    AssetImage('assets/slanted_menu.png'),
+                  ),
+                ),
+                FractionalTranslation(
+                  translation: Tween<Offset>(
+                    begin: Offset.zero,
+                    end: Offset(1.0, 0.0),
+                  ).evaluate(animation),
+                  child: ImageIcon(
+                    AssetImage('assets/diamond.png'),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         // Here, we do a custom cross fade between backTitle and frontTitle.
@@ -116,8 +123,8 @@ class _BackdropTitle extends AnimatedWidget {
                   end: Offset(0.5, 0.0),
                 ).evaluate(animation),
                 child: Semantics(
-                    label: 'hide categories menu',
-                    child: ExcludeSemantics(child: backTitle)
+                  label: 'hide categories menu',
+                  child: ExcludeSemantics(child: backTitle),
                 ),
               ),
             ),
@@ -132,8 +139,8 @@ class _BackdropTitle extends AnimatedWidget {
                   end: Offset.zero,
                 ).evaluate(animation),
                 child: Semantics(
-                    label: 'show categories menu',
-                    child: ExcludeSemantics(child: frontTitle)
+                  label: 'show categories menu',
+                  child: ExcludeSemantics(child: frontTitle),
                 ),
               ),
             ),
@@ -279,6 +286,7 @@ class _BackdropState extends State<Backdrop>
           },
         ),
       ],
+      backwardsCompatibility: false,
     );
     return Scaffold(
       appBar: appBar,
