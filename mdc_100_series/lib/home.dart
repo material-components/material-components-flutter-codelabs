@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'model/products_repository.dart';
 import 'model/product.dart';
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
     // TODO: Pass Category variable to AsymmetricView (104)
     return Scaffold(
       appBar: AppBar(
-        brightness: Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
           icon: Icon(
             Icons.menu,

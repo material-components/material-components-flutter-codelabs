@@ -29,19 +29,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    _usernameFocusNode
-      .addListener(() {
-        setState(() {
-          //Redraw so that the username label reflects the focus state
-        });
+    _usernameFocusNode.addListener(() {
+      setState(() {
+        // Redraw so that the username label reflects the focus state
       });
+    });
 
-    _passwordFocusNode
-      .addListener(() {
-        setState(() {
-          //Redraw so that the password label reflects the focus state
-        });
+    _passwordFocusNode.addListener(() {
+      setState(() {
+        // Redraw so that the password label reflects the focus state
       });
+    });
   }
 
   @override
@@ -69,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Username',
                 labelStyle: TextStyle(
                     color: _usernameFocusNode.hasFocus
-                        ? Theme.of(context).accentColor
+                        ? Theme.of(context).colorScheme.secondary
                         : _unfocusedColor),
               ),
               focusNode: _usernameFocusNode,
@@ -81,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Password',
                 labelStyle: TextStyle(
                     color: _passwordFocusNode.hasFocus
-                        ? Theme.of(context).accentColor
+                        ? Theme.of(context).colorScheme.secondary
                         : _unfocusedColor),
               ),
               focusNode: _passwordFocusNode,
@@ -92,6 +90,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   child: Text('CANCEL'),
                   style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(
+                      Theme.of(context).colorScheme.secondary,
+                    ),
                     shape: MaterialStateProperty.all(
                       BeveledRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7.0)),
