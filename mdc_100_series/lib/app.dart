@@ -79,22 +79,20 @@ IconThemeData _customIconTheme(IconThemeData original) {
 ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    accentColor: kShrineBrown900,
-    primaryColor: kShrinePink100,
-    scaffoldBackgroundColor: kShrineBackgroundWhite,
-    cardColor: kShrineBackgroundWhite,
-    textSelectionTheme: TextSelectionThemeData(selectionColor: kShrinePink100),
-    errorColor: kShrineErrorRed,
-    buttonTheme: base.buttonTheme.copyWith(
-      buttonColor: kShrinePink100,
-      colorScheme: base.colorScheme.copyWith(
-        secondary: kShrineBrown900,
-      ),
+    colorScheme: base.colorScheme.copyWith(
+      primary: kShrinePink100,
+      onPrimary: kShrineBrown900,
+      secondary: kShrineBrown900,
+      error: kShrineErrorRed,
     ),
-    buttonBarTheme: base.buttonBarTheme.copyWith(
-      buttonTextTheme: ButtonTextTheme.accent,
+    appBarTheme: base.appBarTheme.copyWith(
+      backwardsCompatibility: false,
     ),
-    primaryIconTheme: base.iconTheme.copyWith(color: kShrineBrown900),
+    textTheme: _buildShrineTextTheme(base.textTheme),
+    primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
+    textSelectionTheme: TextSelectionThemeData(
+      selectionColor: kShrinePink100,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       border: CutCornersBorder(),
     ),
