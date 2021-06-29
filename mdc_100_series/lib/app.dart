@@ -96,8 +96,6 @@ ThemeData _buildShrineTheme() {
     inputDecorationTheme: InputDecorationTheme(
       border: CutCornersBorder(),
     ),
-    textTheme: _buildShrineTextTheme(base.textTheme),
-    primaryTextTheme: _buildShrineTextTheme(base.primaryTextTheme),
     accentTextTheme: _buildShrineTextTheme(base.accentTextTheme),
     iconTheme: _customIconTheme(base.iconTheme),
   );
