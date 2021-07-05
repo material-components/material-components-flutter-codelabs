@@ -69,6 +69,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   child: Text('CANCEL'),
                   style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(
+                      Theme.of(context).colorScheme.secondary,
+                    ),
                     shape: MaterialStateProperty.all(
                       BeveledRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7.0)),
@@ -104,7 +107,8 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class AccentColorOverride extends StatelessWidget {
-  const AccentColorOverride({Key? key, required this.color, required this.child})
+  const AccentColorOverride(
+      {Key? key, required this.color, required this.child})
       : super(key: key);
 
   final Color color;
