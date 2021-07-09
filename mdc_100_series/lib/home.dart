@@ -20,6 +20,8 @@ import 'model/product.dart';
 import 'supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   // TODO: Add a variable for Category (104)
 
   @override
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             semanticLabel: 'menu',
           ),
@@ -38,10 +40,10 @@ class HomePage extends StatelessWidget {
             print('Menu button');
           },
         ),
-        title: Text('SHRINE'),
+        title: const Text('SHRINE'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               semanticLabel: 'search',
             ),
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.tune,
               semanticLabel: 'filter',
             ),
