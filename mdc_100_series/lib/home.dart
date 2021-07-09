@@ -19,6 +19,8 @@ import 'model/products_repository.dart';
 import 'model/product.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   // TODO: Add a variable for Category (104)
 
   List<Card> _buildGridCards(BuildContext context) {
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                 child: Column(
                   // TODO: Align labels to the bottom and center (103)
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +64,7 @@ class HomePage extends StatelessWidget {
                       style: theme.textTheme.headline6,
                       maxLines: 1,
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
                       formatter.format(product.price),
                       style: theme.textTheme.subtitle2,
@@ -85,7 +87,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             semanticLabel: 'menu',
           ),
@@ -93,10 +95,10 @@ class HomePage extends StatelessWidget {
             print('Menu button');
           },
         ),
-        title: Text('SHRINE'),
+        title: const Text('SHRINE'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               semanticLabel: 'search',
             ),
@@ -105,7 +107,7 @@ class HomePage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.tune,
               semanticLabel: 'filter',
             ),
@@ -118,7 +120,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: GridView.count(
           crossAxisCount: 2,
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           childAspectRatio: 8.0 / 9.0,
           children: _buildGridCards(context),
         ),
