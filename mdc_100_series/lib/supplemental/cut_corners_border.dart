@@ -104,8 +104,8 @@ class CutCornersBorder extends OutlineInputBorder {
     Canvas canvas,
     Rect rect, {
     double? gapStart,
-    double gapExtent: 0.0,
-    double gapPercentage: 0.0,
+    double gapExtent = 0.0,
+    double gapPercentage = 0.0,
     TextDirection? textDirection,
   }) {
     assert(gapPercentage >= 0.0 && gapPercentage <= 1.0);
