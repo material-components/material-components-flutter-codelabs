@@ -18,10 +18,11 @@ import '../model/product.dart';
 import 'product_card.dart';
 
 class TwoProductCardColumn extends StatelessWidget {
-  TwoProductCardColumn({
+  const TwoProductCardColumn({
     required this.bottom,
     this.top,
-  });
+    Key? key,
+  }) : super(key: key);
 
   final Product bottom;
   final Product? top;
@@ -43,7 +44,7 @@ class TwoProductCardColumn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsetsDirectional.only(start: 28.0),
+            padding: const EdgeInsetsDirectional.only(start: 28.0),
             child: top != null
                 ? ProductCard(
                     imageAspectRatio: imageAspectRatio,
@@ -53,9 +54,9 @@ class TwoProductCardColumn extends StatelessWidget {
                     height: heightOfCards,
                   ),
           ),
-          SizedBox(height: spacerHeight),
+          const SizedBox(height: spacerHeight),
           Padding(
-            padding: EdgeInsetsDirectional.only(end: 28.0),
+            padding: const EdgeInsetsDirectional.only(end: 28.0),
             child: ProductCard(
               imageAspectRatio: imageAspectRatio,
               product: bottom,
@@ -68,7 +69,8 @@ class TwoProductCardColumn extends StatelessWidget {
 }
 
 class OneProductCardColumn extends StatelessWidget {
-  OneProductCardColumn({required this.product});
+  const OneProductCardColumn({required this.product, Key? key})
+      : super(key: key);
 
   final Product product;
 
@@ -81,7 +83,7 @@ class OneProductCardColumn extends StatelessWidget {
         ProductCard(
           product: product,
         ),
-        SizedBox(
+        const SizedBox(
           height: 40.0,
         ),
       ],
