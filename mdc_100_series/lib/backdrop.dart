@@ -33,7 +33,7 @@ class _FrontLayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 16.0,
-      shape: BeveledRectangleBorder(
+      shape: const BeveledRectangleBorder(
         borderRadius: BorderRadius.only(topLeft: Radius.circular(46.0)),
       ),
       child: Column(
@@ -85,20 +85,21 @@ class _BackdropTitle extends AnimatedWidget {
         SizedBox(
           width: 72.0,
           child: IconButton(
-            padding: EdgeInsets.only(right: 8.0),
-            onPressed: this.onPress,
+            padding: const EdgeInsets.only(right: 8.0),
+            onPressed: onPress,
             icon: Stack(children: <Widget>[
               Opacity(
                 opacity: animation.value,
-                child: ImageIcon(AssetImage('assets/slanted_menu.png')),
+                child: const ImageIcon(AssetImage('assets/slanted_menu.png')),
               ),
               FractionalTranslation(
                 translation: Tween<Offset>(
                   begin: Offset.zero,
-                  end: Offset(1.0, 0.0),
+                  end: const Offset(1.0, 0.0),
                 ).evaluate(animation),
-                child: ImageIcon(AssetImage('assets/diamond.png')),
-              )]),
+                child: const ImageIcon(AssetImage('assets/diamond.png')),
+              )
+            ]),
           ),
         ),
         // Here, we do a custom cross fade between backTitle and frontTitle.
@@ -108,33 +109,31 @@ class _BackdropTitle extends AnimatedWidget {
             Opacity(
               opacity: CurvedAnimation(
                 parent: ReverseAnimation(animation),
-                curve: Interval(0.5, 1.0),
+                curve: const Interval(0.5, 1.0),
               ).value,
               child: FractionalTranslation(
                 translation: Tween<Offset>(
                   begin: Offset.zero,
-                  end: Offset(0.5, 0.0),
+                  end: const Offset(0.5, 0.0),
                 ).evaluate(animation),
                 child: Semantics(
                     label: 'hide categories menu',
-                    child: ExcludeSemantics(child: backTitle)
-                ),
+                    child: ExcludeSemantics(child: backTitle)),
               ),
             ),
             Opacity(
               opacity: CurvedAnimation(
                 parent: animation,
-                curve: Interval(0.5, 1.0),
+                curve: const Interval(0.5, 1.0),
               ).value,
               child: FractionalTranslation(
                 translation: Tween<Offset>(
-                  begin: Offset(-0.25, 0.0),
+                  begin: const Offset(-0.25, 0.0),
                   end: Offset.zero,
                 ).evaluate(animation),
                 child: Semantics(
                     label: 'show categories menu',
-                    child: ExcludeSemantics(child: frontTitle)
-                ),
+                    child: ExcludeSemantics(child: frontTitle)),
               ),
             ),
           ],
@@ -163,7 +162,8 @@ class Backdrop extends StatefulWidget {
     required this.backLayer,
     required this.frontTitle,
     required this.backTitle,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   _BackdropState createState() => _BackdropState();
@@ -178,7 +178,7 @@ class _BackdropState extends State<Backdrop>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       value: 1.0,
       vsync: this,
     );
@@ -220,7 +220,7 @@ class _BackdropState extends State<Backdrop>
     Animation<RelativeRect> layerAnimation = RelativeRectTween(
       begin: RelativeRect.fromLTRB(
           0.0, layerTop, 0.0, layerTop - layerSize.height),
-      end: RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0),
+      end: const RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0),
     ).animate(_controller.view);
 
     return Stack(
@@ -254,27 +254,29 @@ class _BackdropState extends State<Backdrop>
         backTitle: widget.backTitle,
       ),
       actions: <Widget>[
-        new IconButton(
-          icon: Icon(
+        IconButton(
+          icon: const Icon(
             Icons.search,
             semanticLabel: 'login',
           ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const LoginPage()),
             );
           },
         ),
-        new IconButton(
-          icon: Icon(
+        IconButton(
+          icon: const Icon(
             Icons.tune,
             semanticLabel: 'login',
           ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const LoginPage()),
             );
           },
         ),

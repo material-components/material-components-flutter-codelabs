@@ -26,7 +26,7 @@ class CategoryMenuPage extends StatelessWidget {
     Key? key,
     required this.currentCategory,
     required this.onCategoryTap,
-  });
+  }) : super(key: key);
 
   Widget _buildCategory(Category category, BuildContext context) {
     final categoryString =
@@ -35,32 +35,32 @@ class CategoryMenuPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => onCategoryTap(category),
       child: category == currentCategory
-        ? Column(
-          children: <Widget>[
-            SizedBox(height: 16.0),
-            Text(
-              categoryString,
-              style: theme.textTheme.bodyText1,
-              textAlign: TextAlign.center,
+          ? Column(
+              children: <Widget>[
+                const SizedBox(height: 16.0),
+                Text(
+                  categoryString,
+                  style: theme.textTheme.bodyText1,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 14.0),
+                Container(
+                  width: 70.0,
+                  height: 2.0,
+                  color: kShrinePink400,
+                ),
+              ],
+            )
+          : Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Text(
+                categoryString,
+                style: theme.textTheme.bodyText1!.copyWith(
+                  color: kShrineBrown900.withAlpha(153),
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
-            SizedBox(height: 14.0),
-            Container(
-              width: 70.0,
-              height: 2.0,
-              color: kShrinePink400,
-            ),
-          ],
-        )
-      : Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.0),
-        child: Text(
-          categoryString,
-          style: theme.textTheme.bodyText1!.copyWith(
-              color: kShrineBrown900.withAlpha(153)
-            ),
-          textAlign: TextAlign.center,
-        ),
-      ),
     );
   }
 
@@ -68,12 +68,12 @@ class CategoryMenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: EdgeInsets.only(top: 40.0),
+        padding: const EdgeInsets.only(top: 40.0),
         color: kShrinePink100,
         child: ListView(
-          children: _categories
-            .map((Category c) => _buildCategory(c, context))
-            .toList()),
+            children: _categories
+                .map((Category c) => _buildCategory(c, context))
+                .toList()),
       ),
     );
   }

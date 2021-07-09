@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -30,35 +31,35 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
-            SizedBox(height: 80.0),
+            const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
                 Image.asset('assets/diamond.png'),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 Text(
                   'SHRINE',
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ],
             ),
-            SizedBox(height: 120.0),
+            const SizedBox(height: 120.0),
             AccentColorOverride(
               color: kShrineBrown900,
               child: TextField(
                 controller: _usernameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Username',
                 ),
               ),
             ),
-            SizedBox(height: 12.0),
+            const SizedBox(height: 12.0),
             AccentColorOverride(
               color: kShrineBrown900,
               child: TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                 ),
                 obscureText: true,
@@ -67,10 +68,10 @@ class _LoginPageState extends State<LoginPage> {
             ButtonBar(
               children: <Widget>[
                 TextButton(
-                  child: Text('CANCEL'),
+                  child: const Text('CANCEL'),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(
-                      BeveledRectangleBorder(
+                      const BeveledRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7.0)),
                       ),
                     ),
@@ -81,11 +82,11 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 ElevatedButton(
-                  child: Text('NEXT'),
+                  child: const Text('NEXT'),
                   style: ButtonStyle(
                     elevation: MaterialStateProperty.all(8.0),
                     shape: MaterialStateProperty.all(
-                      BeveledRectangleBorder(
+                      const BeveledRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(7.0)),
                       ),
                     ),
@@ -104,7 +105,8 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class AccentColorOverride extends StatelessWidget {
-  const AccentColorOverride({Key? key, required this.color, required this.child})
+  const AccentColorOverride(
+      {Key? key, required this.color, required this.child})
       : super(key: key);
 
   final Color color;
