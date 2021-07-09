@@ -1,4 +1,4 @@
-name: Shrine
+name: shrine
 description: Learn the basics of using Material Components by building a simple app with core components.
 
 environment:
@@ -15,6 +15,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^1.0.0
 
 flutter:
   # TODO: Insert Fonts (103)
