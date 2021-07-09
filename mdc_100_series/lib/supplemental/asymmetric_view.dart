@@ -20,9 +20,9 @@ import 'product_columns.dart';
 class AsymmetricView extends StatelessWidget {
   final List<Product> products;
 
-  AsymmetricView({Key? key, required this.products});
+  const AsymmetricView({Key? key, required this.products}) : super(key: key);
 
-  List<Container> _buildColumns(BuildContext context) {
+  List<Widget> _buildColumns(BuildContext context) {
     if (products.isEmpty) {
       return <Container>[];
     }
@@ -53,10 +53,10 @@ class AsymmetricView extends StatelessWidget {
           product: products[_oddCasesIndex(index)],
         );
       }
-      return Container(
+      return SizedBox(
         width: width,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: column,
         ),
       );
@@ -88,7 +88,7 @@ class AsymmetricView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       scrollDirection: Axis.horizontal,
-      padding: EdgeInsets.fromLTRB(0.0, 34.0, 16.0, 44.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 34.0, 16.0, 44.0),
       children: _buildColumns(context),
     );
   }

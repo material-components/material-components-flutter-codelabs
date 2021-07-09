@@ -18,13 +18,15 @@ import 'package:intl/intl.dart';
 import '../model/product.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard({this.imageAspectRatio = 33 / 49, required this.product})
-      : assert(imageAspectRatio > 0);
+  const ProductCard(
+      {this.imageAspectRatio = 33 / 49, required this.product, Key? key})
+      : assert(imageAspectRatio > 0),
+        super(key: key);
 
   final double imageAspectRatio;
   final Product product;
 
-  static final kTextBoxHeight = 65.0;
+  static const kTextBoxHeight = 65.0;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,7 @@ class ProductCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),
-              SizedBox(height: 4.0),
+              const SizedBox(height: 4.0),
               Text(
                 formatter.format(product.price),
                 style: theme.textTheme.caption,
