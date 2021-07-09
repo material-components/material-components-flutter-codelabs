@@ -21,7 +21,7 @@ import 'supplemental/asymmetric_view.dart';
 class HomePage extends StatelessWidget {
   final Category category;
 
-  const HomePage({this.category = Category.all});
+  const HomePage({this.category = Category.all, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
