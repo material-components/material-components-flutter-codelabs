@@ -1,5 +1,5 @@
 name: shrine
-description: Discover how Material Components for Flutter make it easy to differentiate your product and express your brand through design.
+description: Improve your design and learn to use our advanced component backdrop menu for Flutter.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -18,7 +18,13 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-  # TODO: Insert Fonts (103)
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Regular.ttf
+        - asset: fonts/Rubik-Medium.ttf
+          weight: 500
+
   uses-material-design: true
   assets:
     - assets/diamond.png
