@@ -1,5 +1,5 @@
 name: shrine
-description: Learn how to use Material for structure and layout.
+description: Discover how Material Components for Flutter make it easy to differentiate your product and express your brand through design.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
