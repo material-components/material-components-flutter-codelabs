@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart' as flutter_svg;
 
 import 'colors.dart';
+import 'model/product.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,6 +28,23 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _identificationController = TextEditingController();
+  bool _showPassword = false;
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    _usernameController.dispose();
+    _passwordController.dispose();
+    _identificationController.dispose();
+    super.dispose();
+  }
+
+  String _validaIdentification(String value) {
+    return value.toUpperCase().splitMapJoin(nifRexp,
+        onMatch: (p0) => '${p0[0]}', onNonMatch: (n) => '*');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                flutter_svg.SvgPicture.asset("assets/Logo.svg",color: kShrineGreen100,),
+                flutter_svg.SvgPicture.asset("assets/Logo.svg"),
                 const SizedBox(height: 16.0),
                 Text(
                   'Dogtor',
@@ -61,6 +79,24 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icon(Icons.password),
                   labelText: 'Password',
                 )),
+
+            /// InputText para validar DNI:
+            const SizedBox(height: 12.0),
+            TextFormField(
+              controller: _identificationController,
+              decoration: const InputDecoration(
+                  filled: true,
+                  prefixIcon: Icon(Icons.supervised_user_circle),
+                  labelText: 'Identificación',
+                  hintText: "Introduzca DNI o Nie con formato "),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                } else {
+                  return _validaIdentification(value);
+                }
+              },
+            ),
             OverflowBar(
               alignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -68,6 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text('CANCEL'),
                   onPressed: () {
                     _usernameController.clear();
+                    _identificationController.clear();
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(

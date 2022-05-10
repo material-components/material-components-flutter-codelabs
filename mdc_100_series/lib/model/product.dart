@@ -18,6 +18,9 @@ enum Category {
   clothing,
   home,
 }
+var letraString = "TRWAGMYFPDXBNJZSQVHLCKE";
+var nifRexp = RegExp(r'[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]$');
+var nieRexp = RegExp(r'[XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKET]$');
 
 class Product {
   const Product({
