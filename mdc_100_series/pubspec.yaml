@@ -1,5 +1,6 @@
 name: shrine
-description: Improve your design and learn to use our advanced component backdrop menu for Flutter.
+description: Improve your design and learn to use our advanced component backdrop menu for
+  Flutter.
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -7,10 +8,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   intl: ^0.17.0
 
   cupertino_icons: ^1.0.3
   shrine_images: ^2.0.1
+  amplify_flutter: ^0.4.5
+  amplify_datastore: ^0.4.5
+  flutter_svg: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -18,6 +24,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
+  generate: true
   fonts:
     - family: Rubik
       fonts:
@@ -28,6 +35,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/diamond.png
+    - assets/Logo.svg
     - assets/slanted_menu.png
     - packages/shrine_images/0-0.jpg
     - packages/shrine_images/1-0.jpg
@@ -67,3 +75,5 @@ flutter:
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
     - packages/shrine_images/37-0.jpg
+flutter_intl:
+  enabled: true

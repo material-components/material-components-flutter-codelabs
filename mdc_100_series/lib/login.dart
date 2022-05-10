@@ -13,6 +13,9 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart' as flutter_svg;
+
+import 'colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,7 +27,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,29 +37,30 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
+                flutter_svg.SvgPicture.asset("assets/Logo.svg",color: kShrineGreen100,),
                 const SizedBox(height: 16.0),
                 Text(
-                  'SHRINE',
+                  'Dogtor',
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ],
             ),
             const SizedBox(height: 120.0),
-            TextField(
+            TextFormField(
               controller: _usernameController,
               decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.account_box),
                 labelText: 'Username',
               ),
+              validator: (value) => value!.isEmpty ? value : null,
             ),
             const SizedBox(height: 12.0),
-            TextField(
-              controller: _passwordController,
-              decoration: const InputDecoration(
-                labelText: 'Password',
-              ),
-              obscureText: true,
-            ),
+            TextFormField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.password),
+                  labelText: 'Password',
+                )),
             OverflowBar(
               alignment: MainAxisAlignment.end,
               children: <Widget>[

@@ -13,6 +13,8 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 
 import 'backdrop.dart';
 import 'category_menu_page.dart';
@@ -50,6 +52,13 @@ class _ShrineAppState extends State<ShrineApp> {
               backTitle: const Text('MENU'),
             ),
       },
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: _kShrineTheme,
     );
   }
@@ -68,7 +77,7 @@ ThemeData _buildShrineTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
-      primary: kShrinePink100,
+      primary: kShrineGreen100,
       onPrimary: kShrineBrown900,
       secondary: kShrineBrown900,
       error: kShrineErrorRed,
