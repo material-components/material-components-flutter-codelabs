@@ -42,14 +42,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 120.0),
             // TODO: Remove filled: true values (103)
-            TextFormField(
+            TextField(
               controller: _usernameController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
+              //   validator: (value) {
+              //   if (value == null || value.isEmpty) {
+              //     return 'Please enter some text';
+              //   }
+              //   return null;
+              // },
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
