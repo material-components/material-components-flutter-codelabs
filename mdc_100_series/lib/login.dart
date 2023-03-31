@@ -42,8 +42,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 120.0),
             // TODO: Remove filled: true values (103)
-            TextField(
+            TextFormField(
               controller: _usernameController,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter some text';
+                }
+                return null;
+              },
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
@@ -72,8 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   child: const Text('Sign Up'),
                   onPressed: () {
-                    // _usernameController.clear();
-                    // _passwordController.clear();
+                    //Navigator.push();
                   },
                 ),
                 // TODO: Add an elevation to NEXT (103)
