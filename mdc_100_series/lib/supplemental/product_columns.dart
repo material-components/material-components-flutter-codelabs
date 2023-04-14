@@ -80,8 +80,13 @@ class OneProductCardColumn extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        ProductCard(
-          product: product,
+        ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 550,
+          ),
+          child: ProductCard(
+            product: product,
+          ),
         ),
         const SizedBox(
           height: 40.0,
