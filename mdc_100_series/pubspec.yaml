@@ -9,8 +9,8 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
 
-  cupertino_icons: ^1.0.3
-  shrine_images: ^2.0.1
+  cupertino_icons: ^1.0.5
+  shrine_images: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -61,3 +61,4 @@ flutter:
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
     - packages/shrine_images/37-0.jpg
+
