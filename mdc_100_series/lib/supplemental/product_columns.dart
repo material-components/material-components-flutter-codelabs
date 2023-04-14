@@ -79,8 +79,13 @@ class OneProductCardColumn extends StatelessWidget {
       reverse: true,
       physics: const ClampingScrollPhysics(),
       children: <Widget>[
-        ProductCard(
-          product: product,
+        ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 550,
+          ),
+          child: ProductCard(
+            product: product,
+          ),
         ),
         const SizedBox(
           height: 40.0,

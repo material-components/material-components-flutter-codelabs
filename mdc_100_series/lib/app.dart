@@ -65,7 +65,7 @@ class _ShrineAppState extends State<ShrineApp> {
 final ThemeData _kShrineTheme = _buildShrineTheme();
 
 ThemeData _buildShrineTheme() {
-  final ThemeData base = ThemeData.light();
+  final ThemeData base = ThemeData.light(useMaterial3: true);
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
       primary: kShrinePink100,
@@ -76,6 +76,10 @@ ThemeData _buildShrineTheme() {
     textTheme: _buildShrineTextTheme(base.textTheme),
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: kShrinePink100,
+    ),
+    appBarTheme: const AppBarTheme(
+      foregroundColor: kShrineBrown900,
+      backgroundColor: kShrinePink100,
     ),
     inputDecorationTheme: const InputDecorationTheme(
       border: CutCornersBorder(),
@@ -95,17 +99,17 @@ ThemeData _buildShrineTheme() {
 TextTheme _buildShrineTextTheme(TextTheme base) {
   return base
       .copyWith(
-        headline5: base.headline5!.copyWith(
+        headlineSmall: base.headlineSmall!.copyWith(
           fontWeight: FontWeight.w500,
         ),
-        headline6: base.headline6!.copyWith(
+        titleLarge: base.titleLarge!.copyWith(
           fontSize: 18.0,
         ),
-        caption: base.caption!.copyWith(
+        bodySmall: base.bodySmall!.copyWith(
           fontWeight: FontWeight.w400,
           fontSize: 14.0,
         ),
-        bodyText1: base.bodyText1!.copyWith(
+        bodyLarge: base.bodyLarge!.copyWith(
           fontWeight: FontWeight.w500,
           fontSize: 16.0,
         ),
