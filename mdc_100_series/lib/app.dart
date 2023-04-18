@@ -35,6 +35,7 @@ class ShrineApp extends StatelessWidget {
         // TODO: Change backLayer field value to CategoryMenuPage (104)
       },
       // TODO: Add a theme (103)
+      theme: Theme.light(useMaterial3: true),
     );
   }
 }
