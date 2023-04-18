@@ -25,8 +25,8 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
+      theme: Theme.light(useMaterial3: true),
       initialRoute: '/login',
-      theme: Theme.light(useMaterial3: true)
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
         // TODO: Change to a Backdrop with a HomePage frontLayer (104)
